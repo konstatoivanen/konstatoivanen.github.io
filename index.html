@@ -70,11 +70,21 @@
                 position:absolute;
                 top: 204px;
                 left: 74px;
+                transform-origin: 0% 50%;
+                animation-name: SlideIn_Left;
+                animation-duration: 0.5s;
+            }
+
+            @keyframes SlideIn_Left 
+            {
+                0%   {transform:translateX(-100%);}
+                100% {transform:translateX(0%);}
             }
 
             .social
             {
                 display: list-item;
+                list-style-type: none;
                 content: "";
                 position:absolute;
                 top: 256px;
