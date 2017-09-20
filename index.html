@@ -70,15 +70,12 @@
                 position:absolute;
                 top: 204px;
                 left: 74px;
-                transform-origin: 0% 50%;
-                animation-name: SlideIn_Left;
-                animation-duration: 0.5s;
             }
 
-            @keyframes SlideIn_Left 
+            @keyframes RotateIn_Left 
             {
-                0%   {transform:translateX(-100%);}
-                100% {transform:translateX(0%);}
+                0%   {transform:rotateY(-90deg)}
+                100% {transform:rotateX(0deg)}
             }
 
             .social
@@ -104,6 +101,10 @@
                 padding-top: 4px;
                 padding-left: 8px;
                 clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
+
+                transform-origin: 0% 50%;
+                animation-name: RotateIn_Left;
+                animation-duration: 0.5s;
             }
             .tileB
             {
@@ -118,6 +119,10 @@
                 padding-top: 4px;
                 padding-left: 8px;
                 clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);
+
+                transform-origin: 0% 50%;
+                animation-name: RotateIn_Left;
+                animation-duration: 0.5s;
             }        
             .info
             {
@@ -235,7 +240,7 @@
             </div>
         </div>
 
-        <div class="panel" id="panel2">
+        <div class="panel" id="panel2" style="transform-origin: 0% 50%; animation-name: RotateIn_Left; animation-duration: 0.5s;">
             <div class="info">
                 Hi, I'm Konsta Toivanen a young game programming student and hobbyist from Kajaani. As you can see from the other tabs I've worked on a variety of different game components and effects on my own time. I harbor a deep interest in programming and with the help of my studies I look forward into turning this hobby into a profession. 
                 <br>
