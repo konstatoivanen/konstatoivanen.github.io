@@ -21,7 +21,6 @@
                 font-size: 300%;
                 white-space: nowrap;
             }
-
             p 
             {
                 text-indent: 74px;
@@ -61,6 +60,7 @@
             {
                top: 28px;
                padding-bottom: 6px;
+               color:#00B2FF;
             }
 
             .panel
@@ -141,15 +141,9 @@
 
             .imageTR 
             {
-                background-size: contain;
                 position: absolute;
-                background-position: top right;
-                background-repeat: no-repeat;
                 background-color:black;
                 align-content:center;
-                font-family: republic;
-                color:#EBE6E2;
-                content:"Loading";
                 top: 0px;
                 right: 0px;
                 height: 100%;
@@ -157,15 +151,9 @@
             }
             .imageBC
             {
-                background-size: contain;
                 position: absolute;
-                background-position: bottom center;
-                background-repeat: no-repeat;
                 background-color:black;
                 align-content:center;
-                font-family: republic;
-                color:#EBE6E2;
-                content:"Loading";
                 bottom: 0px;
                 right: 0px;
                 height: 100%;
@@ -188,32 +176,32 @@
 
             <div class="tileA">
                 2D polygon fragmentation <br> &emsp; ▸Pattern generation via algorthim <br> &emsp; ▸Edit or create patterns <br> &emsp; ▸Save patterns <br> &emsp; ▸Breaks plane at impact point <br> &emsp; ▸Stick produced debris to mount <br> &emsp; points
-                <div class='imageTR' style="top:-4px; left: 260px;"><video width="260" height="268" loop autoplay><source src="V_Fragment.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 260px;"><video width="260" height="268" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Fragment.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:638px;">
                 Object highlighting system <br> &emsp; ▸Add objects to buffer at runtime <br> &emsp; ▸Supports multiple submeshes <br> &emsp; ▸Fade in/out <br> &emsp; ▸Per instance color <br> &emsp; ▸Culling <br> &emsp; ▸Gobal thickness <br> &emsp; ▸Global overlay texture <br> &emsp; 
-                <div class='imageTR' style="top:-4px; left: 256px;"><video width="390" height="268" loop autoplay><source src="V_Highlight.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 256px;"><video width="390" height="268" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Highlight.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:598px;">
                 Smooth player controller <br> &emsp; ▸wallrunning <br> &emsp; ▸sliding <br> &emsp; ▸vaulting <br> &emsp; ▸spring smoothing <br> &emsp; ▸custom step offset <br> &emsp; ▸stick to moving platforms
-                <div class='imageTR' style="top:-4px; left: 216px;"><video width="390" height="268" loop autoplay><source src="V_Movement.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 216px;"><video width="390" height="268" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Movement.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:638px;">
                 AI system <br> &emsp; ▸Detection by vision cone <br> &emsp; ▸Transparency affects detection <br> &emsp; ▸Audio reaction <br> &emsp; ▸Flocking <br> &emsp; ▸Dynamic targeting <br> &emsp; ▸Infighting <br> &emsp; ▸3 state machine <br> &emsp; ▸Supports stealth <br> &emsp; ▸Easy derivations from baseclass 
-                <div class='imageTR' style="top:-4px; left: 256px;"><video width="390" height="268" loop autoplay><source src="V_AI.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 256px;"><video width="390" height="268" loop preload="auto" oncanplaythrough="this.play();"><source src="V_AI.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:702px;">
                 Biped character controller <br> &emsp; ▸Animation to ragdoll and back <br> &emsp; ▸Apply animation velocity to ragdoll <br> &emsp; ▸Rotationmodes : face target, face velocity <br> &emsp; ▸Scripted sequences <br> &emsp; ▸Foot IK <br> &emsp; ▸Weapon To target IK
-                <div class='imageTR' style="top:-4px; left: 320px;"><video width="390" height="268" loop autoplay><source src="V_Controller.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 320px;"><video width="390" height="268" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Controller.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA">
                 Instance Manager <br> &emsp; ▸Recycle spawned objects & fx <br> &emsp; ▸Get impact fx by physicmaterial <br> &emsp; ▸Positional audio cues <br> &emsp; ▸Procedural mesh hosting/caching
-                <div class='imageTR' style="top:-4px; left: 272px;"><video width="260" height="268" loop autoplay><source src="V_IM.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 272px;"><video width="260" height="268" loop preload="auto" oncanplaythrough="this.play();"><source src="V_IM.mp4" type="video/mp4"></video></div>
             </div>
 
         </div>
@@ -221,36 +209,36 @@
         <div class="panel" id="panel1">
             <div class="tileB" style="width:248px; height:284px;">
                 Disintegration Shader
-                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop autoplay><source src="V_Disintegrate.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Disintegrate.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 Forcefield Shader
-                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop autoplay><source src="V_Forcefield.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Forcefield.mp4"></video></div>
             </div>
             <div class="tileB" style="width:376px; height:284px;">
                 Character Blink Shader
-                <div class='imageBC' style="top:32px;"><video width="384" height="284" style="transform:translateY(-14px);" loop autoplay><source src="V_Blink.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="384" height="284" style="transform:translateY(-14px);" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Blink.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 Blood Particle Shader
-                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop autoplay><source src="V_Blood.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Blood.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 Volumetric muzzleflash Shader
-                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop autoplay><source src="V_MuzzleFlash.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop preload="auto" oncanplaythrough="this.play();"><source src="V_MuzzleFlash.mp4"></video></div>
             </div>
             <div class="tileB" style="width:448px; height:284px;">
                 Combined Image-effects
-                <div class='imageBC' style="top:32px;"><video width="456" height="320" style="transform:translateY(-32px);" loop autoplay><source src="V_Combo.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="456" height="320" style="transform:translateY(-32px);" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Combo.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 Tracer Shader
-                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop autoplay><source src="V_Tracers.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video>
+                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Tracers.mp4"></video>
                 </div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 Laser Shader
-                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop autoplay><source src="V_Lasers.mp4" type="video/mp4;codecs="avc1.42E01E, mp4a.40.2""></video></div>
+                <div class='imageBC' style="top:32px;"><video width="256" height="256" loop preload="auto" oncanplaythrough="this.play();"><source src="V_Lasers.mp4"></video></div>
             </div>
         </div>
 
