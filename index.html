@@ -71,6 +71,7 @@
                 left: 74px;
             }
 
+
             @keyframes ClipIn_Left
             {
                 0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);}
@@ -133,6 +134,7 @@
                 animation-name: ClipIn_Left_TileB;
                 animation-duration: 0.5s;
             }      
+
             .info
             {
                 display: inline-grid;
@@ -151,23 +153,35 @@
             .imageTR 
             {
                 position: absolute;
-                background-color:black;
+                background-color:transparent;
                 align-content:center;
                 top: 0px;
                 right: 0px;
                 height: 100%;
                 width: 100%;
+                clip-path: inherit;
             }
             .imageBC
             {
                 position: absolute;
-                background-color:black;
+                background-color:transparent;
                 align-content:center;
                 bottom: 0px;
                 right: 0px;
                 height: 100%;
                 width: 100%;
+
+                clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+
+                animation-name: ClipIn_Left;
+                animation-duration: 0.5s;
             }
+
+            video
+            {
+                clip-path: inherit;
+            }
+
         </style>
     </head>
 
@@ -185,7 +199,7 @@
 
             <div class="tileA">
                 Ropesimulation <br>▸Vertices connected with springs <br>▸Demo paramaters are not physically <br> accurate<br>▸Demo uses OpenGL for rendering<br>▸Easy to tweak spring function allows <br> for many different types of rope
-                <div class='imageTR' style="top:-4px; left: 260px;"><video id="vidA0" width="268" height="268" loop preload="auto"><source src="V_Rope.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="top:-4px; left: 260px;"><video id="vidA0" width="260" height="267" loop preload="auto"><source src="V_Rope.mp4" type="video/mp4"></video></div>
             </div>
             <div class="tileA">
                 2D polygon fragmentation <br>▸Pattern generation via algorthim <br>▸Edit or create patterns <br>▸Save patterns <br>▸Breaks plane at impact point <br>▸Stick produced debris to mount <br>points
