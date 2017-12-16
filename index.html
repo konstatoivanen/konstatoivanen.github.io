@@ -3,7 +3,10 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
     <head>
+
         <title>Portfolio</title>
+
+        <link rel="icon" href="T_Icon.png">
 
         <style>
             @font-face
@@ -11,6 +14,9 @@
                 font-family: 'republic';
                 src: url('konstatoivanen.github.io/republic-heavy-webfont.woff');
             }
+
+
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
 
             h1 
             {
@@ -103,32 +109,38 @@
             .tileA
             {
                 display: inline-grid;
-                font-family: republic;
-                background-color: #262626;
+
+                background-color: #191919;
                 color: #EBE6E2;
                 position:relative;
+
                 width: 512px;
                 height: 256px;      
                 margin-top: 4px;
                 padding-top: 4px;
                 padding-left: 8px;
+
+                border-left: 4px solid  #00B2FF;
+
                 clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
 
                 animation-name: ClipIn_Left_TileA;
                 animation-duration: 0.5s;
             }
+
             .tileB
             {
                 display: inline-grid;
-                font-family: republic;
                 background-color: #262626;
                 color: #EBE6E2;
                 position:relative;
+
                 width: 512px;
                 height: 256px;      
                 margin-top: 4px;
                 padding-top: 4px;
                 padding-left: 8px;
+
                 clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);
 
                 animation-name: ClipIn_Left_TileB;
@@ -138,7 +150,7 @@
             .info
             {
                 display: inline-grid;
-                font-family: republic;
+                font-family: 'Roboto', sans-serif;
                 color: #EBE6E2;
                 position:relative;
                 border-left:4px solid  #00B2FF;
@@ -155,7 +167,7 @@
                 position: absolute;
                 background-color:transparent;
                 align-content:center;
-                top: 0px;
+                top:-4px;
                 right: 0px;
                 height: 100%;
                 width: 100%;
@@ -182,6 +194,49 @@
                 clip-path: inherit;
             }
 
+            h2
+            {
+                display:inline-block;
+
+                font-family: Republic; 
+                font-size: 18px;
+
+                white-space:nowrap;
+
+                height: 32px;
+                margin-top: 2px;
+                margin-left:4px;
+                padding-top: 4px;
+            }
+
+            h3
+            {
+                display:inline-block;
+
+                font-family: Republic; 
+                font-size: 18px;
+
+                white-space:nowrap;
+
+                height: 32px;
+                margin-top: 2px;
+                margin-left:2px;
+                padding-top: 4px;
+            }
+
+            .descr
+            {
+                position: relative;
+
+                font-family: 'Roboto', sans-serif;
+                font-size: 14px;
+                line-height: 22px;
+
+                padding-top : -32px;
+                margin-top: -32px;
+                margin-left:16px;
+            }
+
         </style>
     </head>
 
@@ -196,79 +251,108 @@
         <div class="pBut" id="button2" onclick="switchPanel(2)">Info</div>
 
         <div class="panel" id="panel0">
+            <div class="tileA" style="width:704px;">
+                <h2>Side Slasher</h2>
+                    <div class="descr">
+                        Our goal was to create a vertical slice of a 2D <br>melee action game for a technology <br>workshop course. This we achieved for the <br>most part (a few novelty features missing). </div> <h2 style="margin-top: -16px;"> Credits </h2><div class="descr">Olli Uikkanen (Character Art & Animation), <br>Me (Code, Level Design, Sounds & Ost). 
+                    </div>
+                <div class='imageTR' style="top:0px; left: 322px;"><iframe width="390" height="268"" src="https://www.youtube.com/embed/LF3x8I6VOn4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+            </div>
 
             <div class="tileA">
-                Ropesimulation <br>▸Vertices connected with springs <br>▸Demo paramaters are not physically <br> accurate<br>▸Demo uses OpenGL for rendering<br>▸Easy to tweak spring function allows <br> for many different types of rope
-                <div class='imageTR' style="top:-4px; left: 260px;"><video id="vidA0" width="260" height="267" loop preload="auto"><source src="V_Rope.mp4" type="video/mp4"></video></div>
+                <h2>Ropesimulation</h2> 
+                    <div class="descr" style="margin-top: -84px;">
+                        -Vertices connected with springs<br>-Demo paramaters are not physically<br>&nbsp;&nbsp;accurate<br>-Demo uses OpenGL for rendering<br>-Easy to tweak spring function allows<br>&nbsp;&nbsp;for many different types of rope 
+                    </div>
+                <div class='imageTR' style="left: 260px;"><video id="vidA0" width="260" height="267" loop preload="auto"><source src="V_Rope.mp4" type="video/mp4"></video></div>
             </div>
+
             <div class="tileA">
-                2D polygon fragmentation <br>▸Pattern generation via algorthim <br>▸Edit or create patterns <br>▸Save patterns <br>▸Breaks plane at impact point <br>▸Stick produced debris to mount <br>points
-                <div class='imageTR' style="top:-4px; left: 260px;"><video id="vidA1" width="260" height="268" loop preload="auto"><source src="V_Fragment.mp4" type="video/mp4"></video></div>
+                <h2>2D polygon fragmentation </h2>
+                    <div class="descr" style="margin-top: -84px;">
+                        -Pattern generation via algorthim <br>-Edit or create patterns <br>-Save patterns <br>-Breaks plane at impact point <br>-Stick produced debris to mount <br>&nbsp;&nbsp;points
+                    </div>
+                <div class='imageTR' style="left: 260px;"><video id="vidA1" width="260" height="268" loop preload="auto"><source src="V_Fragment.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:638px;">
-                Object highlighting system <br>▸Add objects to buffer at runtime <br>▸Supports multiple submeshes <br>▸Fade in/out <br>▸Per instance color <br>▸Culling <br>▸Gobal thickness <br>▸Global overlay texture
-                <div class='imageTR' style="top:-4px; left: 256px;"><video id="vidA2" width="390" height="268" loop preload="auto"><source src="V_Highlight.mp4" type="video/mp4"></video></div>
+                <h2>Object highlighting system</h2> 
+                    <div class="descr" style="margin-top: -62px;">
+                        -Add objects to buffer at runtime <br>-Supports multiple submeshes <br>-Fade in/out <br>-Per instance color <br>-Culling <br>-Gobal thickness <br>-Global overlay texture
+                    </div>
+                <div class='imageTR' style="left: 256px;"><video id="vidA2" width="390" height="268" loop preload="auto"><source src="V_Highlight.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:598px;">
-                Smooth player controller <br>▸Wallrunning <br>▸Sliding <br>▸Vaulting <br>▸Spring smoothing <br>▸Custom step offset <br>▸Stick to moving platforms
-                <div class='imageTR' style="top:-4px; left: 216px;"><video id="vidA3" width="390" height="268" loop preload="auto"><source src="V_Movement.mp4" type="video/mp4"></video></div>
+                <h2>Smooth player controller</h2>
+                    <div class="descr" style="margin-top: -84px;">
+                        -Wallrunning <br>-Sliding <br>-Vaulting <br>-Spring smoothing <br>-Custom step offset <br>-Stick to moving platforms
+                    </div>
+                <div class='imageTR' style="left: 216px;"><video id="vidA3" width="390" height="268" loop preload="auto"><source src="V_Movement.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:638px;">
-                AI system <br>▸Detection by vision cone <br>▸Transparency affects detection <br>▸Audio reaction <br>▸Flocking <br>▸Dynamic targeting <br>▸Infighting <br>▸3 state machine <br>▸Supports stealth <br>▸Easy derivations from baseclass 
-                <div class='imageTR' style="top:-4px; left: 256px;"><video id="vidA4" width="390" height="268" loop preload="auto" ><source src="V_AI.mp4" type="video/mp4"></video></div>
+                <h2>AI system</h2>
+                    <div class="descr" style="margin-top: -40px;">
+                        -Detection by vision cone <br>-Transparency affects detection <br>-Audio reaction <br>-Flocking <br>-Dynamic targeting <br>-Infighting <br>-3 state machine <br>-Easy derivations from baseclass 
+                    </div>
+                <div class='imageTR' style="left: 256px;"><video id="vidA4" width="390" height="268" loop preload="auto" ><source src="V_AI.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:702px;">
-                Biped character controller <br>▸Animation to ragdoll and back <br>▸Apply animation velocity to ragdoll <br>▸Rotationmodes : face target, face velocity <br>▸Scripted sequences <br>▸Foot IK <br>▸Weapon To target IK
-                <div class='imageTR' style="top:-4px; left: 320px;"><video id="vidA5" width="390" height="268" loop preload="auto" ><source src="V_Controller.mp4" type="video/mp4"></video></div>
+                <h2>Biped character controller</h2>
+                    <div class="descr" style="margin-top: -84px;">
+                        -Animation to ragdoll and back <br>-Apply animation velocity to ragdoll <br>-Rotationmodes : face target, face velocity <br>-Scripted sequences <br>-Foot IK <br>-Weapon To target IK
+                    </div>
+                <div class='imageTR' style="left: 320px;"><video id="vidA5" width="390" height="268" loop preload="auto"><source src="V_Controller.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA">
-                Instance Manager <br>▸Recycle spawned objects & fx <br>▸Get impact fx by physicmaterial <br>▸Positional audio cues <br>▸Procedural mesh hosting/caching
-                <div class='imageTR' style="top:-4px; left: 272px;"><video id="vidA6" width="260" height="268" loop preload="auto" ><source src="V_IM.mp4" type="video/mp4"></video></div>
+                <h2>Instance Manager</h2>
+                    <div class="descr" style="margin-top: -108px;">
+                        -Recycle spawned objects & fx <br>-Get impact fx by physicmaterial <br>-Positional audio cues <br>-Procedural mesh hosting/caching
+                    </div>
+                <div class='imageTR' style="left: 272px;"><video id="vidA6" width="260" height="268" loop preload="auto"><source src="V_IM.mp4" type="video/mp4"></video></div>
             </div>
 
         </div>
 
         <div class="panel" id="panel1">
             <div class="tileB" style="width:248px; height:284px;">
-                Mind altering substance shader
+                <h3>Mind altering substance shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB0" width="256" height="256" loop preload="auto"><source src="V_Trip.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                Disintegration Shader
+                <h3>Disintegration Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" height="256" loop preload="auto" ><source src="V_Disintegrate.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                Forcefield Shader
+                <h3>Forcefield Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" height="256" loop preload="auto" ><source src="V_Forcefield.mp4"></video></div>
             </div>
             <div class="tileB" style="width:376px; height:284px;">
-                Character Blink Shader
+                <h3>Character Blink Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB3" width="384" height="284" style="transform:translateY(-14px);" loop preload="auto" ><source src="V_Blink.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                Blood Particle Shader
+                <h3>Blood Particle Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB4" width="256" height="256" loop preload="auto" ><source src="V_Blood.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                Volumetric muzzleflash Shader
+                <h3>Volumetric muzzleflash Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB5" width="256" height="256" loop preload="auto" ><source src="V_MuzzleFlash.mp4"></video></div>
             </div>
             <div class="tileB" style="width:448px; height:284px;">
-                Combined Image-effects
+                <h3>Combined Image-effects</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB6" width="456" height="320" style="transform:translateY(-32px);" loop preload="auto" ><source src="V_Combo.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                Tracer Shader
+                <h3>Tracer Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB7" width="256" height="256" loop preload="auto" ><source src="V_Tracers.mp4"></video>
                 </div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                Laser Shader
+                <h3>Laser Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" height="256" loop preload="auto" ><source src="V_Lasers.mp4"></video></div>
             </div>
         </div>
@@ -276,14 +360,12 @@
         <div class="panel" id="panel2" style="animation-name: ClipIn_Left; animation-duration: 0.5s;">
             <div class="info">
                 Hi, I'm Konsta Toivanen a young game programming student and hobbyist from Kajaani. As you can see from the other tabs I've worked on a variety of different game components and effects on my own time. I harbor a deep interest in programming and with the help of my studies I look forward into turning this hobby into a profession. 
-                <br>
-                <br>Languages: &emsp; C#, CG, OpenGL, Html, Css, Javascript. 
-                <br>
-                <br>Programs: &emsp; Visual Studio, Unity, Source, 3DSMax. 
-                <br>
-                <br>Education: &emsp; Kajaani University of Applied Sciences - Information Systems, 2017-2020. 
-                <br>
-                <br>Contact: &emsp; konstatoivanen1@kamk.fi
+                <h2>
+                Languages:      &emsp; C#, CG, OpenGL, Html, Css, Javascript. 
+                <br>Programs:   &emsp;&nbsp;&nbsp; Visual Studio, Unity, Source, 3DSMax. 
+                <br>Education:  &emsp;&nbsp;&nbsp; Kajaani University of Applied Sciences - Information Systems, 2017-2020. 
+                <br>Contact:    &emsp;&emsp;&nbsp;&nbsp; konstatoivanen1@kamk.fi
+                </h2>
             </div>
             <div class="social">
                 <div class="pBut" onclick="window.location.href = 'https://www.linkedin.com/in/konsta-toivanen-72b8a714b'">LinkedIn</div>
@@ -294,47 +376,47 @@
 
         <div class="panel" id="panel3">
             <div class="tileB" style="width:760px; height:392px;">
-                Club 0
+                <h3>Club 0</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_01.jpg"/></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Club 1
+                <h3>Club 1</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_02.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Club 2
+                <h3>Club 2</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_03.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Club 3
+                <h3>Club 3</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_04.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Club 4
+                <h3>Club 4</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_05.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Club 5
+                <h3>Club 5</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_06.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                BathHouse 0
+                <h3>BathHouse 0</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_BathHouse_01.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                BathHouse 1
+                <h3>BathHouse 1</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_BathHouse_02.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Office 0
+                <h3>Office 0</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Office_01.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Office 1
+                <h3>Office 1</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Office_02.jpg" /></div>
             </div>
             <div class="tileB" style="width:760px; height:392px;">
-                Office 2
+                <h3>Office 2</h3>
                 <div class='imageBC' style="top:32px;"><img width="768" src="T_Office_03.jpg" /></div>
             </div>
         </div>
