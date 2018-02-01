@@ -326,13 +326,13 @@
                 <h3>Disintegration Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" height="256" loop preload="auto" ><source src="V_Disintegrate.mp4"></video></div>
             </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Forcefield Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" height="256" loop preload="auto" ><source src="V_Forcefield.mp4"></video></div>
-            </div>
             <div class="tileB" style="width:376px; height:284px;">
-                <h3>Character Blink Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB3" width="384" height="284" style="transform:translateY(-14px);" loop preload="auto" ><source src="V_Blink.mp4"></video></div>
+                <h3>Character Blink Shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB3" width="384" height="284" style="transform:translateY(-14px);" loop preload="auto"><source src="V_Blink.mp4"></video></div>
+            </div>
+            <div class="tileB" style="width:248px; height:284px;">
+                <h3>Buildings Shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB9" width="256" height="256" loop preload="auto"><source src="V_Buildings.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Blood Particle Shader</h3> 
@@ -354,6 +354,10 @@
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Laser Shader</h3> 
                 <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" height="256" loop preload="auto" ><source src="V_Lasers.mp4"></video></div>
+            </div>
+            <div class="tileB" style="width:248px; height:284px;">
+                <h3>Forcefield Shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" height="256" loop preload="auto"><source src="V_Forcefield.mp4"></video></div>
             </div>
         </div>
 
@@ -464,7 +468,7 @@
             playstop("vidA" + i.toString(), x == 0);
         }
 
-        for (i = 0; i < 9; i++)
+        for (i = 0; i < 10; i++)
         {
             playstop("vidB" + i.toString(), x == 1);
         }
@@ -475,9 +479,16 @@
         var video = document.getElementById(id);
 
         if (b)
-            video.play();
+        {
+            if(video.paused)
+                video.play();
+        }
         else
+        {
+            video.un
             video.pause();
+        }
+
     }
 
     function init()
