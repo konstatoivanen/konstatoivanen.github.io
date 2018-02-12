@@ -165,9 +165,7 @@
             .imageTR 
             {
                 position: absolute;
-                background-color:transparent;
-                align-content:center;
-                top:-4px;
+                top: 0px;
                 right: 0px;
                 height: 100%;
                 width: 100%;
@@ -176,11 +174,9 @@
             .imageBC
             {
                 position: absolute;
-                background-color:transparent;
-                align-content:center;
                 bottom: 0px;
                 right: 0px;
-                height: 100%;
+                height: 256;
                 width: 100%;
 
                 clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
@@ -226,15 +222,14 @@
 
             .descr
             {
-                position: relative;
+                position: absolute;
+
+                top : 42px;
+                left: 12px;
 
                 font-family: 'Roboto', sans-serif;
                 font-size: 14px;
                 line-height: 22px;
-
-                padding-top : -32px;
-                margin-top: -32px;
-                margin-left:16px;
             }
 
         </style>
@@ -254,65 +249,65 @@
             <div class="tileA" style="width:704px;">
                 <h2>Side Slasher</h2>
                     <div class="descr">
-                        Our goal was to create a vertical slice of a 2D <br>melee action game for a technology <br>workshop course. This we achieved for the <br>most part (a few novelty features missing). </div> <h2 style="margin-top: -16px;"> Credits </h2><div class="descr">Olli Uikkanen (Character Art & Animation), <br>Me (Programming, Level Design, Sounds & Ost). 
+                        Our goal was to create a vertical slice of a 2D <br>melee action game for a technology <br>workshop course. This we achieved for the <br>most part (a few novelty features missing). </div> <h2> Credits </h2><div class="descr" style="top:166px">Olli Uikkanen (Character Art & Animation), <br>Me (Programming, Level Design, Sounds & Ost). 
                     </div>
-                <div class='imageTR' style="top:0px; left: 322px;"><iframe width="390" height="268"" src="https://www.youtube.com/embed/LF3x8I6VOn4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                <div class='imageTR' style="width:390px"><iframe width="390" height="260" src="https://www.youtube.com/embed/LF3x8I6VOn4" frameborder="0" gesture="media" allow="encrypted-media"></iframe></div>
             </div>
 
             <div class="tileA">
                 <h2>2D polygon fragmentation </h2>
-                    <div class="descr" style="margin-top: -96px;">
+                    <div class="descr" >
                         A Procedural 2D mesh pattern <br> generator. Patterns can be edited, <br> saved, created manually or clipped <br> by a convex polygon. <br> Pattern fragments can then be <br> materialized into physics objects.
                     </div>
-                <div class='imageTR' style="left: 260px;"><video id="vidA1" width="260" height="268" loop preload="auto"><source src="V_Fragment.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:260px" ><video id="vidA1" height="260" loop preload="auto"><source src="V_Fragment.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA">
                 <h2>Rope simulation</h2>
-                <div class="descr" style="margin-top: -112px;">
+                <div class="descr">
                     An easy to tweak but physically <br> incorrect simulation of <br> interconnected springs. <br> Rendered with OpenTK <br> (a C# wrapper for OpenGL).
                 </div>
-                <div class='imageTR' style="left: 260px;"><video id="vidA0" width="260" height="267" loop preload="auto"><source src="V_Rope.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:260px"><video id="vidA0" height="260" loop preload="auto"><source src="V_Rope.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:638px;">
                 <h2>Object highlighting system</h2> 
-                    <div class="descr" style="margin-top: -112px;">
+                    <div class="descr">
                         Renders a dynamic stack of objects <br> into a buffer to create a highlighting <br> post effect. Supports individual <br> properties such as, fade in/out, <br> color and thickness. 
                     </div>
-                <div class='imageTR' style="left: 256px;"><video id="vidA2" width="390" height="268" loop preload="auto"><source src="V_Highlight.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:390px"><video id="vidA2" height="260" loop preload="auto"><source src="V_Highlight.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:598px;">
                 <h2>Custom player controller</h2>
-                    <div class="descr" style="margin-top: -54px;">
+                    <div class="descr">
                         Notable features include: <br> -step offset<br> -cylinder collision <br> -vaulting <br> -wallrunning <br> -sliding <br> -spring smoothing, <br> -stick to moving platforms 
                     </div>
-                <div class='imageTR' style="left: 216px;"><video id="vidA3" width="390" height="268" loop preload="auto"><source src="V_Movement.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:390px"><video id="vidA3" height="260" loop preload="auto"><source src="V_Movement.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:638px;">
                 <h2>AI system</h2>
-                    <div class="descr" style="margin-top: -84px;">
+                    <div class="descr">
                         A versatile framework that allows<br> for easy derivations from baseclass <br> and the creation of almost any kind <br> of dynamic behavior such as flocking,<br> flanking, searching or apprehension. <br>Stimuli can be fed through visual,<br> auditory or olfactory means.
                     </div>
-                <div class='imageTR' style="left: 256px;"><video id="vidA4" width="390" height="268" loop preload="auto" ><source src="V_AI.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:390px"><video id="vidA4" height="260" loop preload="auto" ><source src="V_AI.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA" style="width:702px;">
                 <h2>Biped character controller</h2>
-                    <div class="descr" style="margin-top: -96px;">
+                    <div class="descr">
                         A Robust biped character controller with <br> support for features such as, physics <br> fade in/out, <br> apply animation movement to physics, <br> strafing, scripted sequences, foot IK <br> and weapon to target IK.
                     </div>
-                <div class='imageTR' style="left: 320px;"><video id="vidA5" width="390" height="268" loop preload="auto"><source src="V_Controller.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:390px"><video id="vidA5" height="260" loop preload="auto"><source src="V_Controller.mp4" type="video/mp4"></video></div>
             </div>
 
             <div class="tileA">
                 <h2>Instance Manager</h2>
-                    <div class="descr" style="margin-top: -112px;">
+                    <div class="descr">
                         Object pooling system with extended<br> features such as, hashed object ids,<br> impact fx from physic material,<br> positional audio cues and<br> procedural mesh caching and hosting.
                     </div>
-                <div class='imageTR' style="left: 272px;"><video id="vidA6" width="260" height="268" loop preload="auto"><source src="V_IM.mp4" type="video/mp4"></video></div>
+                <div class='imageTR' style="width:260px"><video id="vidA6" height="260" loop preload="auto"><source src="V_IM.mp4" type="video/mp4"></video></div>
             </div>
 
         </div>
@@ -320,44 +315,44 @@
         <div class="panel" id="panel1">
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Mind altering substance shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB0" width="256" height="256" loop preload="auto"><source src="V_Trip.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB0" width="256" loop preload="auto"><source src="V_Trip.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Disintegration Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" height="256" loop preload="auto" ><source src="V_Disintegrate.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" loop preload="auto" ><source src="V_Disintegrate.mp4"></video></div>
             </div>
             <div class="tileB" style="width:376px; height:284px;">
                 <h3>Character Blink Shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB3" width="384" height="284" style="transform:translateY(-14px);" loop preload="auto"><source src="V_Blink.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB3" width="384" loop preload="auto"><source src="V_Blink.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Buildings Shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB9" width="256" height="256" loop preload="auto"><source src="V_Buildings.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB9" width="256" loop preload="auto"><source src="V_Buildings.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Blood Particle Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB4" width="256" height="256" loop preload="auto" ><source src="V_Blood.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB4" width="256" loop preload="auto" ><source src="V_Blood.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Volumetric muzzleflash Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB5" width="256" height="256" loop preload="auto" ><source src="V_MuzzleFlash.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB5" width="256" loop preload="auto" ><source src="V_MuzzleFlash.mp4"></video></div>
             </div>
             <div class="tileB" style="width:448px; height:284px;">
                 <h3>Combined Image-effects</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB6" width="456" height="320" style="transform:translateY(-32px);" loop preload="auto" ><source src="V_Combo.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB6" width="456" loop preload="auto" ><source src="V_Combo.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Tracer Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB7" width="256" height="256" loop preload="auto" ><source src="V_Tracers.mp4"></video>
+                <div class='imageBC' style="top:32px;"><video id="vidB7" width="256" loop preload="auto" ><source src="V_Tracers.mp4"></video>
                 </div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Laser Shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" height="256" loop preload="auto" ><source src="V_Lasers.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" loop preload="auto" ><source src="V_Lasers.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Forcefield Shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" height="256" loop preload="auto"><source src="V_Forcefield.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" loop preload="auto"><source src="V_Forcefield.mp4"></video></div>
             </div>
         </div>
 
