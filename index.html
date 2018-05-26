@@ -78,23 +78,20 @@
             }
 
 
-            @keyframes ClipIn_Left
-            {
-                0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);}
-                100% {clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);}
-            }
+            @keyframes			ClipIn_Left {	0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);} }
+			@-moz-keyframes		ClipIn_Left {	0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);} }
+			@-webkit-keyframes	ClipIn_Left {	0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);} }
+			@-o-keyframes		ClipIn_Left {	0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);} }
 
-            @keyframes ClipIn_Left_TileA
-            {
-                0%   {clip-path: polygon(0   0,  5% 5%,  10% 5%,  10% 100%, 0 100%, 0 0);}
-                100% {clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);}
-            }
+            @keyframes			ClipIn_Left_TileA {		0%   {clip-path: polygon(0   0,  5% 5%,  10% 5%,  10% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);} }
+            @-moz-keyframes		ClipIn_Left_TileA {		0%   {clip-path: polygon(0   0,  5% 5%,  10% 5%,  10% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);} }
+            @-webkit-keyframes	ClipIn_Left_TileA {		0%   {clip-path: polygon(0   0,  5% 5%,  10% 5%,  10% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);} }
+            @-o-keyframes		ClipIn_Left_TileA {		0%   {clip-path: polygon(0   0,  5% 5%,  10% 5%,  10% 100%, 0 100%, 0 0);}	100% {clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);} }
 
-            @keyframes ClipIn_Left_TileB
-            {
-                0%   {clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);}
-                100% {clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);}
-            }
+            @keyframes			ClipIn_Left_TileB { 0%   {clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);} 100% {clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);} }
+            @-moz-keyframes		ClipIn_Left_TileB { 0%   {clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);} 100% {clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);} }
+            @-webkit-keyframes	ClipIn_Left_TileB { 0%   {clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);} 100% {clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);} }
+            @-o-keyframes		ClipIn_Left_TileB { 0%   {clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);} 100% {clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);} }
 
             .social
             {
@@ -124,8 +121,12 @@
 
                 clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
 
-                animation-name: ClipIn_Left_TileA;
-                animation-duration: 0.5s;
+				-webkit-backface-visibility: hidden;
+
+				-webkit-animation:	ClipIn_Left_TileA 0.5s 0.05s 1 normal forwards;
+				-moz-animation:		ClipIn_Left_TileA 0.5s 0.05s 1 normal forwards;
+				-o-animation:		ClipIn_Left_TileA 0.5s 0.05s 1 normal forwards;
+				animation:			ClipIn_Left_TileA 0.5s 0.05s 1 normal forwards;
             }
 
             .tileB
@@ -143,8 +144,10 @@
 
                 clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);
 
-                animation-name: ClipIn_Left_TileB;
-                animation-duration: 0.5s;
+				-webkit-animation:	ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
+				-moz-animation:		ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
+				-o-animation:		ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
+				animation:			ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
             }      
 
             .info
@@ -181,8 +184,10 @@
 
                 clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
 
-                animation-name: ClipIn_Left;
-                animation-duration: 0.5s;
+				-webkit-animation:	ClipIn_Left 0.5s 0.05s 1 normal forwards;
+				-moz-animation:		ClipIn_Left 0.5s 0.05s 1 normal forwards;
+				-o-animation:		ClipIn_Left 0.5s 0.05s 1 normal forwards;
+				animation:			ClipIn_Left 0.5s 0.05s 1 normal forwards;
             }
 
             video
@@ -309,7 +314,6 @@
                     </div>
                 <div class='imageTR' style="width:260px"><video id="vidA6" height="260" loop preload="auto"><source src="V_IM.mp4" type="video/mp4"></video></div>
             </div>
-
         </div>
 
         <div class="panel" id="panel1">
@@ -484,7 +488,6 @@
         }
         else
         {
-            video.un
             video.pause();
         }
 
