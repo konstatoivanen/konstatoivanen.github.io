@@ -55,7 +55,6 @@
                                
                 position:relative;
                 top: 32px;
-                left: 66px;
                 width: 128px;
                 padding-left: 8px;
                 padding-bottom: 2px;
@@ -98,9 +97,8 @@
                 display: list-item;
                 list-style-type: none;
                 content: "";
-                position:absolute;
+                position: sticky;
                 top: 256px;
-                left: -66px;
             }
 
             .tileA
@@ -138,9 +136,8 @@
 
                 width: 512px;
                 height: 256px;      
-                margin-top: 4px;
-                padding-top: 4px;
-                padding-left: 8px;
+                margin:  0px;
+                padding: 0px;
 
                 clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);
 
@@ -219,10 +216,21 @@
 
                 white-space:nowrap;
 
-                height: 32px;
-                margin-top: 2px;
-                margin-left:2px;
-                padding-top: 2px;
+                height: 16px;
+                margin: 8px;
+
+                left:  0px;
+                right: 0px;
+            }
+
+            h4 
+            {
+                display: inline-block;
+                font-family: Republic;
+                font-size: 18px;
+                white-space: nowrap;
+                margin-top:  32px;
+                margin-left: 4px;
             }
 
             .descr
@@ -245,10 +253,10 @@
         <h1> <b>Konsta Toivanen Portfolio</b> </h1>
         <p>A miscellaneous collection of projects & effects of varying relevance.</p>
 
-        <div class="pBut" id="button0" onclick="switchPanel(0)">C#</div>
-        <div class="pBut" id="button1" onclick="switchPanel(1)">Cg</div>
-        <div class="pBut" id="button3" onclick="switchPanel(3)">Env</div>
-        <div class="pBut" id="button2" onclick="switchPanel(2)">Info</div>
+        <div class="pBut" style="left: 66px" id="button0" onclick="switchPanel(0)">C#</div>
+        <div class="pBut" style="left: 66px" id="button1" onclick="switchPanel(1)">Cg</div>
+        <div class="pBut" style="left: 66px" id="button3" onclick="switchPanel(3)">Env</div>
+        <div class="pBut" style="left: 66px" id="button2" onclick="switchPanel(2)">Info</div>
 
         <div class="panel" id="panel0">
             <div class="tileA" style="width:704px;">
@@ -449,13 +457,13 @@
         <div class="panel" id="panel2" style="animation-name: ClipIn_Left; animation-duration: 0.5s;">
             <div class="info">
                 Hi, I'm Konsta Toivanen a young game programming student and hobbyist from Kajaani. As you can see from the other tabs I've worked on a variety of different game components and effects on my own time. I harbor a deep interest in programming and with the help of my studies I look forward into turning this hobby into a profession. 
-                <h2>
-                Languages:      &emsp; C#, CG, HLSL, OpenGL, Html, Css, Javascript. 
-                <br>Programs:   &emsp;&nbsp;&nbsp; Visual Studio, Unity, Source, 3DSMax. 
-                <br>Education:  &emsp;&nbsp;&nbsp; Kajaani University of Applied Sciences - Information Systems, 2017-2020. 
-                <br>Employed at:&nbsp;&nbsp;&nbsp; Critical Force Oy - Programmer Trainee.
-                <br>Contact:    &emsp;&emsp;&nbsp;&nbsp; konstatoivanen1@kamk.fi
-                </h2>
+                <h4>
+                    Languages:      &emsp; C#, CG, HLSL, OpenGL, Html, Css, Javascript.
+                    <br>Programs:   &emsp;&nbsp;&nbsp; Visual Studio, Unity, Source, 3DSMax.
+                    <br>Education:  &emsp;&nbsp;&nbsp; Kajaani University of Applied Sciences - Information Systems, 2017-2020.
+                    <br>Employed at:&nbsp;&nbsp;&nbsp; Critical Force Oy - Programmer Trainee.
+                    <br>Contact:    &emsp;&emsp;&nbsp;&nbsp; &nbsp; konstatoivanen1@kamk.fi
+                </h4>
             </div>
             <div class="social">
                 <div class="pBut" onclick="window.location.href = 'https://www.linkedin.com/in/konsta-toivanen-72b8a714b'">LinkedIn</div>
