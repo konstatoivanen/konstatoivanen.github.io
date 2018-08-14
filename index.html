@@ -326,16 +326,16 @@
 
         <div class="panel" id="panel1">
             <div class="tileB" style="width:248px; height:284px;">
-                <h3>Mind altering substance shader</h3> 
+                <h3>Mind altering substance shader</h3>
                 <div class='imageBC' style="top:32px;"><video id="vidB0" width="256" loop preload="metadata"><source src="V_Trip.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                <h3>Disintegration shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" loop preload="metadata" ><source src="V_Disintegrate.mp4"></video></div>
+                <h3>Disintegration shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" loop preload="metadata"><source src="V_Disintegrate.mp4"></video></div>
             </div>
-			<div class="tileB" style="width:248px; height:284px;">
-                <h3>Line of sight shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB11" width="256" loop preload="metadata" ><source src="V_Los.mp4"></video></div>
+            <div class="tileB" style="width:248px; height:284px;">
+                <h3>Line of sight shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" loop preload="metadata"><source src="V_Los.mp4"></video></div>
             </div>
             <div class="tileB" style="width:376px; height:284px;">
                 <h3>Character blink shader</h3>
@@ -343,36 +343,39 @@
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Buildings shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB9" width="256" loop preload="metadata"><source src="V_Buildings.mp4"></video></div>
-            </div>
-			<div class="tileB" style="width:248px; height:284px;">
-                <h3>Screenspace blood shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB10" width="256" loop preload="metadata" ><source src="V_Blood2.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB4" width="256" loop preload="metadata"><source src="V_Buildings.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                <h3>Blood particle shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB4" width="256" loop preload="metadata" ><source src="V_Blood.mp4"></video></div>
+                <h3>Screenspace blood shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB5" width="256" loop preload="metadata"><source src="V_Blood2.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                <h3>Volumetric muzzleflash shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB5" width="256" loop preload="metadata" ><source src="V_MuzzleFlash.mp4"></video></div>
+                <h3>Blood particle shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB6" width="256" loop preload="metadata"><source src="V_Blood.mp4"></video></div>
+            </div>
+            <div class="tileB" style="width:248px; height:284px;">
+                <h3>Volumetric muzzleflash shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB7" width="256" loop preload="metadata"><source src="V_MuzzleFlash.mp4"></video></div>
+            </div>
+            <div class="tileB" style="width:248px; height:284px;">
+                <h3>Lit cartoon particle shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" loop preload="metadata"><source src="V_CartoonParticle.mp4"></video></div>
             </div>
             <div class="tileB" style="width:448px; height:284px;">
-                <h3>Combined image-effects</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB6" width="456" loop preload="metadata" ><source src="V_Combo.mp4"></video></div>
+                <h3>Combined image-effects</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB9" width="456" loop preload="metadata"><source src="V_Combo.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                <h3>Tracer shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB7" width="256" loop preload="metadata" ><source src="V_Tracers.mp4"></video>
-                </div>
+                <h3>Tracer shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB10" width="256" loop preload="metadata"><source src="V_Tracers.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
-                <h3>Laser shader</h3> 
-                <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" loop preload="metadata" ><source src="V_Lasers.mp4"></video></div>
+                <h3>Laser shader</h3>
+                <div class='imageBC' style="top:32px;"><video id="vidB11" width="256" loop preload="metadata"><source src="V_Lasers.mp4"></video></div>
             </div>
             <div class="tileB" style="width:248px; height:284px;">
                 <h3>Forcefield shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" loop preload="metadata"><source src="V_Forcefield.mp4"></video></div>
+                <div class='imageBC' style="top:32px;"><video id="vidB12" width="256" loop preload="metadata"><source src="V_Forcefield.mp4"></video></div>
             </div>
         </div>
 
@@ -468,28 +471,19 @@
 <script>
     function switchPanel(x)
     {
-        document.getElementById("button0").style.backgroundColor    = x == 0 ? "#EBE6E2" : "#262626";
-        document.getElementById("button0").style.color              = x == 0 ? "#1D150C" : "#EBE6E2";
-        document.getElementById('panel0').style.display             = x == 0 ? "inline"  : "none";
-
-        document.getElementById("button1").style.backgroundColor    = x == 1 ? "#EBE6E2" : "#262626";
-        document.getElementById("button1").style.color              = x == 1 ? "#1D150C" : "#EBE6E2";
-        document.getElementById('panel1').style.display             = x == 1 ? "inline"  : "none";
-
-        document.getElementById("button2").style.backgroundColor    = x == 2 ? "#EBE6E2" : "#262626";
-        document.getElementById("button2").style.color              = x == 2 ? "#1D150C" : "#EBE6E2";
-        document.getElementById('panel2').style.display             = x == 2 ? "inline"  : "none";
-
-        document.getElementById("button3").style.backgroundColor    = x == 3 ? "#EBE6E2" : "#262626";
-        document.getElementById("button3").style.color              = x == 3 ? "#1D150C" : "#EBE6E2";
-        document.getElementById('panel3').style.display             = x == 3 ? "inline" : "none";
+        for (i = 0; i < 4; i++)
+        {
+            document.getElementById("button" + i.toString()).style.backgroundColor    = x == i ? "#EBE6E2" : "#262626";
+            document.getElementById("button" + i.toString()).style.color              = x == i ? "#1D150C" : "#EBE6E2";
+            document.getElementById('panel' + i.toString()).style.display             = x == i ? "inline" : "none";
+        }
 
         for(i = 0; i < 8; i++)
         {
             playstop("vidA" + i.toString(), x == 0);
         }
 
-        for (i = 0; i < 12; i++)
+        for (i = 0; i < 13; i++)
         {
             playstop("vidB" + i.toString(), x == 1);
         }
@@ -520,7 +514,7 @@
            subscribeToClick("vidA" + i.toString());
         }
 
-		for (i = 0; i < 12; i++)
+		for (i = 0; i < 13; i++)
         {
             subscribeToClick("vidB" + i.toString());
         }
