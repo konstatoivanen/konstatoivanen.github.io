@@ -74,7 +74,7 @@ p:before
 
 .buttonContainer
 {
-    display: table;
+    display: list-item;
     list-style-type: none;
     content: "";
     position: sticky;
@@ -87,7 +87,6 @@ p:before
     color: #EBE6E2;
 
     margin-top: 4px;
-    margin-right: 4px;
     position:relative;
     height: 24px;
     width: 128px;
