@@ -3,14 +3,13 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
     <head>
-
         <title>Portfolio</title>
-
         <link rel="icon" href="T_Icon.png">
         <link rel="stylesheet" href="stylesheet.css">
+        <link ref="panel0" href="panel0.html">
     </head>
 
-    <body style="background-color:#0C0C0C;">
+    <body style="min-height:100vh; overflow: hidden;">
 
         <h1> <b>Konsta Toivanen Portfolio</b> </h1>
         <p>A miscellaneous collection of projects & effects of varying relevance.</p>
@@ -22,220 +21,7 @@
             <div class="pButton" id="button2" onclick="switchPanel(2)">Info</div>
         </div>
 
-        <div class="panel" id="panel0">
-            <div class="tileA" style="width:704px;">
-                <h2>Side Slasher</h2>
-                    <div class="descr">
-                        Our goal was to create a vertical slice of a 2D <br>melee action game for a technology <br>workshop course. This we achieved for the <br>most part (a few novelty features missing). </div> <h2> Credits </h2><div class="descr" style="top:166px">Olli Uikkanen (Character Art & Animation), <br>Me (Programming, Level Design, Sounds & Ost). 
-                    </div>
-                <div class='imageTR' style="width:390px"><iframe width="390" height="260" src="https://www.youtube.com/embed/LF3x8I6VOn4" frameborder="0" gesture="media" allow="encrypted-media"></iframe></div>
-            </div>
-
-            <div class="tileA">
-                <h2>2D polygon fragmentation </h2>
-                    <div class="descr" >
-                        A Procedural 2D mesh pattern <br> generator. Patterns can be edited, <br> saved, created manually or clipped <br> by a convex polygon. <br> Pattern fragments can then be <br> materialized into physics objects.
-                    </div>
-                <div class='imageTR' style="width:260px" ><video id="vidA1" height="260" loop preload="metadata"><source src="V_Fragment.mp4" type="video/mp4"></video></div>
-            </div>
-
-			<div class="tileA">
-                <h2>Generic IK Solver</h2>
-                    <div class="descr" >
-                        A multithreaded IK solver <br> using CCD for n > 2 chains <br> and simple trigonometry <br> for n < 2 chains.
-                    </div>
-                <div class='imageTR' style="width:320px" ><video id="vidA7" height="260" loop preload="metadata"><source src="V_IK.mp4" type="video/mp4"></video></div>
-            </div>
-
-            <div class="tileA">
-                <h2>Rope simulation</h2>
-                <div class="descr">
-                    An easy to tweak but physically <br> incorrect simulation of <br> interconnected springs. <br> Rendered with OpenTK <br> (a C# wrapper for OpenGL).
-                </div>
-                <div class='imageTR' style="width:260px"><video id="vidA0" height="260" loop preload="metadata"><source src="V_Rope.mp4" type="video/mp4"></video></div>
-            </div>
-
-            <div class="tileA" style="width:638px;">
-                <h2>Object highlighting system</h2> 
-                    <div class="descr">
-                        Renders a dynamic stack of objects <br> into a buffer to create a highlighting <br> post effect. Supports individual <br> properties such as, fade in/out, <br> color and thickness. 
-                    </div>
-                <div class='imageTR' style="width:390px"><video id="vidA2" height="260" loop preload="metadata"><source src="V_Highlight.mp4" type="video/mp4"></video></div>
-            </div>
-
-            <div class="tileA" style="width:598px;">
-                <h2>Custom player controller</h2>
-                    <div class="descr">
-                        Notable features include: <br> -step offset<br> -cylinder collision <br> -vaulting <br> -wallrunning <br> -sliding <br> -spring smoothing, <br> -stick to moving platforms 
-                    </div>
-                <div class='imageTR' style="width:390px"><video id="vidA3" height="260" loop preload="metadata"><source src="V_Movement.mp4" type="video/mp4"></video></div>
-            </div>
-
-            <div class="tileA" style="width:638px;">
-                <h2>AI system</h2>
-                    <div class="descr">
-                        A versatile framework that allows<br> for easy derivations from baseclass <br> and the creation of almost any kind <br> of dynamic behavior such as flocking,<br> flanking, searching or apprehension. <br>Stimuli can be fed through visual,<br> auditory or olfactory means.
-                    </div>
-                <div class='imageTR' style="width:390px"><video id="vidA4" height="260" loop preload="metadata" ><source src="V_AI.mp4" type="video/mp4"></video></div>
-            </div>
-
-            <div class="tileA" style="width:702px;">
-                <h2>Biped character controller</h2>
-                    <div class="descr">
-                        A Robust biped character controller with <br> support for features such as, physics <br> fade in/out, <br> apply animation movement to physics, <br> strafing, scripted sequences, foot IK <br> and weapon to target IK.
-                    </div>
-                <div class='imageTR' style="width:390px"><video id="vidA5" height="260" loop preload="metadata"><source src="V_Controller.mp4" type="video/mp4"></video></div>
-            </div>
-
-            <div class="tileA">
-                <h2>Instance Manager</h2>
-                    <div class="descr">
-                        Object pooling system with extended<br> features such as, hashed object ids,<br> impact fx from physic material,<br> positional audio cues and<br> procedural mesh caching and hosting.
-                    </div>
-                <div class='imageTR' style="width:260px"><video id="vidA6" height="260" loop preload="metadata"><source src="V_IM.mp4" type="video/mp4"></video></div>
-            </div>
-        </div>
-
-        <div class="panel" id="panel1">
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Mind altering substance shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB0" width="256" loop preload="metadata"><source src="V_Trip.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Disintegration shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB1" width="256" loop preload="metadata"><source src="V_Disintegrate.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Line of sight shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB2" width="256" loop preload="metadata"><source src="V_Los.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:376px; height:284px;">
-                <h3>Character blink shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB3" width="384" loop preload="metadata"><source src="V_Blink.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Buildings shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB4" width="256" loop preload="metadata"><source src="V_Buildings.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Screenspace blood shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB5" width="256" loop preload="metadata"><source src="V_Blood2.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Blood particle shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB6" width="256" loop preload="metadata"><source src="V_Blood.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Volumetric muzzleflash shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB7" width="256" loop preload="metadata"><source src="V_MuzzleFlash.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Lit cartoon particle shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB8" width="256" loop preload="metadata"><source src="V_CartoonParticle.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:448px; height:284px;">
-                <h3>Combined image-effects</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB9" width="456" loop preload="metadata"><source src="V_Combo.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Tracer shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB10" width="256" loop preload="metadata"><source src="V_Tracers.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Laser shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB11" width="256" loop preload="metadata"><source src="V_Lasers.mp4"></video></div>
-            </div>
-            <div class="tileB" style="width:248px; height:284px;">
-                <h3>Forcefield shader</h3>
-                <div class='imageBC' style="top:32px;"><video id="vidB12" width="256" loop preload="metadata"><source src="V_Forcefield.mp4"></video></div>
-            </div>
-        </div>
-
-        <div class="panel" id="panel3">
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Text & Drive</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_TND.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Slasher 0</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Slasher_00.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Slasher 1</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Slasher_01.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Slasher 2</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Slasher_02.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Slasher 3</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Slasher_03.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Club 0</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_01.jpg"/></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Club 1</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_02.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Club 2</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_03.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Club 3</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_04.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Club 4</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_05.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Club 5</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Club_06.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>BathHouse 0</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_BathHouse_01.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>BathHouse 1</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_BathHouse_02.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Office 0</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Office_01.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Office 1</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Office_02.jpg" /></div>
-            </div>
-            <div class="tileB" style="width:760px; height:392px;">
-                <h3>Office 2</h3>
-                <div class='imageBC' style="top:32px;"><img width="768" src="T_Office_03.jpg" /></div>
-            </div>
-        </div>
-
-        <div class="panel" id="panel2" style="animation-name: ClipIn_Left; animation-duration: 0.5s;">
-            <div class="info">
-                Hi, I'm Konsta Toivanen a young game programming student and hobbyist from Kajaani. As you can see from the other tabs I've worked on a variety of different game components and effects on my own time. I harbor a deep interest in programming and with the help of my studies I look forward into turning this hobby into a profession. 
-                <h4>
-                    Languages:      &emsp; C#, CG, HLSL, OpenGL, Html, Css, Javascript.
-                    <br>Programs:   &emsp;&nbsp;&nbsp; Visual Studio, Unity, Source, 3DSMax.
-                    <br>Education:  &emsp;&nbsp;&nbsp; Kajaani University of Applied Sciences - Information Systems, 2017-2020.
-                    <br>Employed at:&nbsp;&nbsp;&nbsp; Critical Force Oy - Junior Programmer.
-                    <br>Contact:    &emsp;&emsp;&nbsp;&nbsp; konstatoivanen1@kamk.fi
-                </h4>
-            </div>
-            <div class="buttonContainer" style="margin-top:8px">
-                <div class="pButton" style="position: sticky" onclick="window.location.href = 'https://www.linkedin.com/in/konsta-toivanen-72b8a714b'">LinkedIn</div>
-                <div class="pButton" style="position: sticky" onclick="window.location.href = 'https://github.com/konstatoivanen'">GitHub</div>
-                <div class="pButton" style="position: sticky" onclick="window.location.href = 'https://soundcloud.com/konstatoivanen'">SoundCloud</div>
-            </div>
-        </div>
-
+        <div class="panelParent" id="sc"></div>
     </body>
 </html>
 
@@ -244,70 +30,18 @@
     {
         for (i = 0; i < 4; i++)
         {
-            document.getElementById("button" + i.toString()).style.backgroundColor    = x == i ? "#EBE6E2" : "#262626";
-            document.getElementById("button" + i.toString()).style.color              = x == i ? "#1D150C" : "#EBE6E2";
-            document.getElementById('panel' + i.toString()).style.display             = x == i ? "list-item" : "none";
+            var button = document.getElementById('button' + i.toString());
+            button.style.backgroundColor    = x == i ? "#EBE6E2" : "#262626";
+            button.style.color              = x == i ? "#1D150C" : "#EBE6E2";
         }
 
-        for(i = 0; i < 8; i++)
+        switch (x)
         {
-            playstop("vidA" + i.toString(), x == 0);
-        }
-
-        for (i = 0; i < 13; i++)
-        {
-            playstop("vidB" + i.toString(), x == 1);
-        }
-    }
-
-    function playstop(id, b)
-    {
-        var video = document.getElementById(id);
-
-        if (b)
-        {
-            if(video.paused)
-                video.play();
-        }
-        else
-        {
-            video.pause();
+            case 0: document.getElementById('sc').innerHTML = '<object type="text/html" data="panel0.html" ></object>'; break;
+            case 1: document.getElementById('sc').innerHTML = '<object type="text/html" data="panel1.html" ></object>'; break;
+            case 2: document.getElementById('sc').innerHTML = '<object type="text/html" data="panel2.html" ></object>'; break;
+            case 3: document.getElementById('sc').innerHTML = '<object type="text/html" data="panel3.html" ></object>'; break;
         }
 
     }
-
-    function init()
-    {
-        switchPanel(0);
-
-		for(i = 0; i < 8; i++)
-        {
-           subscribeToClick("vidA" + i.toString());
-        }
-
-		for (i = 0; i < 13; i++)
-        {
-            subscribeToClick("vidB" + i.toString());
-        }
-    }
-
-	function subscribeToClick(id)
-	{
-		var video = document.getElementById(id);
-
-		video.addEventListener('click', function()
-		{
-			if(video.paused)
-			{
-				video.play();
-			}
-			else
-			{
-				video.pause();
-			}
-		}, false);
-	}
-
-    window.onload = init;
-
 </script>

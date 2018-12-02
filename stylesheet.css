@@ -74,9 +74,10 @@ p:before
 
 .buttonContainer
 {
-    display: list-item;
+    display: table;
     content: "";
     position: sticky;
+    white-space:nowrap;
 }
 .pButton
 {
@@ -86,6 +87,7 @@ p:before
     color: #EBE6E2;
 
     margin-top: 4px;
+    margin-right: 4px;
     position:relative;
     height: 24px;
     width: 128px;
@@ -100,13 +102,22 @@ p:before
    margin-top: 0px;
 }
 
+.panelParent {
+    position: absolute;
+    top:192px;
+    bottom:8px;
+    right:8px;
+    left:66px;
+    overflow: hidden;
+}
+
 .panel
 {
-    display: none;
+    display: table;
     content: "";
     position:relative;
-    top: 8px;
-    left: 66px;
+    top: 0px;
+    left: 0px;
 }
 
 
@@ -121,12 +132,13 @@ p:before
     width: 512px;
     height: 256px;      
     margin-bottom: 4px;
+    margin-right:4px;
     padding-top: 4px;
     padding-left: 8px;
 
     border-left: 4px solid  #00B2FF;
 
-    clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(0   0,  5% 5%,  10% 5%,  10% 100%, 0 100%, 0 0);
 
 	-webkit-backface-visibility: hidden;
 
@@ -146,10 +158,10 @@ p:before
     height: 256px;      
     margin:  0px;
     padding: 0px;
-    margin-right: 1px;
+    margin-right: 4px;
     margin-bottom: 4px;
 
-    clip-path: polygon(90% 0, 95% 2.5%, 100% 2.5%, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);
 
 	-webkit-animation:	ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
 	-moz-animation:		ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
@@ -185,20 +197,14 @@ p:before
     position: absolute;
     bottom: 0px;
     right: 0px;
-    height: 256;
     width: 100%;
 
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+    clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);
 
 	-webkit-animation:	ClipIn_Left 0.5s 0.05s 1 normal forwards;
 	-moz-animation:		ClipIn_Left 0.5s 0.05s 1 normal forwards;
 	-o-animation:		ClipIn_Left 0.5s 0.05s 1 normal forwards;
 	animation:			ClipIn_Left 0.5s 0.05s 1 normal forwards;
-}
-
-video
-{
-    clip-path: inherit;
 }
 
 .descr
@@ -211,6 +217,26 @@ video
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 22px;
+}
+
+video
+{
+    clip-path: inherit;
+}
+
+object 
+{
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    overflow: hidden;
+}
+
+body 
+{
+    background-color: #0C0C0C;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 @keyframes			ClipIn_Left { 0%   {clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);} 100% {clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);} }
