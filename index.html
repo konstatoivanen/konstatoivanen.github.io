@@ -16,10 +16,10 @@
         <p>A miscellaneous collection of projects & effects of varying relevance.</p>
 
         <div class="buttonContainer" style="margin-left:66px; margin-top:38px">
-            <div class="pBut" id="button0" onclick="switchPanel(0)">C#</div>
-            <div class="pBut" id="button1" onclick="switchPanel(1)">Cg</div>
-            <div class="pBut" id="button3" onclick="switchPanel(3)">Env</div>
-            <div class="pBut" id="button2" onclick="switchPanel(2)">Info</div>
+            <div class="button" id="button0" onclick="switchPanel(0)">C#</div>
+            <div class="button" id="button1" onclick="switchPanel(1)">Cg</div>
+            <div class="button" id="button3" onclick="switchPanel(3)">Env</div>
+            <div class="button" id="button2" onclick="switchPanel(2)">Info</div>
         </div>
 
         <div class="panel" id="panel0">
@@ -225,14 +225,14 @@
                     Languages:      &emsp; C#, CG, HLSL, OpenGL, Html, Css, Javascript.
                     <br>Programs:   &emsp;&nbsp;&nbsp; Visual Studio, Unity, Source, 3DSMax.
                     <br>Education:  &emsp;&nbsp;&nbsp; Kajaani University of Applied Sciences - Information Systems, 2017-2020.
-                    <br>Employed at:&nbsp;&nbsp;&nbsp; Critical Force Oy - Programmer Trainee.
-                    <br>Contact:    &emsp;&emsp;&nbsp;&nbsp; &nbsp; konstatoivanen1@kamk.fi
+                    <br>Employed at:&nbsp;&nbsp;&nbsp; Critical Force Oy - Junior Programmer.
+                    <br>Contact:    &emsp;&emsp;&nbsp;&nbsp; konstatoivanen1@kamk.fi
                 </h4>
             </div>
             <div class="buttonContainer" style="margin-top:8px">
-                <div class="pBut" style="position: sticky" onclick="window.location.href = 'https://www.linkedin.com/in/konsta-toivanen-72b8a714b'">LinkedIn</div>
-                <div class="pBut" style="position: sticky" onclick="window.location.href = 'https://github.com/konstatoivanen'">GitHub</div>
-                <div class="pBut" style="position: sticky" onclick="window.location.href = 'https://soundcloud.com/konstatoivanen'">SoundCloud</div>
+                <div class="button" style="position: sticky" onclick="window.location.href = 'https://www.linkedin.com/in/konsta-toivanen-72b8a714b'">LinkedIn</div>
+                <div class="button" style="position: sticky" onclick="window.location.href = 'https://github.com/konstatoivanen'">GitHub</div>
+                <div class="button" style="position: sticky" onclick="window.location.href = 'https://soundcloud.com/konstatoivanen'">SoundCloud</div>
             </div>
         </div>
 
@@ -246,7 +246,7 @@
         {
             document.getElementById("button" + i.toString()).style.backgroundColor    = x == i ? "#EBE6E2" : "#262626";
             document.getElementById("button" + i.toString()).style.color              = x == i ? "#1D150C" : "#EBE6E2";
-            document.getElementById('panel' + i.toString()).style.display             = x == i ? "inline" : "none";
+            document.getElementById('panel' + i.toString()).style.display             = x == i ? "list-item" : "none";
         }
 
         for(i = 0; i < 8; i++)
