@@ -102,20 +102,20 @@ p:before
 
 .panelParent {
     position: absolute;
-    top:202px;
-    bottom:8px;
-    right:8px;
-    left:66px;
+    top: 202px;
+    bottom: 8px;
+    right: 8px;
+    left: 66px;
     overflow: hidden;
 }
 
 .panel
 {
+    position: relative;
     display: table;
     content: "";
-    position:relative;
-    top: 0px;
     left: 0px;
+    top: 0px;
 }
 
 
