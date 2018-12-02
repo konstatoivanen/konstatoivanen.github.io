@@ -74,7 +74,6 @@ p:before
 
 .buttonContainer
 {
-    display: table;
     content: "";
     position: sticky;
     white-space:nowrap;
@@ -87,7 +86,6 @@ p:before
     color: #EBE6E2;
 
     margin-top: 4px;
-    margin-right: 4px;
     position:relative;
     height: 24px;
     width: 128px;
