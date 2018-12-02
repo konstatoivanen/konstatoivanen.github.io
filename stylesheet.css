@@ -79,7 +79,7 @@ p:before
     content: "";
     position: sticky;
 }
-.button
+.pButton
 {
     display: inline-block; 
     font-family: republic;
@@ -95,7 +95,7 @@ p:before
     padding-top: 14px;
     clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 }
-.button:hover
+.pButton:hover
 {
    padding-top: 18px;
    margin-top: 0px;
