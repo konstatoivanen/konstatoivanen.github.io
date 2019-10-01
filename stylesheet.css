@@ -58,11 +58,8 @@ p
     color: #EBE6E2;
     font-family: republic;
     white-space: nowrap;
-    width: 512px;
     height: 100%;
-    padding-top: 8px;
     margin: 0px;
-    margin-top:8px;
 }
 p:before
 {
@@ -71,8 +68,6 @@ p:before
     position:relative;
     background-color: #00B2FF;
     border-left: 4px solid #00B2FF;
-    padding-bottom:0px;
-    padding-top:8px;
     left: -8px;
 }
 
@@ -108,7 +103,7 @@ p:before
 {
     display:block;
     position: absolute;
-    top:164px;
+    top:168px;
     bottom:0px;
     right: 8px;
     left:0px;
@@ -174,7 +169,8 @@ p:before
 	animation:			ClipIn_Left_TileB 0.5s 0.05s 1 normal forwards;
 }
 
-.info {
+.info 
+{
     display: inline-grid;
     font-family: 'Roboto', sans-serif;
     color: #EBE6E2;
