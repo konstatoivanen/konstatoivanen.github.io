@@ -99,15 +99,15 @@ p:before
    margin-top: 0px;
 }
 
-.panelParent 
+.panelParent
 {
-    display:block;
+    display: block;
     position: absolute;
-    top:168px;
-    bottom:0px;
+    top: 168px;
+    bottom: 0px;
     right: 8px;
-    left:0px;
-    margin-left:66px;
+    left: 0px;
+    margin-left: 66px;
     overflow: hidden;
 }
 
