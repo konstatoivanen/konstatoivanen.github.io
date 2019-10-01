@@ -55,12 +55,14 @@ h4
 }
 p 
 {
-    margin-left:74px;
-    margin-top: 0px;
     color: #EBE6E2;
     font-family: republic;
-    font-size: 100%;
     white-space: nowrap;
+    width: 512px;
+    height: 100%;
+    padding-top: 8px;
+    margin: 0px;
+    margin-top:8px;
 }
 p:before
 {
@@ -68,7 +70,9 @@ p:before
     height: 100%;
     position:relative;
     background-color: #00B2FF;
-    border: 2px solid #00B2FF;
+    border-left: 4px solid #00B2FF;
+    padding-bottom:0px;
+    padding-top:8px;
     left: -8px;
 }
 
@@ -87,10 +91,10 @@ p:before
 
     margin-top: 4px;
     position:relative;
-    height: 24px;
+    height: 100%;
     width: 128px;
     padding-left: 10px;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
     padding-top: 14px;
     clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 }
@@ -100,12 +104,15 @@ p:before
    margin-top: 0px;
 }
 
-.panelParent {
+.panelParent 
+{
+    display:block;
     position: absolute;
-    top: 202px;
-    bottom: 8px;
+    top:164px;
+    bottom:0px;
     right: 8px;
-    left: 66px;
+    left:0px;
+    margin-left:66px;
     overflow: hidden;
 }
 
