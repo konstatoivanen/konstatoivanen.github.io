@@ -5,25 +5,38 @@
 }
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+body::-webkit-scrollbar {
+    width: 4px;
+    background-color: #191919;
+}
+
+body::-webkit-scrollbar-track {
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #00B2FF;
+    outline: 1px solid slategrey;
+}
+
 h1 
 {
-    margin-left:64px;
-    margin-bottom: 0px;
     color: #EBE6E2;
     font-family: republic;
-    letter-spacing: -2px;
     font-size: 300%;
+    
+    margin-left:64px;
+    margin-bottom: 0px;
+    letter-spacing: -2px;
     white-space: nowrap;
 }
 h2
 {
-    display:inline-block;
-
+    color: #EBE6E2;
     font-family: Republic; 
     font-size: 18px;
 
+    display:inline-block;
     white-space:nowrap;
-
     height: 32px;
     margin-top: 2px;
     margin-left:4px;
@@ -31,24 +44,24 @@ h2
 }
 h3
 {
-    display:inline-block;
-
+    color: #EBE6E2;
     font-family: Republic; 
     font-size: 18px;
-
+    
+    display:inline-block;
     white-space:nowrap;
-
     height: 16px;
     margin: 8px;
-
     left:  0px;
     right: 0px;
 }
 h4 
 {
-    display: inline-block;
+    color: #EBE6E2;
     font-family: Republic;
     font-size: 18px;
+    
+    display: inline-block;
     white-space: nowrap;
     margin-top:  32px;
     margin-left: 4px;
@@ -123,12 +136,11 @@ p:before
 
 .tileA
 {
-    display: inline-grid;
-
-    background-color: #191919;
     color: #EBE6E2;
-    position:relative;
+    background-color: #191919;
 
+    display: inline-grid;
+    position:relative;
     width: 512px;
     height: 256px;      
     margin-bottom: 4px;
@@ -149,11 +161,11 @@ p:before
 }
 .tileB
 {
-    display: inline-grid;
-    background-color: #262626;
     color: #EBE6E2;
-    position:relative;
+    background-color: #262626;
 
+    display: inline-grid;
+    position:relative;
     width: 512px;
     height: 256px;      
     margin:  0px;
@@ -171,9 +183,9 @@ p:before
 
 .info 
 {
-    display: inline-grid;
-    font-family: 'Roboto', sans-serif;
     color: #EBE6E2;
+    font-family: 'Roboto', sans-serif;
+    display: inline-grid;
     position: relative;
     border-left: 4px solid #00B2FF;
     width: 574px;
@@ -210,13 +222,15 @@ p:before
 
 .descr
 {
+    color: #EBE6E2;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+
     position: absolute;
 
     top : 42px;
     left: 12px;
 
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
     line-height: 22px;
 }
 
