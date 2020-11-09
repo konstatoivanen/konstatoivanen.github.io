@@ -9,22 +9,58 @@
 <body style="margin-top:0px;">
     <div class="panel">
 
-        <div class="tileA">
+        <div class="tileA" style="width:630px">
+            <h2>GLOBAL ILLUMINATION</h2>
+            <div class="descr">
+                <strong>></strong> Rasterize scene geometry into a RLE height field <br> &nbsp;&nbsp; for mapping playable area.<br>
+                <strong>></strong> Bake sh9 probes for each height field span & minimize <br> &nbsp;&nbsp; probe count by sharing similar probes between spans.<br>
+                <strong>></strong> Bilinearly interpolate between sampled cells.<br><br>
+                <span>&#169;</span> Critical Force Ltd. Used with permission.
+            </div>
+            <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_Probes.mp4" type="video/mp4"></video></div>
+        </div>
+
+        <div class="tileA" style="width:630px">
+            <h2>PBR SKIN TOOLS</h2>
+            <div class="descr">
+                <strong>></strong> Projection map textures onto models.<br>
+                <strong>></strong> Render layers into albedo, normal map or rma targets.<br>
+                <strong>></strong> Export skin to texture files or generate at runtime.<br>
+                <strong>></strong> Save in memory by sharing resources between skins.<br><br>
+                <span>&#169;</span> Critical Force Ltd. Used with permission.
+            </div>
+            <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_Skin.mp4" type="video/mp4"></video></div>
+        </div>
+
+        <div class="tileA" style="width:620px">
+            <h2>MOBILE PBR</h2>
+            <div class="descr">
+                <strong>></strong> Single directional light support.<br>
+                <strong>></strong> 3 hdr octahedron environment maps for reflections.<br>
+                <strong>></strong> Spherical harmonics for indirect lighting.<br>
+                <strong>></strong> Directional light extracted from sh9 values.<br>
+                <strong>></strong> OEM sample interpolation between volumes.<br><br>
+                <span>&#169;</span> Critical Force Ltd. Used with permission.
+            </div>
+            <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_PBR.mp4" type="video/mp4"></video></div>
+        </div>
+
+        <div class="tileA" style="width:560px">
             <h2>VOLUMETRIC LIGHTING</h2>
             <div class="descr">
-                Properties:<br>
-                - 4 samples per texel.<br>
-                - Wanghash noise for dithering.<br>
-                - Half resolution rendering.<br>
-                - Bilateral upsampling.<br>
-                - Frame blending to resolve noise.<br>
-                - Gaussian 5x5 PCF for shadows.<br>
-                - D-lambert to emulate in scattering.
+                <strong>></strong> 4 samples per texel.<br>
+                <strong>></strong> Wanghash noise for dithering.<br>
+                <strong>></strong> Half resolution rendering.<br>
+                <strong>></strong> Bilateral upsampling.<br>
+                <strong>></strong> Frame blending to resolve noise.<br>
+                <strong>></strong> Gaussian 5x5 PCF for shadows.<br>
+                <strong>></strong> D-lambert to emulate in scattering.<br><br>
+                <span>&#169;</span> Critical Force Ltd. Used with permission.
             </div>
             <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_Volumetrics.mp4" type="video/mp4"></video></div>
         </div>
 
-        <div class="tileA" style="width:704px;">
+        <div class="tileA" style="width:720px;">
             <h2>SIDE SLASHER</h2>
             <div class="descr">
                 Our goal was to create a vertical slice of a 2D <br>
@@ -59,11 +95,10 @@
         <div class="tileA">
             <h2>TANK GAME</h2>
             <div class="descr">
-                A 1v1 local multiplayer tank game. <br>
-                Made using OpenTK. <br>
-                Properties: <br>
-                - Voronoi based level generation. <br>
-                - 2D physics solver.
+                <strong>></strong> A 1v1 local multiplayer tank game. <br>
+                <strong>></strong> Made using OpenTK. <br>
+                <strong>></strong> Voronoi based level generation. <br>
+                <strong>></strong> Custom 2D physics solver.
             </div>
             <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_Tank.mp4" type="video/mp4"></video></div>
         </div>
@@ -130,45 +165,6 @@
                 (a C# wrapper for OpenGL).
             </div>
             <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_Rope.mp4" type="video/mp4"></video></div>
-        </div>
-
-        <div class="tileA" style="width:638px;">
-            <h2>AI SYSTEM</h2>
-            <div class="descr">
-                A versatile framework that allows<br>
-                for easy derivations from baseclass <br>
-                and the creation of almost any kind <br>
-                of dynamic behavior such as flocking,<br>
-                flanking, searching or apprehension. <br>
-                Stimuli can be fed through visual,<br>
-                auditory or olfactory means.
-            </div>
-            <div class='imageTR' style="width:390px"><video height="260" loop preload="auto" autoplay muted>><source src="V_AI.mp4" type="video/mp4"></video></div>
-        </div>
-
-        <div class="tileA" style="width:702px;">
-            <h2>BIPED CHARACTER CONTROLLER</h2>
-            <div class="descr">
-                A Robust biped character controller with <br>
-                support for features such as, physics <br>
-                fade in/out, <br>
-                apply animation movement to physics, <br>
-                strafing, scripted sequences, foot IK <br>
-                and weapon to target IK.
-            </div>
-            <div class='imageTR' style="width:390px"><video height="260" loop preload="auto" autoplay muted><source src="V_Controller.mp4" type="video/mp4"></video></div>
-        </div>
-
-        <div class="tileA">
-            <h2>INSTANCE MANAGER</h2>
-            <div class="descr">
-                Object pooling system with extended<br>
-                features such as, hashed object ids,<br>
-                impact fx from physic material,<br>
-                positional audio cues and<br>
-                procedural mesh caching.
-            </div>
-            <div class='imageTR' style="width:260px"><video height="260" loop preload="auto" autoplay muted>><source src="V_IM.mp4" type="video/mp4"></video></div>
         </div>
     </div>
 </body>
