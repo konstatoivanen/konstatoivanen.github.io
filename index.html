@@ -22,6 +22,7 @@
             <div class="pButton" id="button0" onclick="switchPanel(0)">PRJ</div>
             <div class="pButton" id="button1" onclick="switchPanel(1)">GL</div>
             <div class="pButton" id="button3" onclick="switchPanel(3)">ENV</div>
+            <div class="pButton" id="button4" onclick="switchPanel(4)">OST</div>
             <div class="pButton" id="button2" onclick="switchPanel(2)">INFO</div>
         </div>
         <div class="panelParent" id="panelParent">
@@ -33,7 +34,7 @@
 <script>
     function switchPanel(x)
     {
-        for (i = 0; i < 4; i++)
+        for (i = 0; i < 5; i++)
         {
             var button = document.getElementById('button' + i.toString());
             button.style.backgroundColor    = x == i ? "#EBE6E2" : "#262626";
@@ -48,6 +49,7 @@
             case 1: panelFrame.src = 'panel1.html'; break;
             case 2: panelFrame.src = 'panel2.html'; break;
             case 3: panelFrame.src = 'panel3.html'; break;
+            case 4: panelFrame.src = 'panel4.html'; break;
         }
 
     }
