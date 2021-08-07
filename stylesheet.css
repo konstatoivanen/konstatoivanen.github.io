@@ -259,16 +259,6 @@ a
     animation: ClipIn_Left_TileVideo 0.5s 0.0s 1 normal forwards;
 }
 
-.rootBody
-{
-    overflow: hidden;
-    vertical-align: top;
-    margin-left: min(72px, 4vw);
-    left: 0px;
-    right: 0px;
-    position: absolute;
-    min-height: 100%;
-}
 
 video
 {
@@ -290,6 +280,17 @@ body
     overflow-y: visible;
     margin-left: 0px;
     zoom:1.125;
+}
+
+.rootBody
+{
+    overflow: hidden;
+    vertical-align: top;
+    margin-left: min(72px, 4vw);
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    min-height: 100%;
 }
 
 @keyframes Blinking
