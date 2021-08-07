@@ -59,8 +59,8 @@ function tryUpdatePreviousTileVideo(newId)
 
 function setButtonColor(element, isActive)
 {
-    element.style.color = isActive ? "#191919" : "#EBE6E2";
-    element.style.background = isActive ? "#EBE6E2" : "#191919";
+    element.style.color = isActive ? "var(--color-button-opaque-selected-fg)" : "var(--color-button-opaque-default-fg)";
+    element.style.background = isActive ? "var(--color-button-opaque-selected-bg)" : "var(--color-button-opaque-default-bg)";
 }
 
 function expandTile(id)
@@ -120,8 +120,7 @@ function expandTile(id)
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
                 element.insertAdjacentHTML("afterend", "<div class='videoBC'><iframe width='556' height='278' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
-                var video = newparent.lastElementChild.lastElementChild;
-                video.src = element.dataset.content;
+                newparent.lastElementChild.lastElementChild.src = element.dataset.content;
             }
             break;
 

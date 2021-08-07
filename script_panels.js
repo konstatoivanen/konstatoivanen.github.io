@@ -15,17 +15,17 @@ function switchPanel(id)
     {
         var previousInside = previousButton.getElementsByClassName("pButtonInside").item(0);
 
-        previousButton.style.backgroundColor = "#333333";
-        previousButton.style.color = "#333333";
-        previousInside.style.backgroundColor = "#00B2FF";
+        previousButton.style.backgroundColor = "var(--color-button-hollow-default)";
+        previousButton.style.color = "var(--color-button-hollow-default)";
+        previousInside.style.backgroundColor = "var(--color-background)";
     }
 
     previousButtonId = id;
 
     var inside = button.getElementsByClassName("pButtonInside").item(0);
-    button.style.backgroundColor = "#EBE6E2";
-    button.style.color = "#333333";
-    inside.style.backgroundColor = "#EBE6E2";
+    button.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
+    button.style.color = "var(--color-button-hollow-selected-fg)";
+    inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
 
     document.getElementById('panelFrame').src = button.dataset.content;
 }
@@ -42,8 +42,8 @@ function initializeButtons()
         {
             var buttonid = "button_id_" + i.toString();
             button.id = buttonid;
-            button.style.color = "#333333";
-            button.style.backgroundColor = "#333333"
+            button.style.color = "var(--color-button-hollow-default)";
+            button.style.backgroundColor = "var(--color-button-hollow-default)";
             button.setAttribute("onclick", " switchPanel('" + buttonid.toString() + "')");
         }
     }

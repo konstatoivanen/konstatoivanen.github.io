@@ -4,10 +4,29 @@
 }
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+:root 
+{
+    --color-background: #000000;
+    --color-header: #839098;
+    --color-paragraph: #FD30A7;
+    --color-button-hollow-default: #839098;
+    --color-button-hollow-selected-fg: #000000;
+    --color-button-hollow-selected-bg: #FD30A7;
+    --color-button-opaque-selected-bg: #839098;
+    --color-button-opaque-selected-fg: #191919;
+    --color-button-opaque-default-bg: #191919;
+    --color-button-opaque-default-fg: #839098;
+    --color-tile-bg: #000000;
+    --color-tile-fg: #EBE6E2;
+    --color-scrollbar: #FD30A7;
+    --color-scrollbar-thumb: #000000;
+    --color-link: #FD30A7;
+}
+
 body::-webkit-scrollbar 
 {
     width: 4px;
-    background-color: #191919;
+    background-color: var(--color-scrollbar);
 }
 
 body::-webkit-scrollbar-track
@@ -16,13 +35,13 @@ body::-webkit-scrollbar-track
 
 body::-webkit-scrollbar-thumb
 {
-    background-color: #00B2FF;
+    background-color: var(--color-scrollbar-thumb);
     outline: 1px solid slategrey;
 }
 
 h1 
 {
-    color: #191919;
+    color: var(--color-header);
     font-family: republic;
     font-size: 300%;
     
@@ -56,6 +75,7 @@ h5
     bottom:0px;
     left:4px;
 }
+
 /*
 h5:after
 {
@@ -72,7 +92,7 @@ h4:after
 
 p 
 {
-    color: #EBE6E2;
+    color: var(--color-paragraph);
     font-family: republic;
     white-space: nowrap;
     height: 100%;
@@ -80,8 +100,9 @@ p
     margin-left:2px;
 }
 
-p2 {
-    color: #EBE6E2;
+p2 
+{
+    color: var(--color-tile-text);
     font-family: 'Roboto', sans-serif;
     font-size: min(max(1.5vw, 14px), 16px);
     line-height: min(max(3vw, 16px), 28px);
@@ -93,7 +114,7 @@ p2 {
 
 a 
 {
-    color: #00B2FF;
+    color:  var(--color-link);
 }
 
 .pButton
@@ -101,8 +122,8 @@ a
     box-sizing:border-box;
     display: inline-block; 
     font-family: republic;
-    background-color: #191919;
-    color: #EBE6E2;
+    background-color: var(--color-button-hollow-default);
+    color: var(--color-button-hollow-default);
 
     vertical-align:bottom;
     width:128px;
@@ -124,7 +145,7 @@ a
     position:relative;
     box-sizing:border-box;
     font-family: inherit;
-    background-color: #00B2FF;
+    background-color: var(--color-background);
     color: inherit;
     width:100%;
     height:100%;
@@ -134,8 +155,8 @@ a
 
 .tileButton 
 {
-    color: #EBE6E2;
-    background-color: #191919;
+    color: var(--color-button-opaque-default-fg);
+    background-color: var(--color-button-opaque-default-bg);
 
     display: inline-grid;
     position:relative;
@@ -150,8 +171,8 @@ a
 
 .tileButton:hover 
 {
-    background-color: #EBE6E2 !important;
-    color: #191919 !important;
+    background-color: var(--color-button-opaque-selected-bg) !important;
+    color: var(--color-button-opaque-selected-fg) !important;
 }
 
 
@@ -176,7 +197,6 @@ a
 
 .tileExtended
 {
-    color: #EBE6E2;
     background-color: transparent;
 
     display: block;
@@ -191,8 +211,8 @@ a
 
 .tileA
 {
-    color: #EBE6E2;
-    background-color: #000000;
+    color: var(--color-tile-fg);
+    background-color: var(--color-tile-bg);
 
     display: block;
     position:relative;
@@ -207,8 +227,8 @@ a
 
 .info 
 {
-    color: #EBE6E2;
-    background-color: #000000;
+    color: var(--color-tile-fg);
+    background-color: var(--color-tile-bg);
     font-family: 'Roboto', sans-serif;
     position: relative;
     max-width:900px;
@@ -241,7 +261,7 @@ a
     right: 0px;
     width: 100%;
 
-    clip-path: polygon(0    0,   0% 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0,0% 100%, 0 100%, 0 0);
 	animation: ClipIn_Left 0.3s 0.0s 1 normal forwards;
 }
 
@@ -275,7 +295,7 @@ object
 
 body.root
 {
-    background-color: #00B2FF;
+    background-color: var(--color-background);
     position: absolute;
     overflow: hidden;
     vertical-align: top;
