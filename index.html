@@ -12,47 +12,43 @@
         <link ref="panel3" href="panel3.html">
     </head>
 
-    <body style="min-height:100vh; overflow: hidden;">
+    <body style="overflow: hidden; vertical-align:top;">
 
         <h1> <b>Konsta Toivanen Portfolio</b></h1>
-        <div style="white-space:nowrap; margin-left:74px;">
+        <div style="white-space:nowrap; margin-left:66px;">
             <p>A miscellaneous collection of projects & effects of varying relevance.</p>
         </div>
-        <div class="buttonContainer" style="margin-left:66px; margin-top:16px">
-            <div class="pButton" id="button0" onclick="switchPanel(0)">PRJ</div>
-            <div class="pButton" id="button1" onclick="switchPanel(1)">GL</div>
-            <div class="pButton" id="button3" onclick="switchPanel(3)">ENV</div>
-            <div class="pButton" id="button4" onclick="switchPanel(4)">OST</div>
-            <div class="pButton" id="button2" onclick="switchPanel(2)">INFO</div>
+        <div style="white-space: nowrap; margin-left:66px; margin-top:16px; height:42px;">
+            <div class="pButton" data-content="panel_projects.html">
+                <div class="pButtonInside">
+                    <h5>PROJECTS</h5>
+                </div> 
+            </div>
+            <div class="pButton" data-content="panel_graphics.html">
+                <div class="pButtonInside">
+                    <h5>GRAPHICS</h5>
+                </div>
+            </div>
+            <div class="pButton" data-content="panel_environment.html">
+                <div class="pButtonInside">
+                    <h5>ENVIRONMENT</h5>
+                </div>
+            </div>
+            <div class="pButton" data-content="panel_soundtrack.html">
+                <div class="pButtonInside">
+                    <h5>SOUNDTRACK</h5>
+                </div>
+            </div>
+            <div class="pButton" data-content="panel_info.html">
+                <div class="pButtonInside">
+                    <h5>INFO</h5>
+                </div>
+            </div>
         </div>
-        <div class="panelParent" id="panelParent">
+        <div class="panelParent">
             <iframe width="100%" height="100%" frameborder="0" id="panelFrame" src=""></iframe>
         </div>
     </body>
 </html>
 
-<script>
-    function switchPanel(x)
-    {
-        for (i = 0; i < 5; i++)
-        {
-            var button = document.getElementById('button' + i.toString());
-            button.style.backgroundColor    = x == i ? "#EBE6E2" : "#262626";
-            button.style.color              = x == i ? "#1D150C" : "#EBE6E2";
-        }
-
-        var panelFrame = document.getElementById('panelFrame');
-
-        switch (x)
-        {
-            case 0: panelFrame.src = 'panel0.html'; break;
-            case 1: panelFrame.src = 'panel1.html'; break;
-            case 2: panelFrame.src = 'panel2.html'; break;
-            case 3: panelFrame.src = 'panel3.html'; break;
-            case 4: panelFrame.src = 'panel4.html'; break;
-        }
-
-    }
-
-    window.onload = switchPanel(0);
-</script>
+<script src="script_panels.js"></script>
