@@ -14,7 +14,7 @@ function scrollElementToTop(element)
 
     if (panel.clientHeight < panel.scrollHeight)
     {
-        element.scrollIntoView({ alignToTop: 'true', behavior: 'smooth', block: 'start', inline: 'start' });
+        element.scrollIntoView({ alignToTop: 'true', behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
 }
 

@@ -24,7 +24,7 @@ h1
 {
     color: #191919;
     font-family: republic;
-    font-size: min(max(5vw, 24px), 48px);
+    font-size: 300%;
     
     margin-bottom: 0px;
     letter-spacing: -2px;
@@ -257,6 +257,17 @@ a
     max-height: 278px;
     clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
     animation: ClipIn_Left_TileVideo 0.5s 0.0s 1 normal forwards;
+}
+
+body#rootBody
+{
+    overflow: hidden;
+    vertical-align: top;
+    margin-left: min(72px, 4vw);
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    min-height: 100%;
 }
 
 video
