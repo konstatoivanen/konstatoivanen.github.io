@@ -282,7 +282,7 @@ body
     zoom:1.125;
 }
 
-.rootBody
+body.rootBody
 {
     overflow: hidden;
     vertical-align: top;
