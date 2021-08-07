@@ -24,9 +24,8 @@ h1
 {
     color: #191919;
     font-family: republic;
-    font-size: 300%;
+    font-size: min(max(5vw, 24px), 48px);
     
-    margin-left:64px;
     margin-bottom: 0px;
     letter-spacing: -2px;
     white-space: nowrap;
@@ -78,17 +77,18 @@ p
     white-space: nowrap;
     height: 100%;
     margin: 0px;
+    margin-left:2px;
 }
 
-p2 
-{
+p2 {
     color: #EBE6E2;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: min(max(1.5vw, 14px), 16px);
+    line-height: min(max(3vw, 16px), 28px);
     position: absolute;
     top: 24px;
     left: 32px;
-    line-height: 28px;
+    max-width: 40%;
 }
 
 a 
@@ -163,7 +163,6 @@ a
     bottom: 0px;
     right: 8px;
     left: 0px;
-    margin-left: 66px;
     overflow: hidden;
 }
 
@@ -172,12 +171,8 @@ a
     position: relative;
     display: table;
     max-width: 1400px;
-    content: "";
-    left: 0px;
-    top: 0px;
     height:100%;
 }
-
 
 .tileExtended
 {
@@ -210,40 +205,20 @@ a
 	animation: ClipIn_Left_Tile 0.5s 0.05s 1 normal forwards;
 }
 
-.tileB
-{
-    color: #EBE6E2;
-    background-color: #191919;
-
-    display: inline-grid;
-    position:relative;
-    width: 512px;
-    height: 256px;      
-    margin:  0px;
-    padding: 0px;
-    margin-right: 4px;
-    margin-bottom: 4px;
-
-    clip-path: polygon(0   0,  5% 2.5%,  10% 2.5%,  10% 100%, 0 100%, 0 0);
-	animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
-}
-
-
 .info 
 {
     color: #EBE6E2;
     background-color: #000000;
     font-family: 'Roboto', sans-serif;
-    display: inline-grid;
     position: relative;
     max-width:900px;
-    width: 100%;
     height: 0px;
     padding-left:32px;
-    padding-right:256px;
+    padding-right:min(256px, 12vw);
     padding-top:24px;
     margin-bottom:4px;
-    line-height: 28px;
+    font-size: min(max(1.5vw, 14px), 16px);
+    line-height: min(max(3vw, 16px), 28px);
 
     clip-path: polygon(0% 0, 0% 6%, 0% 6%, 0% 100%, 0 100%, 0 0);
     animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
@@ -251,15 +226,16 @@ a
 
 .imageTR 
 {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    float:right;
+    position: sticky;
     height: 100%;
+    max-width: 50%;
     clip-path: inherit;
 }
 
 .imageBC
 {
+    object-fit: cover;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -301,6 +277,7 @@ body
     background-color: #00B2FF;
     overflow-x: hidden;
     overflow-y: visible;
+    margin-left: 0px;
     zoom:1.125;
 }
 
