@@ -14,7 +14,7 @@ function scrollElementToTop(element)
 
     if (panel.clientHeight < panel.scrollHeight)
     {
-        element.scrollIntoView({ alignToTop: 'true', behavior: 'smooth', block: 'start', inline: 'nearest' });
+        element.scrollIntoView({ alignToTop: 'true', behavior: 'smooth', block: 'start' });
     }
 }
 
@@ -131,12 +131,12 @@ function expandTile(id)
                     return;
                 }
 
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='imageBC'><img height='640' src='" + element.dataset.content + "'/></div></div>");
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='imageBC'><img src='" + element.dataset.content + "'/></div></div>");
             }
             break;
     }
 
-    scrollElementToTop(element);
+    setTimeout(function () { scrollElementToTop(element); }, 250)
 }
 
 function collectTiles()

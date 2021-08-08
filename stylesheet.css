@@ -1,11 +1,11 @@
-@font-face {
+@font-face 
+{
     font-family: 'republic';
     src: url('republic-heavy-webfont.woff') format('woff');
 }
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-:root 
-{
+:root {
     --color-background: #000000;
     --color-header: #839098;
     --color-paragraph: #FD30A7;
@@ -14,6 +14,8 @@
     --color-button-hollow-selected-bg: #FD30A7;
     --color-button-opaque-selected-bg: #839098;
     --color-button-opaque-selected-fg: #191919;
+    --color-button-opaque-hover-bg: #839098;
+    --color-button-opaque-hover-fg: #191919;
     --color-button-opaque-default-bg: #191919;
     --color-button-opaque-default-fg: #839098;
     --color-tile-bg: #000000;
@@ -171,8 +173,8 @@ a
 
 .tileButton:hover 
 {
-    background-color: var(--color-button-opaque-selected-bg) !important;
-    color: var(--color-button-opaque-selected-fg) !important;
+    background-color: var(--color-button-opaque-hover-bg) !important;
+    color: var(--color-button-opaque-hover-fg) !important;
 }
 
 
@@ -202,6 +204,8 @@ a
     display: block;
     position:relative;
     width: 99%;
+    max-width: 85vw;
+    max-height:50vw;
     height: 0px;
     margin-bottom:4px;
 
@@ -255,14 +259,18 @@ a
 
 .imageBC
 {
-    object-fit: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 100%;
-
-    clip-path: polygon(0 0,0% 100%, 0 100%, 0 0);
+    position: relative;
+    height:100%;
+    width:100%;
+    clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
 	animation: ClipIn_Left 0.3s 0.0s 1 normal forwards;
+}
+
+.imageBC img 
+{
+    object-fit:fill;
+    height: 100%;
+    clip-path:inherit;
 }
 
 .videoBC 
@@ -358,9 +366,9 @@ body.tile
 @keyframes ClipIn_Left_TileExtendedTall
 { 
     0%  {height:0px;  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40% {height:512px; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60% {height:512px; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:512px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
+    40% {height:75vh; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60% {height:75vh; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:75vh; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_TileVideo
