@@ -1,8 +1,9 @@
 @font-face 
 {
     font-family: 'republic';
-    src: url('republic-heavy-webfont.woff') format('woff');
+    src: url('republic-heavy.woff') format('woff');
 }
+
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 :root {
