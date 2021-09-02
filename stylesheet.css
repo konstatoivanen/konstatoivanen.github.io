@@ -8,7 +8,7 @@
 
 :root {
     --color-background: #000000;
-    --color-header: #839098;
+    --color-header: #DCE3E8;
     --color-paragraph: #FD30A7;
     --color-button-hollow-default: #839098;
     --color-button-hollow-selected-fg: #000000;
@@ -20,7 +20,7 @@
     --color-button-opaque-default-bg: #191919;
     --color-button-opaque-default-fg: #839098;
     --color-tile-bg: #000000;
-    --color-tile-fg: #EBE6E2;
+    --color-tile-fg: #DCE3E8;
     --color-scrollbar: #FD30A7;
     --color-scrollbar-thumb: #000000;
     --color-link: #FD30A7;
