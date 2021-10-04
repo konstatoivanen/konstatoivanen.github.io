@@ -6,15 +6,16 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-:root {
+:root 
+{
     --color-background: #000000;
     --color-header: #DCE3E8;
     --color-paragraph: #FD30A7;
     --color-button-hollow-default: #839098;
     --color-button-hollow-selected-fg: #000000;
     --color-button-hollow-selected-bg: #FD30A7;
-    --color-button-opaque-selected-bg: #839098;
-    --color-button-opaque-selected-fg: #191919;
+    --color-button-opaque-selected-bg: #FD30A7;
+    --color-button-opaque-selected-fg: #000000;
     --color-button-opaque-hover-bg: #839098;
     --color-button-opaque-hover-fg: #191919;
     --color-button-opaque-default-bg: #191919;
@@ -39,7 +40,6 @@ body::-webkit-scrollbar-track
 body::-webkit-scrollbar-thumb
 {
     background-color: var(--color-scrollbar-thumb);
-    outline: 1px solid slategrey;
 }
 
 h1 
@@ -64,6 +64,8 @@ h4
     margin-block: 0px;
     bottom: 3px;
     left: 7px;
+
+    user-select:none;
 }
 
 h5 
@@ -313,6 +315,8 @@ body.root
     right: 0px;
     min-height: 100%;
     zoom: 1.125;
+
+    user-select: none;
 }
 
 body.panel 
