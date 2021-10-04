@@ -31,7 +31,7 @@ function lerpString(content, id)
         target.dataset.tweenHandle = null;
         target.dataset.tweenTimeoutHandle = null;
     },
-    interval * content.length + interval);
+    interval * content.length + 60);
 }
 
 function bindButtonHover(button, contentTag, i)
