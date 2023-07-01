@@ -1,5 +1,26 @@
 
 var previousTileId = "";
+var audioClips = null;
+var playAudio = false;
+
+function playSound(index, vol)
+{
+    if (!playAudio)
+    {
+        return;
+    }
+
+    if (audioClips === null)
+    {
+        audioClips = [];
+        audioClips[0] = new Audio('S_Select.wav');
+        audioClips[1] = new Audio('S_Enter.wav');
+        audioClips[2] = new Audio('S_Shift.wav');
+    }
+
+    audioClips[index].volume = vol;
+    audioClips[index].play();
+}
 
 function lerpString(content, id)
 {
@@ -147,7 +168,7 @@ function expandTile(id)
                 var newparent = createElement("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='videoBC' style='max-width:0px;'><video height='278' loop autoplay muted><source src=''></video></div>");
+                element.insertAdjacentHTML("afterend", "<div class='videoBC' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
 
                 var image = newparent.lastElementChild;
                 var video = newparent.lastElementChild.lastElementChild;
@@ -167,7 +188,7 @@ function expandTile(id)
                 var newparent = createElement("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='videoBC'><iframe width='556' height='278' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
+                element.insertAdjacentHTML("afterend", "<div class='videoBC'><iframe width='556' height='100%' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
             }
             break;
@@ -187,7 +208,7 @@ function expandTile(id)
     setTimeout(function () { scrollElementToTop(element); }, 250)
 }
 
-function collectTiles()
+function initialize()
 {
     var tiles = document.getElementsByClassName("tileButton");
     var panel = document.getElementsByClassName("panel").item(0);
@@ -200,9 +221,11 @@ function collectTiles()
 
         if (tile.dataset.content != null)
         {
-            var tileid = "tile_id_" + i.toString();
+            const tileid = "tile_id_" + i.toString();
             tile.id = tileid;
-            tile.setAttribute("onclick", " expandTile('" + tileid.toString() + "')");
+
+            tile.addEventListener('click', e => { expandTile(tileid.toString()); playSound(2, 0.15); });
+            tile.addEventListener('mouseenter', e => { playSound(0, 0.15); });
 
             bindButtonHover(tile, "h4", i);
         }
@@ -219,4 +242,4 @@ function collectTiles()
     setTimeout(function () { expandTile("tile_id_" + initialId); }, 250)
 }
 
-window.onload = collectTiles();
+window.onload = initialize();

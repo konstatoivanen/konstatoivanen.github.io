@@ -46,7 +46,7 @@ function bindButtonHover(button, contentTag, i)
     button.addEventListener('mouseenter', e => { lerpString(c, id); });
 }
 
-function collectTiles()
+function initialize()
 {
     var tiles = document.getElementsByClassName("tileButton");
 
@@ -57,4 +57,4 @@ function collectTiles()
     }
 }
 
-window.onload = collectTiles();
+window.onload = initialize();

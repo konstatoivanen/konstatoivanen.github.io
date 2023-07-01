@@ -6,8 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-:root 
-{
+:root {
     --color-background: #000000;
     --color-header: #DCE3E8;
     --color-paragraph: #FD30A7;
@@ -25,12 +24,55 @@
     --color-scrollbar: #FD30A7;
     --color-scrollbar-thumb: #000000;
     --color-link: #FD30A7;
+    --cscale: max(8px, min(1vw, 2vmin));
+    --cscale-margin: calc(0.25 * var(--cscale));
+    --cscale-edge: calc(0.12 * var(--cscale));
+}
+
+body.root
+{
+    background-color: var(--color-background);
+
+    display: flex; 
+    flex-direction: column;
+
+    position: absolute;
+    overflow: hidden;
+    vertical-align: top;
+    margin-left: calc(2.5 * var(--cscale));
+    margin-right: calc(2.5 * var(--cscale));
+    left: 0px;
+    right: 0px;
+    min-height: 100%;
+    max-width: 200vmin;
+
+    user-select: none;
+}
+
+body.panel 
+{
+    background-color: transparent;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+body.tile 
+{
+    background-color: transparent;
+
+    overflow: hidden;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 body::-webkit-scrollbar 
 {
-    width: 4px;
     background-color: var(--color-scrollbar);
+    width: 4px;
 }
 
 body::-webkit-scrollbar-track
@@ -45,75 +87,69 @@ body::-webkit-scrollbar-thumb
 h1 
 {
     color: var(--color-header);
+
     font-family: republic;
-    font-size: 300%;
-    
+    font-size: max(24px, 4vmin);
     margin-bottom: 0px;
-    letter-spacing: -2px;
+    margin-top: calc(2.5 * var(--cscale));
+    letter-spacing: min(-2px, -0.15vmin);
     white-space: nowrap;
 }
 
 h4
 {
-    font-family: republic;
-    background-color: transparent;
     color: inherit;
-    font-size: 16px;
+    background-color: transparent;
+    white-space:pre;
+
+    font-family: republic;
+    font-size: calc(1.0 * var(--cscale));
 
     position: absolute;
-    margin-block: 0px;
-    bottom: 3px;
-    left: 7px;
+    margin-block: 0%;
+    bottom: 0.2em;
+    left: 0.5em;
 
     user-select:none;
 }
 
 h5 
 {
-    font-family: republic;
-    background-color: transparent;
     color: inherit;
-    font-size:16px;
+    background-color: transparent;
+
+    font-family: republic;
+    font-size: calc(1.0 * var(--cscale));
 
     position:absolute;
-    margin-block:0px;
-    bottom:0px;
-    left:4px;
+    margin-block:0%;
+    bottom:0%;
+    left:0.25em;
 }
-
-/*
-h5:after
-{
-    content:"_";
-    animation:Blinking 0.5s infinite;
-}
-
-h4:after
-{
-    content:"_";
-    animation:Blinking 0.5s infinite;
-}
-*/
 
 p 
 {
     color: var(--color-paragraph);
+
     font-family: republic;
+    font-size: max(12px, 1.75vmin);
+
     white-space: nowrap;
     height: 100%;
-    margin: 0px;
+    margin: 0%;
     margin-left:2px;
 }
 
 p2 
 {
     color: var(--color-tile-text);
+
     font-family: 'Roboto', sans-serif;
-    font-size: min(max(1.5vw, 14px), 16px);
-    line-height: min(max(3vw, 16px), 28px);
+    font-size: calc(1.75 * var(--cscale));
+    line-height: calc(2.5 * var(--cscale));
     position: absolute;
-    top: 24px;
-    left: 32px;
+    top: calc(2 * var(--cscale));
+    left: calc(2.5 * var(--cscale));
     max-width: 40%;
 }
 
@@ -124,34 +160,36 @@ a
 
 .pButton
 {
+    color: var(--color-button-hollow-default);
+    background-color: var(--color-button-hollow-default);
+    
     box-sizing:border-box;
     display: inline-block; 
     font-family: republic;
-    background-color: var(--color-button-hollow-default);
-    color: var(--color-button-hollow-default);
 
     vertical-align:bottom;
-    width:128px;
-    height:38px;
-    margin-top:4px;
-    padding:2.5px;
+    width: calc(8 * var(--cscale));
+    height:calc(2 * var(--cscale));
+    margin-top:calc(0.5 * var(--cscale));
+    padding: var(--cscale-edge);
 
     clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 }
 
 .pButton:hover
 {
-    margin-top:0px;
-    height: 42px;
+    margin-top:0%;
+    height: calc(2.5 * var(--cscale));
 }
 
 .pButtonInside
 {
+    color: inherit;
+    background-color: var(--color-background);
+    
     position:relative;
     box-sizing:border-box;
     font-family: inherit;
-    background-color: var(--color-background);
-    color: inherit;
     width:100%;
     height:100%;
 
@@ -164,11 +202,11 @@ a
     background-color: var(--color-button-opaque-default-bg);
 
     display: inline-grid;
-    position:relative;
-    width: 278px;
-    height: 38px;      
-    margin-bottom:0px;
-    margin-right:4px;
+    position: relative;
+    width: calc(16 * var(--cscale));
+    height: calc(2 * var(--cscale));   
+    margin-bottom:0%;
+    margin-right: calc(0.14 * var(--cscale));
 
     clip-path: polygon(0 0, 0 20%, 0 20%, 0 100%, 0 100%, 0 0);
 	animation: ClipIn_Left_TileButton 0.3s 0.0s 1 normal forwards;
@@ -183,12 +221,11 @@ a
 
 .panelParent
 {
-    display: block;
-    position: absolute;
-    top: 178px;
-    bottom: 0px;
-    right: 8px;
-    left: 0px;
+    display:inline-grid;
+    position:relative;
+    width:100%;
+    flex-grow:1;
+    top:var(--cscale-margin);
     overflow: hidden;
 }
 
@@ -196,7 +233,6 @@ a
 {
     position: relative;
     display: table;
-    max-width: 1400px;
     height:100%;
 }
 
@@ -207,10 +243,9 @@ a
     display: block;
     position:relative;
     width: 99%;
-    max-width: 85vw;
     max-height:44vw;
     height: 0px;
-    margin-bottom:4px;
+    margin-bottom:calc(0.25 * var(--cscale));
 
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 	animation: ClipIn_Left_TileExtended 0.5s 0.05s 1 normal forwards;
@@ -218,8 +253,8 @@ a
 
 .tileA
 {
-    color: var(--color-tile-fg);
-    background-color: var(--color-tile-bg);
+    color: var(--color-button-hollow-default);
+    background-color: var(--color-button-hollow-default);
 
     display: block;
     position:relative;
@@ -228,26 +263,46 @@ a
     margin:  0px;
     padding: 0px;
 
-    clip-path: polygon(0   0,  0% 6%,  0% 6%,  0% 100%, 0 100%, 0 0);
-	animation: ClipIn_Left_Tile 0.5s 0.05s 1 normal forwards;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	animation: ClipIn_Left_Tile_Box 0.5s 0.05s 1 normal forwards;
+}
+
+.tileAInside
+{
+    color: var(--color-tile-fg);
+    background-color: var(--color-tile-bg);
+
+    display: block;
+    position:absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    margin: calc(1.125 * var(--cscale-edge));
+    padding: 0%;
+
+    clip-path: inherit;
+	animation: inherit;
 }
 
 .info 
 {
     color: var(--color-tile-fg);
     background-color: var(--color-tile-bg);
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    max-width:900px;
-    height: 0px;
-    padding-left:32px;
-    padding-right:min(256px, 12vw);
-    padding-top:24px;
-    margin-bottom:4px;
-    font-size: min(max(1.5vw, 14px), 16px);
-    line-height: min(max(3vw, 16px), 28px);
 
-    clip-path: polygon(0% 0, 0% 6%, 0% 6%, 0% 100%, 0 100%, 0 0);
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(1 * var(--cscale));
+    line-height: calc(1.5 * var(--cscale));
+
+
+    position: relative;
+    height: 0px;
+    padding-left: calc(1.5 * var(--cscale));
+    padding-right: calc(2.5 * var(--cscale));
+    padding-top:calc(1.5 * var(--cscale));;
+    margin-bottom:calc(1.5 * var(--cscale));;
+
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
 }
 
@@ -263,6 +318,8 @@ a
 .imageBC
 {
     position: relative;
+    place-items:center;
+    display:flex;
     height:100%;
     width:100%;
     clip-path: polygon(90% 0, 95% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
@@ -272,6 +329,7 @@ a
 .imageBC img 
 {
     object-fit:fill;
+    object-position:center;
     height: 100%;
     clip-path:inherit;
 }
@@ -285,15 +343,16 @@ a
     top: 0px;
     right: 0px;
     width: 100%;
-    max-height: 278px;
+    max-height: calc(20 * var(--cscale));
     clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
-    animation: ClipIn_Left_TileVideo 0.5s 0.0s 1 normal forwards;
+    animation: ClipIn_Left_TileExtended 0.5s 0.0s 1 normal forwards;
 }
 
 
 video
 {
     clip-path: inherit;
+    height:100%;
 }
 
 object 
@@ -304,40 +363,6 @@ object
     overflow: hidden;
 }
 
-body.root
-{
-    background-color: var(--color-background);
-    position: absolute;
-    overflow: hidden;
-    vertical-align: top;
-    margin-left: min(72px, 4vw);
-    left: 0px;
-    right: 0px;
-    min-height: 100%;
-    zoom: 1.125;
-
-    user-select: none;
-}
-
-body.panel 
-{
-    background-color: transparent;
-    overflow-x: hidden;
-    overflow-y: visible;
-    margin-top: 0px;
-    margin-left: 0px;
-    zoom: 1.125;
-}
-
-body.tile 
-{
-    background-color: transparent;
-    overflow: hidden;
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-    zoom: 1.125;
-}
 
 @keyframes Blinking
 { 
@@ -354,40 +379,39 @@ body.tile
 
 @keyframes ClipIn_Left_Info 
 { 
-    0%  {height:0px;    clip-path: polygon(0 0, 0 6%, 0 6%, 0 100%, 0 100%, 0 0);} 
-    40% {height:320px;  clip-path: polygon(0 0, 0 6%, 0 6%, 0 100%, 0 100%, 0 0);} 
-    60% {height:320px;  clip-path: polygon(0 0, 0 6%, 0 6%, 0 100%, 0 100%, 0 0);} 
-    100% {height:320px; clip-path: polygon(95% 0, 97.5% 6%, 100% 6%, 100% 100%, 0 100%, 0 0);} 
+    0%   {height:0px;                       clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    40%  {height:calc(20 * var(--cscale));  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60%  {height:calc(20 * var(--cscale));  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:calc(20 * var(--cscale));  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_TileExtended 
 { 
-    0%  {height:0px;  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40% {height:320px; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60% {height:320px; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:320px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
+    0%   {height:0px;                      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    40%  {height:calc(20 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60%  {height:calc(20 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:calc(20 * var(--cscale)); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_TileExtendedTall
 { 
-    0%  {height:0px;  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40% {height:75vh; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60% {height:75vh; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:75vh; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
-}
-
-@keyframes ClipIn_Left_TileVideo
-{ 
-    0%  {height:0px;  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40% {height:278px; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60% {height:278px; clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:278px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
+    0%   {height:0px;                      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    40%  {height:calc(35 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60%  {height:calc(35 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:calc(35 * var(--cscale)); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_Tile 
 { 
     0%   {clip-path: polygon(0   0,  0 6%,  0 6%,  0 100%, 0 100%, 0 0);} 
     100% {clip-path: polygon(95% 0, 97.5% 6%, 100% 6%, 100% 100%, 0 100%, 0 0); } 
+}
+
+
+@keyframes ClipIn_Left_Tile_Box
+{ 
+    0%   {clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } 
 }
 
 @keyframes ClipIn_Left_TileButton 

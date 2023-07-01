@@ -1,5 +1,43 @@
-
 var previousButtonId = "";
+var audioClips = null;
+var playAudio = false;
+
+function updateScaling()
+{
+    var vw = window.innerWidth / 100;
+    var vh = window.innerHeight / 100;
+    var length = Math.sqrt(vw * vw + vh * vh);
+    var scale = Math.max(8, length);
+    document.documentElement.style.setProperty('--cscale', scale + "px");
+
+    var panel = document.getElementById('panelFrame');
+
+    if (panel == null)
+    {
+        return;
+    }
+
+    panel.contentWindow.document.documentElement.style.setProperty('--cscale', scale + "px");
+}
+
+function playSound(index, vol)
+{
+    if (!playAudio)
+    {
+        return;
+    }
+
+    if (audioClips === null)
+    {
+        audioClips = [];
+        audioClips[0] = new Audio('S_Select.wav');
+        audioClips[1] = new Audio('S_Enter.wav');
+        audioClips[2] = new Audio('S_Shift.wav');
+    }
+
+    audioClips[index].volume = vol;
+    audioClips[index].play();
+}
 
 function lerpString(content, id)
 {
@@ -55,6 +93,8 @@ function switchPanel(id)
         return;
     }
 
+    playSound(1, 0.15);
+
     var button = document.getElementById(id);
     var previousButton = document.getElementById(previousButtonId);
 
@@ -74,11 +114,16 @@ function switchPanel(id)
     button.style.color = "var(--color-button-hollow-selected-fg)";
     inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
 
-    document.getElementById('panelFrame').src = button.dataset.content;
+    var parent = document.getElementById('panelFrame');
+    parent.src = button.dataset.content;
+
+    updateScaling();
 }
 
-function initializeButtons()
+function initialize()
 {
+    window.addEventListener('resize', function () { updateScaling(); });
+
     var buttons = document.getElementsByClassName("pButton");
 
     for (var i = 0; i < buttons .length; i++)
@@ -87,11 +132,13 @@ function initializeButtons()
 
         if (button.dataset.content != null)
         {
-            var buttonid = "button_id_" + i.toString();
+            const buttonid = "button_id_" + i.toString();
             button.id = buttonid;
             button.style.color = "var(--color-button-hollow-default)";
             button.style.backgroundColor = "var(--color-button-hollow-default)";
-            button.setAttribute("onclick", " switchPanel('" + buttonid.toString() + "')");
+
+            button.addEventListener('click', e => { switchPanel(buttonid.toString()); });
+            button.addEventListener('mouseenter', e => { playSound(0, 0.15); });
             bindButtonHover(button, "h5", i);
         }
     }
@@ -99,4 +146,4 @@ function initializeButtons()
     switchPanel("button_id_0");
 }
 
-window.onload = initializeButtons();
+window.onload = initialize();
