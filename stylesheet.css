@@ -145,8 +145,8 @@ p2
     color: var(--color-tile-text);
 
     font-family: 'Roboto', sans-serif;
-    font-size: calc(1.75 * var(--cscale));
-    line-height: calc(2.5 * var(--cscale));
+    font-size: calc(2.5 * var(--cscale));
+    line-height: calc(3 * var(--cscale));
     position: absolute;
     top: calc(2 * var(--cscale));
     left: calc(2.5 * var(--cscale));
@@ -396,9 +396,9 @@ object
 @keyframes ClipIn_Left_TileExtendedTall
 { 
     0%   {height:0px;                      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40%  {height:calc(35 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60%  {height:calc(35 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:calc(35 * var(--cscale)); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
+    40%  {height:calc(30 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60%  {height:calc(30 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:calc(30 * var(--cscale)); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_Tile 

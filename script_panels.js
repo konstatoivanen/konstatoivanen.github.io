@@ -1,4 +1,5 @@
 var previousButtonId = "";
+var currentScale = 0;
 var audioClips = null;
 var playAudio = false;
 
@@ -7,17 +8,15 @@ function updateScaling()
     var vw = window.innerWidth / 100;
     var vh = window.innerHeight / 100;
     var length = Math.sqrt(vw * vw + vh * vh);
-    var scale = Math.max(8, length);
-    document.documentElement.style.setProperty('--cscale', scale + "px");
+    currentScale = Math.max(8, length);
+    document.documentElement.style.setProperty('--cscale', currentScale + "px");
 
     var panel = document.getElementById('panelFrame');
 
-    if (panel == null)
+    if (panel != null && panel.contentWindow != null)
     {
-        return;
+        panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
     }
-
-    panel.contentWindow.document.documentElement.style.setProperty('--cscale', scale + "px");
 }
 
 function playSound(index, vol)
@@ -113,16 +112,21 @@ function switchPanel(id)
     button.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
     button.style.color = "var(--color-button-hollow-selected-fg)";
     inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
-
-    var parent = document.getElementById('panelFrame');
-    parent.src = button.dataset.content;
+    document.getElementById('panelFrame').src = button.dataset.content;
 
     updateScaling();
 }
 
 function initialize()
 {
+    updateScaling();
+
     window.addEventListener('resize', function () { updateScaling(); });
+
+    document.getElementById('panelFrame').addEventListener("load", function ()
+    {
+        this.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
+    });
 
     var buttons = document.getElementsByClassName("pButton");
 
