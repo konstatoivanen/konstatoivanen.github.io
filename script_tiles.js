@@ -3,6 +3,17 @@ var previousTileId = "";
 var audioClips = null;
 var playAudio = false;
 
+function updateScaling()
+{
+    var currentScale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+    var panel = document.getElementById('tileFrame');
+
+    if (panel != null && panel.contentWindow != null)
+    {
+        panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
+    }
+}
+
 function playSound(index, vol)
 {
     if (!playAudio)
@@ -68,7 +79,6 @@ function bindButtonHover(button, contentTag, i)
 
     button.addEventListener('mouseenter', e => { lerpString(c, id); });
 }
-
 
 function createElement(content)
 {
@@ -205,11 +215,25 @@ function expandTile(id)
             break;
     }
 
+    var tileFrame = document.getElementById('tileFrame');
+
+    if (tileFrame != null)
+    {
+        var scale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+
+        document.getElementById('tileFrame').addEventListener("load", function ()
+        {
+            this.contentWindow.document.documentElement.style.setProperty('--cscale', scale + "px");
+        });
+    }
+
     setTimeout(function () { scrollElementToTop(element); }, 250)
 }
 
 function initialize()
 {
+    window.addEventListener('resize', function () { updateScaling(); });
+
     var tiles = document.getElementsByClassName("tileButton");
     var panel = document.getElementsByClassName("panel").item(0);
 
