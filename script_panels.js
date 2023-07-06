@@ -7,7 +7,12 @@ function updateScaling()
 {
     var vw = window.innerWidth / 100;
     var vh = window.innerHeight / 100;
+
+    var maxAspect = 16.0 / 9.0;
+    vw = Math.min(vw, vh * Math.min(vw / vh, maxAspect));
+
     var length = Math.sqrt(vw * vw + vh * vh);
+
     currentScale = Math.max(8, length);
     document.documentElement.style.setProperty('--cscale', currentScale + "px");
 

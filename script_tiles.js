@@ -10,7 +10,7 @@ function updateScaling()
 
     if (panel != null && panel.contentWindow != null)
     {
-        panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
+        panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale);
     }
 }
 
@@ -223,7 +223,7 @@ function expandTile(id)
 
         document.getElementById('tileFrame').addEventListener("load", function ()
         {
-            this.contentWindow.document.documentElement.style.setProperty('--cscale', scale + "px");
+            this.contentWindow.document.documentElement.style.setProperty('--cscale', scale);
         });
     }
 

@@ -145,8 +145,8 @@ p2
     color: var(--color-tile-text);
 
     font-family: 'Roboto', sans-serif;
-    font-size: calc(2.5 * var(--cscale));
-    line-height: calc(3 * var(--cscale));
+    font-size: var(--cscale);
+    line-height: calc(1.5 * var(--cscale));
     position: absolute;
     top: calc(2 * var(--cscale));
     left: calc(2.5 * var(--cscale));
@@ -278,7 +278,7 @@ a
     bottom: 0%;
     left: 0%;
     right: 0%;
-    margin: calc(1.125 * var(--cscale-edge));
+    margin: var(--cscale-edge);
     padding: 0%;
 
     clip-path: inherit;
