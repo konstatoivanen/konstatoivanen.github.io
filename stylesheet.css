@@ -171,6 +171,7 @@ a
     width: calc(8 * var(--cscale));
     height:calc(2 * var(--cscale));
     margin-top:calc(0.5 * var(--cscale));
+    margin-right:var(--cscale-margin);
     padding: var(--cscale-edge);
 
     clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
@@ -203,7 +204,7 @@ a
 
     display: inline-grid;
     position: relative;
-    width: calc(16 * var(--cscale));
+    width: calc(16 * var(--cscale) + var(--cscale-margin));
     height: calc(2 * var(--cscale));   
     margin-bottom:0%;
     margin-right: calc(0.14 * var(--cscale));
