@@ -4,7 +4,7 @@
     src: url('republic-heavy.woff') format('woff');
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --color-background: #000000;
@@ -131,7 +131,7 @@ p
 {
     color: var(--color-paragraph);
 
-    font-family: republic;
+    font-family: "Roboto", sans-serif;
     font-size: max(12px, 1.75vmin);
 
     white-space: nowrap;
@@ -144,8 +144,9 @@ p2
 {
     color: var(--color-tile-text);
 
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto Mono", monospace;
     font-size: var(--cscale);
+	letter-spacing: calc(-0.025 * var(--cscale));
     line-height: calc(1.5 * var(--cscale));
     position: absolute;
     top: calc(2 * var(--cscale));
@@ -291,7 +292,7 @@ a
     color: var(--color-tile-fg);
     background-color: var(--color-tile-bg);
 
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: calc(1 * var(--cscale));
     line-height: calc(1.5 * var(--cscale));
 
@@ -313,6 +314,8 @@ a
     position: sticky;
     height: 100%;
     max-width: 50%;
+	padding-left: var(--cscale-edge);
+	background-color: var(--color-button-hollow-default);
     clip-path: inherit;
 }
 
