@@ -53,7 +53,7 @@ function initialize()
     for (var i = 0; i < tiles.length; i++)
     {
         var tile = tiles.item(i);
-        bindButtonHover(tile, "h4", i);
+        bindButtonHover(tile, "h2", i);
     }
 }
 

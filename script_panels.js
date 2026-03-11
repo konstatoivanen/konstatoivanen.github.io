@@ -148,7 +148,7 @@ function initialize()
 
             button.addEventListener('click', e => { switchPanel(buttonid.toString()); });
             button.addEventListener('mouseenter', e => { playSound(0, 0.15); });
-            bindButtonHover(button, "h5", i);
+            bindButtonHover(button, "h3", i);
         }
     }
 

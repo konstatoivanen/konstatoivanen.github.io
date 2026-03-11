@@ -96,7 +96,7 @@ h1
     white-space: nowrap;
 }
 
-h4
+h2
 {
     color: inherit;
     background-color: transparent;
@@ -113,7 +113,7 @@ h4
     user-select:none;
 }
 
-h5 
+h3
 {
     color: inherit;
     background-color: transparent;
@@ -292,10 +292,10 @@ a
     color: var(--color-tile-fg);
     background-color: var(--color-tile-bg);
 
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Mono", monospace;
     font-size: calc(1 * var(--cscale));
     line-height: calc(1.5 * var(--cscale));
-
+	letter-spacing: calc(-0.025 * var(--cscale));
 
     position: relative;
     height: 0px;
@@ -306,6 +306,17 @@ a
 
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
+}
+
+.infoGrid 
+{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.infoGridItem 
+{
+ height: calc(1.5 * var(--cscale));
 }
 
 .imageTR 

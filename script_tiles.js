@@ -251,7 +251,7 @@ function initialize()
             tile.addEventListener('click', e => { expandTile(tileid.toString()); playSound(2, 0.15); });
             tile.addEventListener('mouseenter', e => { playSound(0, 0.15); });
 
-            bindButtonHover(tile, "h4", i);
+            bindButtonHover(tile, "h2", i);
         }
     }
 
