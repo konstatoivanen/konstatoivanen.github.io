@@ -13,7 +13,7 @@ function updateScaling()
 
     var length = Math.sqrt(vw * vw + vh * vh);
 
-    currentScale = Math.max(8, length);
+    currentScale = Math.max(8, length * 1.2);
     document.documentElement.style.setProperty('--cscale', currentScale + "px");
 
     var panel = document.getElementById('panelFrame');
