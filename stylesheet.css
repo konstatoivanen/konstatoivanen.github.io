@@ -302,9 +302,8 @@ a
     height: 0px;
     padding-left: calc(1.5 * var(--cscale));
     padding-right: calc(2.5 * var(--cscale));
-    padding-top:calc(1.5 * var(--cscale));;
-    margin-bottom:calc(1.5 * var(--cscale));;
-
+    padding-top:calc(1.5 * var(--cscale));
+    margin-bottom:calc(4.5 * var(--cscale));
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
 }
@@ -395,10 +394,10 @@ object
 
 @keyframes ClipIn_Left_Info 
 { 
-    0%   {height:0px;                       clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40%  {height:calc(20 * var(--cscale));  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60%  {height:calc(20 * var(--cscale));  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:calc(20 * var(--cscale));  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
+    0%   {height:0px;          clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    40%  {height:fit-content;  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60%  {height:fit-content;  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:fit-content;  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_TileExtended 
