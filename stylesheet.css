@@ -245,7 +245,7 @@ a
 
     display: block;
     position:relative;
-    width: calc(min(99%, 5 * (16 * var(--cscale) + 2 * var(--cscale--margin)) - var(--cscale--margin)));
+    width: calc(min(99%, 5 * (16 * var(--cscale) + 2 * var(--cscale-margin)) - var(--cscale-margin)));
     max-height:44vw;
     height: 0px;
     margin-bottom:calc(0.25 * var(--cscale));
