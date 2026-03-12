@@ -207,8 +207,9 @@ a
     position: relative;
     width: calc(16 * var(--cscale) + var(--cscale-margin));
     height: calc(2 * var(--cscale));   
-    margin-bottom:0%;
-    margin-right: calc(0.14 * var(--cscale));
+    margin-bottom: calc(var(--cscale-margin));
+    margin-right: calc(var(--cscale-margin));
+	vertical-align: top;
 
     clip-path: polygon(0 0, 0 20%, 0 20%, 0 100%, 0 100%, 0 0);
 	animation: ClipIn_Left_TileButton 0.3s 0.0s 1 normal forwards;
@@ -244,7 +245,7 @@ a
 
     display: block;
     position:relative;
-    width: 99%;
+    width: calc(min(99%, 5 * (16 * var(--cscale) + 2 * var(--cscale--margin)) - var(--cscale--margin)));
     max-height:44vw;
     height: 0px;
     margin-bottom:calc(0.25 * var(--cscale));
