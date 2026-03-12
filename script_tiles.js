@@ -163,7 +163,7 @@ function expandTile(id)
                     return;
                 }
 
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'><iframe width='100%' height='100%' style='height:inherit' frameborder='0' id='tileFrame' src=''></iframe></div>");
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'><iframe style='width:100%;height:100%' frameborder='0' id='tileFrame' src=''></iframe></div>");
                 document.getElementById('tileFrame').src = element.dataset.content;
             }
             break;
