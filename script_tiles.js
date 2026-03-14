@@ -164,7 +164,25 @@ function expandTile(id)
                 }
 
                 element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'><iframe style='width:100%;height:100%' frameborder='0' id='tileFrame' src=''></iframe></div>");
-                document.getElementById('tileFrame').src = element.dataset.content;
+				
+				var tileFrame = document.getElementById('tileFrame');
+
+				if (tileFrame != null)
+				{
+					var scale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+			
+					tileFrame.addEventListener("load", function ()
+					{
+						this.contentWindow.document.documentElement.style.setProperty('--cscale', scale);
+					});
+					
+					tileFrame.onload = function() 
+					{
+						tileFrame.contentWindow.document.documentElement.style.setProperty('--cscale', scale);
+					};
+				}
+				
+                tileFrame.src = element.dataset.content;
             }
             break;
         case "local_video":
@@ -213,18 +231,6 @@ function expandTile(id)
                 element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='imageBC'><img src='" + element.dataset.content + "'/></div></div>");
             }
             break;
-    }
-
-    var tileFrame = document.getElementById('tileFrame');
-
-    if (tileFrame != null)
-    {
-        var scale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
-
-        document.getElementById('tileFrame').addEventListener("load", function ()
-        {
-            this.contentWindow.document.documentElement.style.setProperty('--cscale', scale);
-        });
     }
 
     setTimeout(function () { scrollElementToTop(element); }, 250)
