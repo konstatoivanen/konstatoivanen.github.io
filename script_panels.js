@@ -9,9 +9,10 @@ function updateScaling()
     var vh = window.innerHeight / 100;
 
     var maxAspect = 16.0 / 9.0;
-    vw = Math.min(vw, vh * Math.min(vw / vh, maxAspect));
+    var vwClamped = Math.min(vw, vh * Math.min(vw / vh, maxAspect));
+    var vhClamped = Math.min(vh, vw * Math.min(vh / vw, maxAspect));
 
-    var length = Math.sqrt(vw * vw + vh * vh);
+    var length = Math.sqrt(vwClamped * vwClamped + vhClamped * vhClamped);
 
     currentScale = Math.max(8, length);
     document.documentElement.style.setProperty('--cscale', currentScale + "px");

@@ -25,8 +25,8 @@
     --color-scrollbar-thumb: #000000;
     --color-link: #FD30A7;
     --cscale: max(8px, min(1vw, 2vmin));
-    --cscale-margin: calc(0.25 * var(--cscale));
-    --cscale-edge: calc(0.12 * var(--cscale));
+    --cscale-margin: calc(max(1px,0.25 * var(--cscale)));
+    --cscale-edge: calc(max(1px,0.12 * var(--cscale)));
 }
 
 body.root
