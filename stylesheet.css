@@ -61,12 +61,18 @@ body.panel
 
 body.tile 
 {
-    background-color: transparent;
+    background-color: var(--color-button-hollow-default);
+    display: block;
+    position:relative;
 
     overflow: hidden;
     margin: 0px;
     width: 100%;
-    height: 100%;
+    height: 100%;  
+    margin:  0px;
+    padding: 0px;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	animation: ClipIn_Left_Tile_Box 0.5s 0.05s 1 normal forwards;
 }
 
 body::-webkit-scrollbar 
@@ -252,22 +258,6 @@ a
 
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 	animation: ClipIn_Left_TileExtended 0.5s 0.05s 1 normal forwards;
-}
-
-.tileA
-{
-    color: var(--color-button-hollow-default);
-    background-color: var(--color-button-hollow-default);
-
-    display: block;
-    position:relative;
-    width: 100%;
-    height: 100%;      
-    margin:  0px;
-    padding: 0px;
-
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-	animation: ClipIn_Left_Tile_Box 0.5s 0.05s 1 normal forwards;
 }
 
 .tileAInside
