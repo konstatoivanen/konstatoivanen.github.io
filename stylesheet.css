@@ -139,6 +139,7 @@ p
 
     font-family: "Roboto", sans-serif;
     font-size: max(12px, 1.75vmin);
+	letter-spacing: calc(-0.025 * var(--cscale));
 
     white-space: nowrap;
     height: 100%;
@@ -150,7 +151,7 @@ p2
 {
     color: var(--color-tile-text);
 
-    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto", sans-serif;
     font-size: var(--cscale);
 	letter-spacing: calc(-0.025 * var(--cscale));
     line-height: calc(1.5 * var(--cscale));
@@ -283,7 +284,7 @@ a
     color: var(--color-tile-fg);
     background-color: var(--color-tile-bg);
 
-    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto", sans-serif;
     font-size: calc(1 * var(--cscale));
     line-height: calc(1.5 * var(--cscale));
 	letter-spacing: calc(-0.025 * var(--cscale));
