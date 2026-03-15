@@ -95,10 +95,10 @@ h1
     color: var(--color-header);
 
     font-family: republic;
-    font-size: max(24px, 4vmin);
+    font-size: max(24px, 5.0vmin);
     margin-bottom: 0px;
     margin-top: calc(2.5 * var(--cscale));
-    letter-spacing: min(-2px, -0.15vmin);
+    letter-spacing: min(-2px, -0.25vmin);
     white-space: nowrap;
 }
 
