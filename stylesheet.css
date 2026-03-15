@@ -151,7 +151,7 @@ p2
     position: absolute;
     top: calc(2 * var(--cscale));
     left: calc(2.5 * var(--cscale));
-    max-width: 60%;
+    max-width: 50%;
 }
 
 a 
