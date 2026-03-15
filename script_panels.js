@@ -8,9 +8,10 @@ function updateScaling()
     var vw = window.innerWidth / 100;
     var vh = window.innerHeight / 100;
 
-    var maxAspect = 16.0 / 9.0;
-    var vwClamped = Math.min(vw, vh * Math.min(vw / vh, maxAspect));
-    var vhClamped = Math.min(vh, vw * Math.min(vh / vw, maxAspect));
+    var maxAspectW = 2.0;
+    var maxAspectH = 1.6;
+    var vwClamped = Math.min(vw, vh * Math.min(vw / vh, maxAspectW));
+    var vhClamped = Math.min(vh, vw * Math.min(vh / vw, maxAspectH));
 
     var length = Math.sqrt(vwClamped * vwClamped + vhClamped * vhClamped);
 
