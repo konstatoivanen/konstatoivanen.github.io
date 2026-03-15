@@ -10,10 +10,13 @@
         <div class="tileA">
             <div class="tileAInside">
                 <p2>
-                    A tool for converting cylindrical IBL textures to GGX convolved octahedron mapped IBL textures.<br>
-                    Output is convolved onto mip map layers using monte carlo integration & GGX importance sampling based on user defined roughness values.<br>
-                    The tool can write the result in either RGBM, RGB9E5 or RGBA16F format.<br>
-                    The resulting image can then be used as an IBL background in other rendering software.<br>
+					Hobby project // An Offline GGX reflection probe convolver:<br>
+                    <strong>></strong> Applies GGX Monte carlo integration to cylindrical IBL textures.<br>
+                    <strong>></strong> Outputs octahedron mapped IBL textures.<br>
+                    <strong>></strong> Different roughness convolutions stored in output mip-levels.<br>
+                    <strong>></strong> Number of levels and level roughnesses defined through CLI args.<br>
+                    <strong>></strong> Outputs a KTX texture in either RGBM, RGB9E5 or RGBA16F format.<br>
+                    <strong>></strong> Resulting texture can be used by other rendering software for lightweight IBL.<br><br>
                     <a href="https://github.com/konstatoivanen/OEMExporter" target="_blank">GitHub Repository</a>
                 </p2>
                 <div class='imageTR'><video height="320" loop preload="auto" autoplay muted>><source src="V_OEM.mp4" type="video/mp4"></video></div>
