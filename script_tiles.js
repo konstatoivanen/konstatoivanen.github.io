@@ -5,12 +5,14 @@ var playAudio = false;
 
 function updateScaling()
 {
-    var currentScale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+    var cscale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+    var cscale_edge = getComputedStyle(document.documentElement).getPropertyValue('--cscale-edge');
     var panel = document.getElementById('tileFrame');
 
     if (panel != null && panel.contentWindow != null)
     {
-        panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale);
+        panel.contentWindow.document.documentElement.style.setProperty('--cscale', cscale);
+        panel.contentWindow.document.documentElement.style.setProperty('--cscale-edge', cscale_edge);
     }
 }
 
@@ -219,11 +221,13 @@ function expandTile(id)
 
     if (tileFrame != null)
     {
-        var scale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+        var cscale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+        var cscale_edge = getComputedStyle(document.documentElement).getPropertyValue('--cscale-edge');
 
         tileFrame.addEventListener("load", function ()
         {
-            this.contentWindow.document.documentElement.style.setProperty('--cscale', scale);
+            this.contentWindow.document.documentElement.style.setProperty('--cscale', cscale);
+            this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', cscale_edge);
         });
     }
 

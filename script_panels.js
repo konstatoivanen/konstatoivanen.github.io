@@ -1,5 +1,6 @@
 var previousButtonId = "";
 var currentScale = 0;
+var currentScaleEdge = 0;
 var audioClips = null;
 var playAudio = false;
 
@@ -16,15 +17,17 @@ function updateScaling()
     var length = Math.sqrt(vwClamped * vwClamped + vhClamped * vhClamped);
 
     currentScale = Math.max(8, length);
-	currentScale = Math.ceil(currentScale);
+	currentScaleEdge = Math.max(1.0, Math.floor(0.12 * currentScale));
 	
     document.documentElement.style.setProperty('--cscale', currentScale + "px");
-
+    document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
+	
     var panel = document.getElementById('panelFrame');
 
     if (panel != null && panel.contentWindow != null)
     {
         panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
+        panel.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
     }
 }
 
@@ -135,6 +138,7 @@ function initialize()
     document.getElementById('panelFrame').addEventListener("load", function ()
     {
         this.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
+        this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
     });
 
     var buttons = document.getElementsByClassName("pButton");
