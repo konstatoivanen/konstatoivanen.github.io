@@ -224,7 +224,7 @@ function expandTile(id)
         var cscale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
         var cscale_edge = getComputedStyle(document.documentElement).getPropertyValue('--cscale-edge');
 
-        tileFrame.addEventListener("load", function ()
+        tileFrame.addEventListener("DOMContentLoaded", function ()
         {
             this.contentWindow.document.documentElement.style.setProperty('--cscale', cscale);
             this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', cscale_edge);

@@ -26,6 +26,7 @@ function updateScaling()
 
     if (panel != null && panel.contentWindow != null)
     {
+		panel.height = panel.contentWindow.document.body.scrollHeight;
         panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
         panel.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
     }
@@ -135,8 +136,9 @@ function initialize()
 
     window.addEventListener('resize', function () { updateScaling(); });
 
-    document.getElementById('panelFrame').addEventListener("load", function ()
+    document.getElementById('panelFrame').addEventListener("DOMContentLoaded", function ()
     {
+		this.height = this.contentWindow.document.body.scrollHeight;
         this.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
         this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
     });

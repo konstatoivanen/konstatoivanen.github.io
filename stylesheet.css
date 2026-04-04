@@ -37,7 +37,8 @@ body.root
     flex-direction: column;
 
     position: absolute;
-    overflow: hidden;
+    overflow-x: hidden;
+	overflow-y: auto;
     vertical-align: top;
     margin-left: calc(2.5 * var(--cscale));
     margin-right: calc(2.5 * var(--cscale));
@@ -54,7 +55,7 @@ body.panel
     background-color: transparent;
 
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: hidden;
     margin-top: 0px;
     margin-left: 0px;
 }
