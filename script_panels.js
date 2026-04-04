@@ -71,7 +71,11 @@ function include_html(target, file, on_load)
 				if (this.status == 200) 
 				{
 					target.innerHTML = this.responseText;
-					on_load();
+					
+					if (on_load !== null)
+					{
+						on_load();
+					}
 				}
 				
 				if (this.status == 404) 
@@ -181,8 +185,6 @@ function try_update_previous_tile_video(newId)
 
 function update_subpage()
 {
-    udpate_scaling();
-	
 	previousTileId = null;
 	
 	// Bind buttons now in dom.
@@ -241,8 +243,8 @@ function expand_tile(id)
                     return;
                 }
 
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'><iframe style='width:100%;height:100%' frameborder='0' id='tileFrame' src=''></iframe></div>");
-                document.getElementById('tileFrame').src = element.dataset.content;
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'></div>");
+				include_html(document.getElementById('expandParent'), element.dataset.content, null);
             }
             break;
 			
