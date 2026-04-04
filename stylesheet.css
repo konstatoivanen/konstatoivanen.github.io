@@ -61,7 +61,7 @@ body.panel
 
 body.tile 
 {
-    background-color: var(--color-button-hollow-default);
+    background-color: var(--color-button-opaque-default-bg);
     display: block;
     position:relative;
 
@@ -272,7 +272,7 @@ a
     bottom: 0%;
     left: 0%;
     right: 0%;
-    margin: var(--cscale-edge);
+    margin-top: var(--cscale-edge);
     padding: 0%;
 
     clip-path: inherit;
@@ -311,7 +311,7 @@ a
     position: sticky;
     height: 100%;
     max-width: 50%;
-	padding-left: var(--cscale-edge);
+	/*padding-left: var(--cscale-edge);*/
 	background-color: var(--color-button-hollow-default);
     clip-path: inherit;
 }
