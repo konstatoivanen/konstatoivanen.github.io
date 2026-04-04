@@ -4,8 +4,6 @@ var currentScaleEdge = 0;
 var audioClips = null;
 var playAudio = false;
 
-var observer = null;
-
 function updateScaling()
 {
     var vw = window.innerWidth / 100;
@@ -28,7 +26,6 @@ function updateScaling()
 
     if (panel != null && panel.contentWindow != null)
     {
-		panel.height = panel.contentWindow.document.body.scrollHeight;
         panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
         panel.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
     }
@@ -136,18 +133,10 @@ function initialize()
 {
     updateScaling();
 
-	// Hacky test
-	const targetNode = document.getElementById('panelFrame').contentDocument.body;
-	const config = { attributes: true, childList: true, subtree: true };
-	const callback = (mutationList, observer) => { updateScaling(); } };
-	observer = new MutationObserver(callback);
-	observer.observe(targetNode, config);
-
     window.addEventListener('resize', function () { updateScaling(); });
 
-    document.getElementById('panelFrame').addEventListener("DOMContentLoaded", function ()
+    document.getElementById('panelFrame').addEventListener("load", function ()
     {
-		this.height = this.contentWindow.document.body.scrollHeight + px;
         this.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
         this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
     });
