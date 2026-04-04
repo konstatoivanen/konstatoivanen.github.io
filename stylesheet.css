@@ -7,22 +7,22 @@
 }
 
 :root {
-    --color-background: #000000;
+    --color-background: #0E0E0F;
     --color-header: #DCE3E8;
     --color-paragraph: #FD30A7;
     --color-button-hollow-default: #839098;
-    --color-button-hollow-selected-fg: #000000;
+    --color-button-hollow-selected-fg: #0E0E0F;
     --color-button-hollow-selected-bg: #FD30A7;
     --color-button-opaque-selected-bg: #FD30A7;
-    --color-button-opaque-selected-fg: #000000;
+    --color-button-opaque-selected-fg: #0E0E0F;
     --color-button-opaque-hover-bg: #839098;
     --color-button-opaque-hover-fg: #191919;
     --color-button-opaque-default-bg: #191919;
     --color-button-opaque-default-fg: #839098;
-    --color-tile-bg: #000000;
+    --color-tile-bg: #0E0E0F;
     --color-tile-fg: #DCE3E8;
     --color-scrollbar: #FD30A7;
-    --color-scrollbar-thumb: #000000;
+    --color-scrollbar-thumb: #0E0E0F;
     --color-link: #FD30A7;
     --cscale: max(8px, min(1vw, 2vmin));
     --cscale-margin: calc(max(1px,0.25 * var(--cscale)));
@@ -80,9 +80,9 @@ h1
     color: var(--color-header);
 
     font-family: republic;
-    font-size: max(24px, 5.0vmin);
+    font-size: max(24px, 6.0vmin);
     margin-bottom: 0px;
-    margin-top: calc(2.5 * var(--cscale));
+    margin-top: calc(1.5 * var(--cscale));
     letter-spacing: min(-2px, -0.25vmin);
     white-space: nowrap;
 }
