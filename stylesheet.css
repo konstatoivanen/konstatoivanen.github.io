@@ -307,12 +307,12 @@ a
 
 .imageTR 
 {
+	background-color: var(--color-button-hollow-default);
     float:right;
     position: sticky;
     height: 100%;
     max-width: 50%;
 	/*padding-left: var(--cscale-edge);*/
-	background-color: var(--color-button-hollow-default);
     clip-path: inherit;
 }
 
@@ -329,6 +329,8 @@ a
 
 .imageBC img 
 {
+	background-color: var(--color-button-opaque-default-bg);
+	padding-top:var(--cscale-edge);
     object-fit:fill;
     object-position:center;
     height: 100%;
@@ -337,10 +339,12 @@ a
 
 .videoBC 
 {
+	background-color: var(--color-button-opaque-default-bg);
     display:block;
     position: relative;
     margin-right:4px;
     margin-bottom:4px;
+	padding-top:var(--cscale-edge);
     top: 0px;
     right: 0px;
     width: 100%;
