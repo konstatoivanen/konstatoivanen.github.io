@@ -4,6 +4,27 @@ var currentScaleEdge = 0;
 var audioClips = null;
 var playAudio = false;
 
+function includeHTML(target, file) 
+{
+	if (file)
+	{
+		/* Make an HTTP request using the attribute value as the file name: */
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() 
+		{
+			if (this.readyState == 4) 
+			{
+				if (this.status == 200) {target.innerHTML = this.responseText;}
+				if (this.status == 404) {target.innerHTML = "Page not found.";}
+			}
+		}
+		xhttp.open("GET", file, true);
+		xhttp.send();
+		/* Exit the function: */
+		return;
+	}
+}
+
 function updateScaling()
 {
     var vw = window.innerWidth / 100;
@@ -112,7 +133,6 @@ function switchPanel(id)
     if (previousButton !== null)
     {
         var previousInside = previousButton.getElementsByClassName("pButtonInside").item(0);
-
         previousButton.style.backgroundColor = "var(--color-button-hollow-default)";
         previousButton.style.color = "var(--color-button-hollow-default)";
         previousInside.style.backgroundColor = "var(--color-background)";
@@ -124,7 +144,7 @@ function switchPanel(id)
     button.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
     button.style.color = "var(--color-button-hollow-selected-fg)";
     inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
-    document.getElementById('panelFrame').src = button.dataset.content;
+	includeHTML(document.getElementById("include_target"), button.dataset.content);
 
     updateScaling();
 }
