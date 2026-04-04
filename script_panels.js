@@ -1,77 +1,28 @@
 var previousButtonId = "";
+var previousTileId = "";
 var currentScale = 0;
 var currentScaleEdge = 0;
 var audioClips = null;
 var playAudio = false;
 
-function includeHTML(target, file) 
+function create_element(content)
 {
-	if (file)
-	{
-		/* Make an HTTP request using the attribute value as the file name: */
-		xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() 
-		{
-			if (this.readyState == 4) 
-			{
-				if (this.status == 200) {target.innerHTML = this.responseText;}
-				if (this.status == 404) {target.innerHTML = "Page not found.";}
-			}
-		}
-		xhttp.open("GET", file, true);
-		xhttp.send();
-		/* Exit the function: */
-		return;
-	}
+    var parent = document.createElement('div');
+    parent.innerHTML = content;
+    return parent.firstElementChild;
 }
 
-function updateScaling()
+function scroll_element_to_top(element)
 {
-    var vw = window.innerWidth / 100;
-    var vh = window.innerHeight / 100;
+    var panel = document.documentElement;
 
-    var maxAspectW = 2.0;
-    var maxAspectH = 1.6;
-    var vwClamped = Math.min(vw, vh * Math.min(vw / vh, maxAspectW));
-    var vhClamped = Math.min(vh, vw * Math.min(vh / vw, maxAspectH));
-
-    var length = Math.sqrt(vwClamped * vwClamped + vhClamped * vhClamped);
-
-    currentScale = Math.max(8, length);
-	currentScaleEdge = Math.max(1.0, Math.floor(0.12 * currentScale));
-	
-    document.documentElement.style.setProperty('--cscale', currentScale + "px");
-    document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
-	
-    var panel = document.getElementById('panelFrame');
-
-    if (panel != null && panel.contentWindow != null)
+    if (panel.clientHeight < panel.scrollHeight)
     {
-        panel.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
-        panel.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
+        element.scrollIntoView({ alignToTop: 'true', behavior: 'smooth', block: 'start' });
     }
 }
 
-function playSound(index, vol)
-{
-    if (!playAudio)
-    {
-        return;
-    }
-
-    if (audioClips === null)
-    {
-        audioClips = [];
-        audioClips[0] = new Audio('S_Select.wav');
-        audioClips[1] = new Audio('S_Enter.wav');
-        audioClips[2] = new Audio('S_Shift.wav');
-    }
-
-    audioClips[index].volume = vol;
-    audioClips[index].play();
-}
-
-function lerpString(content, id)
+function lerp_string(content, id)
 {
     var length = 0;
     var target = document.getElementById(id);
@@ -107,25 +58,267 @@ function lerpString(content, id)
     interval * content.length + 60);
 }
 
-function bindButtonHover(button, contentTag, i)
+function include_html(target, file, on_load) 
 {
-    var buttonContent = button.getElementsByTagName(contentTag).item(0);
-    buttonContent.id = "button_content_" + i.toString();
-
-    const c = buttonContent.innerHTML.toString();
-    const id = buttonContent.id.toString();
-
-    button.addEventListener('mouseenter', e => { lerpString(c, id); });
+	if (file)
+	{
+		/* Make an HTTP request using the attribute value as the file name: */
+		xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() 
+		{
+			if (this.readyState == 4) 
+			{
+				if (this.status == 200) 
+				{
+					target.innerHTML = this.responseText;
+					on_load();
+				}
+				
+				if (this.status == 404) 
+				{
+					target.innerHTML = "Page not found.";
+				}
+			}
+		}
+		xhttp.open("GET", file, true);
+		xhttp.send();
+		/* Exit the function: */
+		return;
+	}
 }
 
-function switchPanel(id)
+function set_button_color(element, isActive)
+{
+    element.style.color = isActive ? "var(--color-button-opaque-selected-fg)" : "var(--color-button-opaque-default-fg)";
+    element.style.background = isActive ? "var(--color-button-opaque-selected-bg)" : "var(--color-button-opaque-default-bg)";
+}
+
+function play_sound(index, vol)
+{
+    if (!playAudio)
+    {
+        return;
+    }
+
+    if (audioClips === null)
+    {
+        audioClips = [];
+        audioClips[0] = new Audio('S_Select.wav');
+        audioClips[1] = new Audio('S_Enter.wav');
+        audioClips[2] = new Audio('S_Shift.wav');
+    }
+
+    audioClips[index].volume = vol;
+    audioClips[index].play();
+}
+
+function udpate_scaling()
+{
+    var vw = window.innerWidth / 100;
+    var vh = window.innerHeight / 100;
+
+    var maxAspectW = 2.0;
+    var maxAspectH = 1.6;
+    var vwClamped = Math.min(vw, vh * Math.min(vw / vh, maxAspectW));
+    var vhClamped = Math.min(vh, vw * Math.min(vh / vw, maxAspectH));
+
+    var length = Math.sqrt(vwClamped * vwClamped + vhClamped * vhClamped);
+
+    currentScale = Math.max(8, length);
+	currentScaleEdge = Math.max(1.0, Math.floor(0.12 * currentScale));
+	
+    document.documentElement.style.setProperty('--cscale', currentScale + "px");
+    document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
+}
+
+function bind_button_hover(button, tag, id)
+{
+    var button_text = button.getElementsByTagName(tag).item(0);
+    button_text.id = "button_content_" + id.toString();
+    const content = button_text.innerHTML.toString();
+    const content_id = button_text.id.toString();
+    button.addEventListener('mouseenter', e => { lerp_string(content, content_id); });
+}
+
+function try_update_previous_tile(newId)
+{
+    var previousTile = document.getElementById(previousTileId);
+
+    if (previousTile !== null)
+    {
+        set_button_color(previousTile, false);
+    }
+
+    if (previousTileId === newId)
+    {
+        previousTileId = null;
+        return false;
+    }
+
+    previousTileId = newId;
+    return true;
+}
+
+function try_update_previous_tile_video(newId)
+{
+    var previousTile = document.getElementById(previousTileId);
+
+    if (previousTile !== null)
+    {
+        previousTile.parentElement.replaceWith(previousTile);
+        set_button_color(previousTile, false);
+    }
+
+    if (previousTileId === newId)
+    {
+        previousTileId = null;
+        return false;
+    }
+
+    previousTileId = newId;
+    return true;
+}
+
+function update_subpage()
+{
+    udpate_scaling();
+	
+	previousTileId = null;
+	
+	// Bind buttons now in dom.
+    var tiles = document.getElementsByClassName("tileButton");
+
+    for (var i = 0; i < tiles.length; i++)
+    {
+        var tile = tiles.item(i);
+        bind_button_hover(tile, "h2", "tile_button_" + i.toString());
+		
+		if (tile.dataset.content != null)
+        {
+            const tileid = "tile_id_" + i.toString();
+            tile.id = tileid;
+            tile.addEventListener('click', e => { expand_tile(tileid.toString()); play_sound(2, 0.15); });
+            tile.addEventListener('mouseenter', e => { play_sound(0, 0.15); });
+        }
+    }
+
+    var initialId = "0";
+
+    var panel = document.getElementsByClassName("panel").item(0);
+    if (panel !== null && panel.hasAttribute("data-initialId"))
+    {
+        initialId = panel.getAttribute("data-initialId");
+        console.log(initialId);
+    }
+
+    setTimeout(function () { expand_tile("tile_id_" + initialId); }, 250);
+}
+
+function expand_tile(id)
+{
+    var element = document.getElementById(id);
+	
+	if (element === null)
+	{
+		return;
+	}
+	
+    var expandParent = document.getElementById('expandParent');
+
+    if (expandParent !== null)
+    {
+        expandParent.remove();
+    }
+
+    set_button_color(element, true);
+
+    switch (element.dataset.behavior)
+    {
+        case "local_document":
+            {
+                if (!try_update_previous_tile(id))
+                {
+                    return;
+                }
+
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'><iframe style='width:100%;height:100%' frameborder='0' id='tileFrame' src=''></iframe></div>");
+                document.getElementById('tileFrame').src = element.dataset.content;
+            }
+            break;
+			
+        case "local_image":
+            {
+                if (!try_update_previous_tile(id))
+                {
+                    return;
+                }
+
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='imageBC'><img src='" + element.dataset.content + "'/></div></div>");
+            }
+            break;
+			
+        case "local_video":
+            {
+                if (!try_update_previous_tile_video(id))
+                {
+                    return;
+                }
+
+                element.style.animationDuration = "0.0s";
+                var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
+                element.parentElement.replaceChild(newparent, element);
+                newparent.appendChild(element);
+                element.insertAdjacentHTML("afterend", "<div class='videoBC' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
+
+                var image = newparent.lastElementChild;
+                var video = newparent.lastElementChild.lastElementChild;
+                video.src = element.dataset.content;
+                video.addEventListener('loadeddata', function () { image.style.maxWidth = ''; }, false);
+            }
+            break;
+
+        case "local_video_embed":
+            {
+                if (!try_update_previous_tile_video(id))
+                {
+                    return;
+                }
+
+                element.style.animationDuration = "0.0s";
+                var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
+                element.parentElement.replaceChild(newparent, element);
+                newparent.appendChild(element);
+                element.insertAdjacentHTML("afterend", "<div class='videoBC'><iframe width='556' height='100%' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
+                newparent.lastElementChild.lastElementChild.src = element.dataset.content;
+            }
+            break;
+    }
+
+    var tileFrame = document.getElementById('tileFrame');
+
+    if (tileFrame != null)
+    {
+        var cscale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
+        var cscale_edge = getComputedStyle(document.documentElement).getPropertyValue('--cscale-edge');
+
+        tileFrame.addEventListener("load", function ()
+        {
+            this.contentWindow.document.documentElement.style.setProperty('--cscale', cscale);
+            this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', cscale_edge);
+        });
+    }
+
+    setTimeout(function () { scroll_element_to_top(element); }, 250)
+}
+
+function switch_panel(id)
 {
     if (id == previousButtonId)
     {
         return;
     }
 
-    playSound(1, 0.15);
+    play_sound(1, 0.15);
 
     var button = document.getElementById(id);
     var previousButton = document.getElementById(previousButtonId);
@@ -144,22 +337,14 @@ function switchPanel(id)
     button.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
     button.style.color = "var(--color-button-hollow-selected-fg)";
     inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
-	includeHTML(document.getElementById("include_target"), button.dataset.content);
-
-    updateScaling();
+	include_html(document.getElementById("include_target"), button.dataset.content, update_subpage);
 }
 
 function initialize()
 {
-    updateScaling();
+    udpate_scaling();
 
-    window.addEventListener('resize', function () { updateScaling(); });
-
-    document.getElementById('panelFrame').addEventListener("load", function ()
-    {
-        this.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
-        this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
-    });
+    window.addEventListener('resize', function () { udpate_scaling(); });
 
     var buttons = document.getElementsByClassName("pButton");
 
@@ -174,13 +359,13 @@ function initialize()
             button.style.color = "var(--color-button-hollow-default)";
             button.style.backgroundColor = "var(--color-button-hollow-default)";
 
-            button.addEventListener('click', e => { switchPanel(buttonid.toString()); });
-            button.addEventListener('mouseenter', e => { playSound(0, 0.15); });
-            bindButtonHover(button, "h3", i);
+            button.addEventListener('click', e => { switch_panel(buttonid.toString()); });
+            button.addEventListener('mouseenter', e => { play_sound(0, 0.15); });
+            bind_button_hover(button, "h3", "panel_button" + i.toString());
         }
     }
 
-    switchPanel("button_id_0");
+    switch_panel("button_id_0");
 }
 
 window.onload = initialize();

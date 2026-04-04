@@ -37,7 +37,8 @@ body.root
     flex-direction: column;
 
     position: absolute;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     vertical-align: top;
     margin-left: calc(2.5 * var(--cscale));
     margin-right: calc(2.5 * var(--cscale));
@@ -49,14 +50,19 @@ body.root
     user-select: none;
 }
 
-body.panel 
+body::-webkit-scrollbar 
 {
-    background-color: transparent;
+    background-color: var(--color-scrollbar);
+    width: 4px;
+}
 
-    overflow-x: hidden;
-    overflow-y: visible;
-    margin-top: 0px;
-    margin-left: 0px;
+body::-webkit-scrollbar-track
+{
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-color: var(--color-scrollbar-thumb);
 }
 
 body.tile 
@@ -73,21 +79,6 @@ body.tile
     padding: 0px;
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 	animation: ClipIn_Left_Tile_Box 0.5s 0.05s 1 normal forwards;
-}
-
-body::-webkit-scrollbar 
-{
-    background-color: var(--color-scrollbar);
-    width: 4px;
-}
-
-body::-webkit-scrollbar-track
-{
-}
-
-body::-webkit-scrollbar-thumb
-{
-    background-color: var(--color-scrollbar-thumb);
 }
 
 h1 
@@ -228,7 +219,6 @@ a
     color: var(--color-button-opaque-hover-fg) !important;
 }
 
-
 .panelParent
 {
     display:inline-grid;
@@ -244,6 +234,7 @@ a
     position: relative;
     display: table;
     height:100%;
+	padding-bottom:calc(3.0 * var(--cscale));
 }
 
 .tileExtended
