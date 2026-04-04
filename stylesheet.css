@@ -216,6 +216,12 @@ a
     color: var(--color-button-opaque-hover-fg) !important;
 }
 
+.divider
+{
+	height: var(--cscale-edge);
+	background-color: var(--color-button-opaque-default-bg);
+}
+
 .panelParent
 {
     display:inline-grid;
