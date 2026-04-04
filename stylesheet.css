@@ -227,7 +227,7 @@ a
     position: relative;
     display: table;
     height:100%;
-	padding-bottom:calc(1.5 * var(--cscale));
+	padding-bottom:calc(2.0 * var(--cscale));
 }
 
 .tileExtended
@@ -266,7 +266,6 @@ a
 .info 
 {
     color: var(--color-tile-fg);
-    background-color: var(--color-tile-bg);
 
     font-family: "Inter", sans-serif;
     font-size: calc(1 * var(--cscale));
