@@ -342,8 +342,7 @@ a
 	background-color: var(--color-button-opaque-default-bg);
     display:block;
     position: relative;
-    margin-right:4px;
-    margin-bottom:4px;
+    margin-bottom:var(--cscale-margin);
 	padding-top:var(--cscale-edge);
     top: 0px;
     right: 0px;
