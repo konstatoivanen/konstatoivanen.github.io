@@ -136,7 +136,7 @@ function initialize()
 
     window.addEventListener('resize', function () { updateScaling(); });
 
-    document.getElementById('panelFrame').addEventListener("DOMContentLoaded", function ()
+    document.getElementById('panelFrame').addEventListener("load", function ()
     {
 		this.height = this.contentWindow.document.body.scrollHeight;
         this.contentWindow.document.documentElement.style.setProperty('--cscale', currentScale + "px");
