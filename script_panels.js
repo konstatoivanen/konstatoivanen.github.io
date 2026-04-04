@@ -169,12 +169,12 @@ function try_update_previous_tile_video(newId)
 
     if (previousTile !== null)
     {
-        previousTile.parentElement.replaceWith(previousTile);
-        set_button_color(previousTile, false);
     }
 
     if (previousTileId === newId)
     {
+        previousTile.parentElement.replaceWith(previousTile);
+        set_button_color(previousTile, false);
         previousTileId = null;
         return false;
     }
@@ -225,92 +225,53 @@ function expand_tile(id)
 		return;
 	}
 	
-    var expandParent = document.getElementById('expandParent');
+    var expand_div = document.getElementById('expand_div');
 
-    if (expandParent !== null)
+    if (expand_div !== null)
     {
-        expandParent.remove();
+        expand_div.remove();
     }
 
     set_button_color(element, true);
 
+    setTimeout(function () { scroll_element_to_top(element); }, 250)
+
     switch (element.dataset.behavior)
     {
         case "local_document":
-            {
-                if (!try_update_previous_tile(id))
-                {
-                    return;
-                }
-
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tile_parent'></div>");
-				include_html(document.getElementById('expandParent'), element.dataset.content, null);
-            }
+			if (try_update_previous_tile(id))
+			{
+				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent'></div>");
+				include_html(document.getElementById('expand_div'), element.dataset.content, null);
+			}
             break;
 			
         case "local_image":
-            {
-                if (!try_update_previous_tile(id))
-                {
-                    return;
-                }
-
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
-            }
+			if (try_update_previous_tile(id))
+			{
+				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
+			}
             break;
 			
         case "local_video":
-            {
-                if (!try_update_previous_tile_video(id))
-                {
-                    return;
-                }
-
-                element.style.animationDuration = "0.0s";
-                var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
-                element.parentElement.replaceChild(newparent, element);
-                newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='video_right' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
-
-                var image = newparent.lastElementChild;
-                var video = newparent.lastElementChild.lastElementChild;
-                video.src = element.dataset.content;
-                video.addEventListener('loadeddata', function () { image.style.maxWidth = ''; }, false);
-            }
+			if (try_update_previous_tile(id))
+			{
+                element.insertAdjacentHTML("afterend", "<div id='expand_div' class='video_right'><video loop autoplay muted><source src='" + element.dataset.content + "'></video></div>");
+			}
             break;
 
         case "local_video_embed":
-            {
-                if (!try_update_previous_tile_video(id))
-                {
-                    return;
-                }
-
-                element.style.animationDuration = "0.0s";
+			if (try_update_previous_tile_video(id))
+			{
+				element.style.animationDuration = "0.0s";
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
                 element.insertAdjacentHTML("afterend", "<div class='video_right'><iframe width='556' height='100%' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
-            }
+			}
             break;
     }
-
-    var tileFrame = document.getElementById('tileFrame');
-
-    if (tileFrame != null)
-    {
-        var cscale = getComputedStyle(document.documentElement).getPropertyValue('--cscale');
-        var cscale_edge = getComputedStyle(document.documentElement).getPropertyValue('--cscale-edge');
-
-        tileFrame.addEventListener("load", function ()
-        {
-            this.contentWindow.document.documentElement.style.setProperty('--cscale', cscale);
-            this.contentWindow.document.documentElement.style.setProperty('--cscale-edge', cscale_edge);
-        });
-    }
-
-    setTimeout(function () { scroll_element_to_top(element); }, 250)
 }
 
 function switch_panel(id)

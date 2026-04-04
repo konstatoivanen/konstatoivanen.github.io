@@ -314,13 +314,10 @@ a
 
 .video_right 
 {
-	background-color: var(--color-button-opaque-default-bg);
+	background-color: transparent;
     display:block;
     position: relative;
     margin-bottom:var(--cscale-margin);
-	padding-top:var(--cscale-edge);
-    top: 0px;
-    right: 0px;
     width: 100%;
     max-height: calc(20 * var(--cscale));
     clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
@@ -332,7 +329,6 @@ video
 {
     clip-path: inherit;
     height:100%;
-	width:100%;
 	object-fit:cover;
 }
 
