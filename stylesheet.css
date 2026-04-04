@@ -32,14 +32,8 @@
 body.root
 {
     background-color: var(--color-background);
-
-    display: flex; 
-    flex-direction: column;
-
-    position: absolute;
     overflow-x: hidden;
     overflow-y: auto;
-    vertical-align: top;
     margin-left: calc(2.5 * var(--cscale));
     margin-right: calc(2.5 * var(--cscale));
     left: 0px;
@@ -224,7 +218,6 @@ a
     display:inline-grid;
     position:relative;
     width:100%;
-    flex-grow:1;
     top:var(--cscale-margin);
     overflow: hidden;
 }
@@ -234,7 +227,7 @@ a
     position: relative;
     display: table;
     height:100%;
-	padding-bottom:calc(3.0 * var(--cscale));
+	padding-bottom:calc(1.5 * var(--cscale));
 }
 
 .tileExtended
