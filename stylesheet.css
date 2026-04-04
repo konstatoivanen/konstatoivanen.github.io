@@ -318,6 +318,8 @@ a
 
 .imageBC
 {
+	background-color: var(--color-button-opaque-default-bg);
+	padding-top:var(--cscale-edge);
     position: relative;
     place-items:center;
     display:flex;
@@ -329,8 +331,6 @@ a
 
 .imageBC img 
 {
-	background-color: var(--color-button-opaque-default-bg);
-	padding-top:var(--cscale-edge);
     object-fit:fill;
     object-position:center;
     height: 100%;
