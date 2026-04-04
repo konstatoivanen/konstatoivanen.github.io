@@ -212,7 +212,6 @@ a
     position:relative;
     width:100%;
     top:var(--cscale-margin);
-    overflow: hidden;
 }
 
 .panel
@@ -220,7 +219,7 @@ a
     position: relative;
     display: table;
     height:100%;
-	padding-bottom:calc(2.0 * var(--cscale));
+	padding-bottom:calc(1.5 * var(--cscale));
 }
 
 .tile_parent
@@ -292,7 +291,7 @@ a
     clip-path: inherit;
 }
 
-.image_left
+.image_wide
 {
     position: relative;
     place-items:center;
@@ -303,13 +302,13 @@ a
 	animation: ClipIn_Left 0.3s 0.0s 1 normal forwards;
 }
 
-.image_left img 
+.image_wide img 
 {
 	background-color: var(--color-button-opaque-default-bg);
 	padding-top:var(--cscale-edge);
-    object-fit:fill;
+    object-fit:cover;
     object-position:center;
-    height: 100%;
+    width: 100%;
     clip-path:inherit;
 }
 

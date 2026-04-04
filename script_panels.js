@@ -18,7 +18,7 @@ function scroll_element_to_top(element)
 
     if (panel.clientHeight < panel.scrollHeight)
     {
-        element.scrollIntoView({ alignToTop: 'true', container: panel, behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ alignToTop: 'true', behavior: 'smooth', block: 'start' });
     }
 }
 
@@ -255,7 +255,7 @@ function expand_tile(id)
                     return;
                 }
 
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_left'><img src='" + element.dataset.content + "'/></div></div>");
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
             }
             break;
 			
