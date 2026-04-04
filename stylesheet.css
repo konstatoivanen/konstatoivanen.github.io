@@ -80,7 +80,7 @@ h1
     color: var(--color-header);
 
     font-family: republic;
-    font-size: max(24px, 6.0vmin);
+    font-size: max(38px, 5.0vmin);
     margin-bottom: 0px;
     margin-top: calc(1.5 * var(--cscale));
     letter-spacing: min(-2px, -0.25vmin);
@@ -124,12 +124,15 @@ p
 
     font-family: "Inter", sans-serif;
     font-size: max(12px, 1.75vmin);
-	letter-spacing: calc(-0.025 * var(--cscale));
+	letter-spacing: min(-0.5px, -0.05vmin);
 
     white-space: nowrap;
+	
+	position:relative;
     height: 100%;
     margin: 0%;
     margin-left:2px;
+	top: -0.25em;
 }
 
 p2 
