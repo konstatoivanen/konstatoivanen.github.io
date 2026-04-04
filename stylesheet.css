@@ -59,22 +59,6 @@ body::-webkit-scrollbar-thumb
     background-color: var(--color-scrollbar-thumb);
 }
 
-body.tile 
-{
-    background-color: var(--color-button-opaque-default-bg);
-    display: block;
-    position:relative;
-
-    overflow: hidden;
-    margin: 0px;
-    width: 100%;
-    height: 100%;  
-    margin:  0px;
-    padding: 0px;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-	animation: ClipIn_Left_Tile_Box 0.5s 0.05s 1 normal forwards;
-}
-
 h1 
 {
     color: var(--color-header);
@@ -154,7 +138,7 @@ a
     color:  var(--color-link);
 }
 
-.pButton
+.panel_button
 {
     color: var(--color-button-hollow-default);
     background-color: var(--color-button-hollow-default);
@@ -173,13 +157,13 @@ a
     clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 }
 
-.pButton:hover
+.panel_button:hover
 {
     margin-top:0%;
     height: calc(2.5 * var(--cscale));
 }
 
-.pButtonInside
+.panel_button_inside
 {
     color: inherit;
     background-color: var(--color-background);
@@ -193,7 +177,7 @@ a
     clip-path: polygon(91% 0, 96% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 }
 
-.tileButton 
+.tile_button 
 {
     color: var(--color-button-opaque-default-fg);
     background-color: var(--color-button-opaque-default-bg);
@@ -210,7 +194,7 @@ a
 	animation: ClipIn_Left_TileButton 0.3s 0.0s 1 normal forwards;
 }
 
-.tileButton:hover 
+.tile_button:hover 
 {
     background-color: var(--color-button-opaque-hover-bg) !important;
     color: var(--color-button-opaque-hover-fg) !important;
@@ -222,7 +206,7 @@ a
 	background-color: var(--color-button-opaque-default-bg);
 }
 
-.panelParent
+.panel_parent
 {
     display:inline-grid;
     position:relative;
@@ -239,7 +223,7 @@ a
 	padding-bottom:calc(2.0 * var(--cscale));
 }
 
-.tileExtended
+.tile_parent
 {
     background-color: transparent;
 
@@ -254,7 +238,7 @@ a
 	animation: ClipIn_Left_TileExtended 0.5s 0.05s 1 normal forwards;
 }
 
-.tileAInside
+.tile
 {
     color: var(--color-tile-fg);
     background-color: var(--color-tile-bg);
@@ -291,13 +275,13 @@ a
     animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
 }
 
-.infoGrid 
+.info_grid
 {
   display: grid;
   grid-template-columns: auto auto;
 }
 
-.imageTR 
+.image_tile_right 
 {
 	background-color: var(--color-button-hollow-default);
     float:right;
@@ -308,7 +292,7 @@ a
     clip-path: inherit;
 }
 
-.imageBC
+.image_left
 {
     position: relative;
     place-items:center;
@@ -319,7 +303,7 @@ a
 	animation: ClipIn_Left 0.3s 0.0s 1 normal forwards;
 }
 
-.imageBC img 
+.image_left img 
 {
 	background-color: var(--color-button-opaque-default-bg);
 	padding-top:var(--cscale-edge);
@@ -329,7 +313,7 @@ a
     clip-path:inherit;
 }
 
-.videoBC 
+.video_right 
 {
 	background-color: var(--color-button-opaque-default-bg);
     display:block;

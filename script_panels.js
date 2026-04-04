@@ -188,7 +188,7 @@ function update_subpage()
 	previousTileId = null;
 	
 	// Bind buttons now in dom.
-    var tiles = document.getElementsByClassName("tileButton");
+    var tiles = document.getElementsByClassName("tile_button");
 
     for (var i = 0; i < tiles.length; i++)
     {
@@ -243,7 +243,7 @@ function expand_tile(id)
                     return;
                 }
 
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended'></div>");
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tile_parent'></div>");
 				include_html(document.getElementById('expandParent'), element.dataset.content, null);
             }
             break;
@@ -255,7 +255,7 @@ function expand_tile(id)
                     return;
                 }
 
-                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tileExtended' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='imageBC'><img src='" + element.dataset.content + "'/></div></div>");
+                element.insertAdjacentHTML("afterend", "<div id='expandParent' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_left'><img src='" + element.dataset.content + "'/></div></div>");
             }
             break;
 			
@@ -270,7 +270,7 @@ function expand_tile(id)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='videoBC' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
+                element.insertAdjacentHTML("afterend", "<div class='video_right' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
 
                 var image = newparent.lastElementChild;
                 var video = newparent.lastElementChild.lastElementChild;
@@ -290,7 +290,7 @@ function expand_tile(id)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='videoBC'><iframe width='556' height='100%' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
+                element.insertAdjacentHTML("afterend", "<div class='video_right'><iframe width='556' height='100%' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
             }
             break;
@@ -327,7 +327,7 @@ function switch_panel(id)
 
     if (previousButton !== null)
     {
-        var previousInside = previousButton.getElementsByClassName("pButtonInside").item(0);
+        var previousInside = previousButton.getElementsByClassName("panel_button_inside").item(0);
         previousButton.style.backgroundColor = "var(--color-button-hollow-default)";
         previousButton.style.color = "var(--color-button-hollow-default)";
         previousInside.style.backgroundColor = "var(--color-background)";
@@ -335,7 +335,7 @@ function switch_panel(id)
 
     previousButtonId = id;
 
-    var inside = button.getElementsByClassName("pButtonInside").item(0);
+    var inside = button.getElementsByClassName("panel_button_inside").item(0);
     button.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
     button.style.color = "var(--color-button-hollow-selected-fg)";
     inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
@@ -348,7 +348,7 @@ function initialize()
 
     window.addEventListener('resize', function () { udpate_scaling(); });
 
-    var buttons = document.getElementsByClassName("pButton");
+    var buttons = document.getElementsByClassName("panel_button");
 
     for (var i = 0; i < buttons .length; i++)
     {
