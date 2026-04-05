@@ -117,16 +117,32 @@ p
 
 p2 
 {
-    color: var(--color-tile-text);
+    color: var(--color-tile-fg);
 
     font-family: "Inter", sans-serif;
-    font-size: var(--cscale);
-	letter-spacing: calc(-0.025 * var(--cscale));
-    line-height: calc(1.5 * var(--cscale));
-    position: absolute;
-    top: calc(2 * var(--cscale));
-    left: calc(2.5 * var(--cscale));
-    max-width: calc(50% - 5.0 * var(--cscale));
+    font-size: calc(max(14px, var(--cscale)));
+	line-height: calc(max(21px, 1.5 * var(--cscale)));
+	letter-spacing: calc(min(-0.3px, -0.025 * var(--cscale)));
+}
+
+p2.proj
+{
+	position: absolute;
+	top: calc(2 * var(--cscale));
+	left: calc(2.5 * var(--cscale));
+	max-width: calc(50% - 5.0 * var(--cscale));
+}
+
+p2.info 
+{
+    position: relative;
+    height: 0px;
+    padding-left: calc(1.5 * var(--cscale));
+    padding-right: calc(2.5 * var(--cscale));
+    padding-top:calc(1.5 * var(--cscale));
+    margin-bottom:calc(4.5 * var(--cscale));
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
 }
 
 a 
@@ -137,6 +153,11 @@ a
 span
 {
 	color:var(--color-paragraph);
+}
+
+span.dark
+{
+	color:var(--color-button-opaque-default-bg);
 }
 
 video
@@ -152,11 +173,6 @@ object
     height: 100%;
     min-height: inherit;
     overflow: hidden;
-}
-
-.dark
-{
-	color:var(--color-button-opaque-default-bg);
 }
 
 .divider
@@ -274,25 +290,6 @@ object
 
     clip-path: inherit;
 	animation: inherit;
-}
-
-.info 
-{
-    color: var(--color-tile-fg);
-
-    font-family: "Inter", sans-serif;
-    font-size: calc(max(14px, 1.0 * var(--cscale)));
-    line-height: calc(max(21px, 1.5 * var(--cscale)));
-	letter-spacing: calc(min(-0.3px, -0.025 * var(--cscale)));
-
-    position: relative;
-    height: 0px;
-    padding-left: calc(1.5 * var(--cscale));
-    padding-right: calc(2.5 * var(--cscale));
-    padding-top:calc(1.5 * var(--cscale));
-    margin-bottom:calc(4.5 * var(--cscale));
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
 }
 
 .info_grid
