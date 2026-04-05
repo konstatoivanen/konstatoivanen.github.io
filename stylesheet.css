@@ -133,18 +133,6 @@ p2.proj
 	max-width: calc(50% - 5.0 * var(--cscale));
 }
 
-p2.info 
-{
-    position: relative;
-    height: 0px;
-    padding-left: calc(1.5 * var(--cscale));
-    padding-right: calc(2.5 * var(--cscale));
-    padding-top:calc(1.5 * var(--cscale));
-    margin-bottom:calc(4.5 * var(--cscale));
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
-}
-
 a 
 {
     color:  var(--color-link);
@@ -290,6 +278,18 @@ object
 
     clip-path: inherit;
 	animation: inherit;
+}
+
+.info 
+{
+    position: relative;
+    height: 0px;
+    padding-left: calc(1.5 * var(--cscale));
+    padding-right: calc(2.5 * var(--cscale));
+    padding-top:calc(1.5 * var(--cscale));
+    margin-bottom:calc(4.5 * var(--cscale));
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: ClipIn_Left_Info 0.5s 0.25s 1 normal forwards;
 }
 
 .info_grid
