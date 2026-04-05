@@ -169,16 +169,20 @@ function try_update_previous_tile_video(newId)
 
     if (previousTile !== null)
     {
+		set_button_color(previousTile, false);
     }
+	
+	var element = document.getElementById(newId);
 
-    if (previousTileId === newId)
-    {
-        previousTile.parentElement.replaceWith(previousTile);
-        set_button_color(previousTile, false);
-        previousTileId = null;
-        return false;
-    }
+	if (element !== null && element.hasAttribute("data-expanded"))
+	{
+		element.parentElement.replaceWith(element);
+		element.removeAttribute("data-expanded");
+		set_button_color(element, false);
+		return false;
+	}
 
+	element.setAttribute("data-expanded",true);
     previousTileId = newId;
     return true;
 }
@@ -254,9 +258,18 @@ function expand_tile(id)
             break;
 			
         case "local_video":
-			if (try_update_previous_tile(id))
+			if (try_update_previous_tile_video(id))
 			{
-                element.insertAdjacentHTML("afterend", "<div id='expand_div' class='video_right'><video loop autoplay muted><source src='" + element.dataset.content + "'></video></div>");
+                element.style.animationDuration = "0.0s";
+                var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
+                element.parentElement.replaceChild(newparent, element);
+                newparent.appendChild(element);
+                element.insertAdjacentHTML("afterend", "<div class='video_right' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
+
+                var image = newparent.lastElementChild;
+                var video = newparent.lastElementChild.lastElementChild;
+                video.src = element.dataset.content;
+                video.addEventListener('loadeddata', function () { image.style.maxWidth = ''; }, false);
 			}
             break;
 
