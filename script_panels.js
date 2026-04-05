@@ -219,7 +219,7 @@ function update_subpage()
         {
             const tileid = "tile_id_" + i.toString();
             tile.id = tileid;
-            tile.addEventListener('click', e => { expand_tile(tileid.toString()); play_sound(2, 0.15); });
+            tile.addEventListener('click', e => { expand_tile(tileid.toString(), true); play_sound(2, 0.15); });
             tile.addEventListener('mouseenter', e => { play_sound(0, 0.15); });
         }
     }
@@ -234,7 +234,7 @@ function update_subpage()
         console.log(initialId);
     }
 	
-    setTimeout(function () { expand_tile("tile_id_" + initialId); }, 250);
+    setTimeout(function () { expand_tile("tile_id_" + initialId, true); }, 250);
 	
 	if (panel != null && panel.hasAttribute("data-unfold"))
 	{	
@@ -243,13 +243,13 @@ function update_subpage()
 			if (tiles.item(i).dataset.content != null)
 			{
 				const tileid = tiles.item(i).id;
-				tiles.item(i).dataset.tweenTimeoutHandle = setTimeout(function () { expand_tile(tileid.toString()); }, 350 * (i + 1));
+				tiles.item(i).dataset.tweenTimeoutHandle = setTimeout(function () { expand_tile(tileid.toString(), false); }, 350 * (i + 1));
 			}
 		}
 	}
 }
 
-function expand_tile(id)
+function expand_tile(id, do_focus)
 {
     var element = document.getElementById(id);
 	
@@ -269,7 +269,6 @@ function expand_tile(id)
 
 	element.dataset.tweenTimeoutHandle = null;
 
-	setTimeout(function () { scroll_element_to_top(element); }, 250);
 	
     switch (element.dataset.behavior)
     {
@@ -278,15 +277,17 @@ function expand_tile(id)
 			{
 				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent'></div>");
 				include_html(document.getElementById('expand_div'), element.dataset.content, null);
+				break;
 			}
-            break;
+            return;
 			
         case "local_image":
 			if (try_update_previous_tile(id))
 			{
 				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
+				break;
 			}
-            break;
+            return;
 			
         case "local_video":
 			if (try_update_previous_tile_video(id))
@@ -301,8 +302,9 @@ function expand_tile(id)
                 var video = newparent.lastElementChild.lastElementChild;
                 video.src = element.dataset.content;
                 video.addEventListener('loadeddata', function () { image.style.maxWidth = ''; }, false);
+				break;
 			}
-            break;
+            return;
 
         case "local_video_embed":
 			if (try_update_previous_tile_video(id))
@@ -313,9 +315,15 @@ function expand_tile(id)
                 newparent.appendChild(element);
                 element.insertAdjacentHTML("afterend", "<div class='video_right' style='width:calc(16 * var(--cscale) + var(--cscale-margin))'><iframe width='100%' height='100%' src='' frameborder='0' gesture='media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
+				break;
 			}
-            break;
+            return;
     }
+	
+	if (do_focus)
+	{
+		setTimeout(function () { scroll_element_to_top(element); }, 250);
+	}
 }
 
 function switch_panel(id)
