@@ -124,7 +124,7 @@ p2
 
     font-family: "Inter", sans-serif;
     font-size: calc(max(14px, var(--cscale)));
-	line-height: calc(max(21px, 1.5 * var(--cscale)));
+	line-height: calc(max(14px, 1.5 * var(--cscale)));
 	letter-spacing: calc(min(-0.3px, -0.025 * var(--cscale)));
 }
 
@@ -140,6 +140,7 @@ p2.proj_cover
 {
 	position: absolute;
 	z-index: 1;
+	text-shadow:0px 0px 24px var(--color-background);
 	top: calc(1.5 * var(--cscale));
 	left: calc(1.5 * var(--cscale));
 	right: calc(1.5 * var(--cscale));
