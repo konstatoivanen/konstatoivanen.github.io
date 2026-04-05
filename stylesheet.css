@@ -134,6 +134,37 @@ a
     color:  var(--color-link);
 }
 
+span
+{
+	color:var(--color-paragraph);
+}
+
+video
+{
+    clip-path: inherit;
+    height:100%;
+	object-fit:cover;
+}
+
+object 
+{
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    overflow: hidden;
+}
+
+.dark
+{
+	color:var(--color-button-opaque-default-bg);
+}
+
+.divider
+{
+	height: var(--cscale-edge);
+	background-color: var(--color-button-opaque-default-bg);
+}
+
 .panel_button
 {
     color: var(--color-button-hollow-default);
@@ -196,12 +227,6 @@ a
     color: var(--color-button-opaque-hover-fg) !important;
 }
 
-.divider
-{
-	height: var(--cscale-edge);
-	background-color: var(--color-button-opaque-default-bg);
-}
-
 .panel_parent
 {
     display:inline-grid;
@@ -256,9 +281,9 @@ a
     color: var(--color-tile-fg);
 
     font-family: "Inter", sans-serif;
-    font-size: calc(1 * var(--cscale));
-    line-height: calc(1.5 * var(--cscale));
-	letter-spacing: calc(-0.025 * var(--cscale));
+    font-size: calc(max(14px, 1.0 * var(--cscale)));
+    line-height: calc(max(21px, 1.5 * var(--cscale)));
+	letter-spacing: calc(min(-0.3px, -0.025 * var(--cscale)));
 
     position: relative;
     height: 0px;
@@ -320,23 +345,6 @@ a
     clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
     animation: ClipIn_Left_TileExtended 0.5s 0.0s 1 normal forwards;
 }
-
-
-video
-{
-    clip-path: inherit;
-    height:100%;
-	object-fit:cover;
-}
-
-object 
-{
-    width: 100%;
-    height: 100%;
-    min-height: inherit;
-    overflow: hidden;
-}
-
 
 @keyframes Blinking
 { 
