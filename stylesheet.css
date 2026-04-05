@@ -123,8 +123,8 @@ p2
     color: var(--color-tile-fg);
 
     font-family: "Inter", sans-serif;
-    font-size: calc(max(14px, var(--cscale)));
-	line-height: calc(max(14px, 1.5 * var(--cscale)));
+    font-size: calc(max(14px, 1.0 * var(--cscale)));
+	line-height: calc(max(14px, 1.0 * var(--cscale)));
 	letter-spacing: calc(min(-0.3px, -0.025 * var(--cscale)));
 }
 
@@ -340,6 +340,7 @@ object
 {
   display: grid;
   grid-template-columns: auto auto;
+  line-height:calc(max(21px, 1.5 * var(--cscale)));
 }
 
 .image_tile_right 
