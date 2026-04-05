@@ -29,6 +29,7 @@
     --cscale-edge: calc(max(1px,0.12 * var(--cscale)));
 	--cscale-body-width: 100wv;
 	--cscale-left-pad: calc(1.5 * var(--cscale));
+	--cscale-tile-height: calc(30 * var(--cscale));
 }
 
 body.root
@@ -255,8 +256,6 @@ object
     display: block;
     position:relative;
     width: calc(min(99%, 5 * (16 * var(--cscale) + 2 * var(--cscale-margin)) - var(--cscale-margin)));
-    max-height:44vw;
-    height: 0px;
     margin-bottom:calc(0.25 * var(--cscale));
 
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -366,10 +365,10 @@ object
 
 @keyframes ClipIn_Left_TileExtended 
 { 
-    0%   {height:0px;                      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    40%  {height:calc(20 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    60%  {height:calc(20 * var(--cscale)); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
-    100% {height:calc(20 * var(--cscale)); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
+    0%   {height:0px;                       clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    40%  {height:var(--cscale-tile-height); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    60%  {height:var(--cscale-tile-height); clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);} 
+    100% {height:var(--cscale-tile-height); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);} 
 }
 
 @keyframes ClipIn_Left_TileExtendedTall
@@ -396,6 +395,6 @@ object
 @keyframes ClipIn_Left_TileButton 
 {  
     0%   {clip-path: polygon(0 0,  0 20%,  0 20%,  0 100%, 0 100%, 0 0);} 
-    25%   {clip-path: polygon(0 0,  0 20%,  0 20%,  0 100%, 0 100%, 0 0);} 
+    25%  {clip-path: polygon(0 0,  0 20%,  0 20%,  0 100%, 0 100%, 0 0);} 
     100% {clip-path: polygon(90% 0, 95% 20%, 100% 20%, 100% 100%, 0 100%, 0 0);} 
 }
