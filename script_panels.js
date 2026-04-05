@@ -1,7 +1,5 @@
 var previousButtonId = "";
 var previousTileId = "";
-var currentScale = 0;
-var currentScaleEdge = 0;
 var audioClips = null;
 var playAudio = false;
 
@@ -118,8 +116,9 @@ function play_sound(index, vol)
 
 function udpate_scaling()
 {
-    var vw = window.innerWidth / 100;
-    var vh = window.innerHeight / 100;
+	// Mobile does some zooming thing that yields bad values.
+    var vw = Math.min(window.outerWidth, window.innerWidth) / 100;
+    var vh = Math.min(window.outerHeight, window.innerHeight) / 100;
 
     var maxAspectW = 2.0;
     var maxAspectH = 1.6;
@@ -128,11 +127,13 @@ function udpate_scaling()
 
     var length = Math.sqrt(vwClamped * vwClamped + vhClamped * vhClamped);
 
-    currentScale = Math.max(8, length);
-	currentScaleEdge = Math.max(1.0, Math.floor(0.12 * currentScale));
+    var scale = Math.max(8, length);
+	var scale_edge = Math.max(1.0, Math.floor(0.12 * scale));
+	var body_width = Math.min(vw, Math.max(vwClamped, 8)) * 100;
 	
-    document.documentElement.style.setProperty('--cscale', currentScale + "px");
-    document.documentElement.style.setProperty('--cscale-edge', currentScaleEdge + "px");
+    document.documentElement.style.setProperty('--cscale', scale + "px");
+    document.documentElement.style.setProperty('--cscale-edge', scale_edge + "px");
+    document.documentElement.style.setProperty('--cscale-body-width', body_width + "px");
 }
 
 function bind_button_hover(button, tag, id)
@@ -205,6 +206,8 @@ function cancel_tile_tweens()
 
 function update_subpage()
 {
+	udpate_scaling();
+	
 	previousTileId = null;
 	
 	// Bind buttons now in dom.
@@ -361,8 +364,6 @@ function initialize()
 {
     udpate_scaling();
 
-    window.addEventListener('resize', function () { udpate_scaling(); });
-
     var buttons = document.getElementsByClassName("panel_button");
 
     for (var i = 0; i < buttons .length; i++)
@@ -385,4 +386,5 @@ function initialize()
     switch_panel("button_id_0");
 }
 
-window.onload = initialize();
+window.onload = initialize;
+window.onresize = udpate_scaling;
