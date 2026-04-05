@@ -289,7 +289,7 @@ function expand_tile(id, do_focus)
         case "local_image":
 			if (try_update_previous_tile(id))
 			{
-				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_TileExtendedTall'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
+				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_Img'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
 				break;
 			}
             return;
