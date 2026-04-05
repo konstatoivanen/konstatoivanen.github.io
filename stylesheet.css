@@ -136,6 +136,15 @@ p2.proj
 	right: calc(50% + 1.0 * var(--cscale));
 }
 
+p2.proj_cover
+{
+	position: absolute;
+	z-index: 1;
+	top: calc(1.5 * var(--cscale));
+	left: calc(1.5 * var(--cscale));
+	right: calc(1.5 * var(--cscale));
+}
+
 a 
 {
     color:  var(--color-link);
@@ -155,6 +164,7 @@ video
 {
     clip-path: inherit;
     height:100%;
+    width:100%;
 	object-fit:cover;
 }
 
@@ -281,6 +291,39 @@ object
 	animation: inherit;
 }
 
+.tile_video 
+{
+	background-color: transparent;
+    display:block;
+    position: relative;
+    margin-bottom:var(--cscale-margin);
+    margin-right:var(--cscale-margin);
+    width: 100%;
+    max-height: calc(20 * var(--cscale));
+    clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
+    animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
+}
+
+.tile_image
+{
+    position: relative;
+    place-items:center;
+    display:flex;
+    height:100%;
+    width:100%;
+}
+
+.tile_image img 
+{
+	background-color: var(--color-button-opaque-default-bg);
+	padding-top:var(--cscale-edge);
+	width: 100%;
+	height: 100%;
+    object-fit:cover;
+    object-position:center;
+    clip-path:inherit;
+}
+
 .info 
 {
     position: relative;
@@ -305,41 +348,16 @@ object
     position: sticky;
     height: 100%;
     max-width: 50%;
-	/*padding-left: var(--cscale-edge);*/
     clip-path: inherit;
 }
 
-.image_wide
+.image_tile_cover
 {
-    position: relative;
-    place-items:center;
-    display:flex;
-    height:100%;
-    width:100%;
-}
-
-.image_wide img 
-{
-	background-color: var(--color-button-opaque-default-bg);
-	padding-top:var(--cscale-edge);
-	width: 100%;
-	height: 100%;
-    object-fit:cover;
-    object-position:center;
-    clip-path:inherit;
-}
-
-.video_right 
-{
-	background-color: transparent;
-    display:block;
-    position: relative;
-    margin-bottom:var(--cscale-margin);
-    margin-right:var(--cscale-margin);
+	background-color: var(--color-button-hollow-default);
+    position: initial;
+    height: 100%;
     width: 100%;
-    max-height: calc(20 * var(--cscale));
-    clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
-    animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
+    clip-path: inherit;
 }
 
 @keyframes ClipIn_Left_Info 

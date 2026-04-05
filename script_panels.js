@@ -289,7 +289,7 @@ function expand_tile(id, do_focus)
         case "local_image":
 			if (try_update_previous_tile(id))
 			{
-				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_Img'><div class='image_wide'><img src='" + element.dataset.content + "'/></div></div>");
+				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_Img'><div class='tile_image'><img src='" + element.dataset.content + "'/></div></div>");
 				break;
 			}
             return;
@@ -301,7 +301,7 @@ function expand_tile(id, do_focus)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='video_right' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
+                element.insertAdjacentHTML("afterend", "<div class='tile_video' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
 
                 var image = newparent.lastElementChild;
                 var video = newparent.lastElementChild.lastElementChild;
@@ -318,7 +318,7 @@ function expand_tile(id, do_focus)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='video_right' style='width:calc(16 * var(--cscale) + var(--cscale-margin))'><iframe width='100%' height='100%' src='' frameborder='0' gesture='media'></iframe></div>");
+                element.insertAdjacentHTML("afterend", "<div class='tile_video' style='width:calc(16 * var(--cscale) + var(--cscale-margin))'><iframe width='100%' height='100%' src='' frameborder='0' gesture='media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
 				break;
 			}
