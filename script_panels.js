@@ -234,20 +234,18 @@ function update_subpage()
         console.log(initialId);
     }
 	
+    setTimeout(function () { expand_tile("tile_id_" + initialId); }, 250);
+	
 	if (panel != null && panel.hasAttribute("data-unfold"))
 	{	
-		for (var i = tiles.length - 1; i >= 0; i--)
+		for (var i = 1; i < tiles.length; i++)
 		{			
 			if (tiles.item(i).dataset.content != null)
 			{
 				const tileid = tiles.item(i).id;
-				tiles.item(i).dataset.tweenTimeoutHandle = setTimeout(function () { expand_tile(tileid.toString()); }, 250 * (tiles.length - i));
+				tiles.item(i).dataset.tweenTimeoutHandle = setTimeout(function () { expand_tile(tileid.toString()); }, 350 * (i + 1));
 			}
 		}
-	}
-	else
-	{
-		setTimeout(function () { expand_tile("tile_id_" + initialId); }, 350);
 	}
 }
 
@@ -271,7 +269,7 @@ function expand_tile(id)
 
 	element.dataset.tweenTimeoutHandle = null;
 
-	//setTimeout(function () { scroll_element_to_top(element); }, 250);
+	setTimeout(function () { scroll_element_to_top(element); }, 250);
 	
     switch (element.dataset.behavior)
     {
