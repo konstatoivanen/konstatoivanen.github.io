@@ -247,7 +247,7 @@ function update_subpage()
 	}
 	else
 	{
-		setTimeout(function () { expand_tile("tile_id_" + initialId); }, 250);
+		setTimeout(function () { expand_tile("tile_id_" + initialId); }, 350);
 	}
 }
 
@@ -271,7 +271,7 @@ function expand_tile(id)
 
 	element.dataset.tweenTimeoutHandle = null;
 
-	setTimeout(function () { scroll_element_to_top(element); }, 250);
+	//setTimeout(function () { scroll_element_to_top(element); }, 250);
 	
     switch (element.dataset.behavior)
     {
