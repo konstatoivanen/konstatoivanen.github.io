@@ -130,10 +130,12 @@ function udpate_scaling()
     var scale = Math.max(8, length);
 	var scale_edge = Math.max(1.0, Math.floor(0.12 * scale));
 	var body_width = Math.min(vw, Math.max(vwClamped, 8)) * 100;
+	var text_pad = vw > vh ? scale * 1.5 : 0;
 	
     document.documentElement.style.setProperty('--cscale', scale + "px");
     document.documentElement.style.setProperty('--cscale-edge', scale_edge + "px");
     document.documentElement.style.setProperty('--cscale-body-width', body_width + "px");
+    document.documentElement.style.setProperty('--cscale-text-pad', text_pad + "px");
 }
 
 function bind_button_hover(button, tag, id)

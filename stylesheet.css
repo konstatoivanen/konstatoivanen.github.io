@@ -28,6 +28,7 @@
     --cscale-margin: calc(max(1px,0.25 * var(--cscale)));
     --cscale-edge: calc(max(1px,0.12 * var(--cscale)));
 	--cscale-body-width: 100wv;
+	--cscale-left-pad: calc(1.5 * var(--cscale));
 }
 
 body.root
@@ -128,9 +129,9 @@ p2
 p2.proj
 {
 	position: absolute;
-	top: calc(2 * var(--cscale));
-	left: calc(2.5 * var(--cscale));
-	max-width: calc(50% - 5.0 * var(--cscale));
+	top: calc(1.5 * var(--cscale));
+	left: var(--cscale-text-pad);
+	right: calc(50% + 1.0 * var(--cscale));
 }
 
 a 
@@ -284,8 +285,7 @@ object
 {
     position: relative;
     height: 0px;
-    padding-left: calc(1.5 * var(--cscale));
-    padding-right: calc(2.5 * var(--cscale));
+    padding-left: var(--cscale-text-pad);
     padding-top:calc(1.5 * var(--cscale));
     margin-bottom:calc(4.5 * var(--cscale));
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
