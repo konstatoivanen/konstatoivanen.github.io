@@ -187,6 +187,22 @@ function try_update_previous_tile_video(newId)
     return true;
 }
 
+function cancel_tile_tweens()
+{
+	var tiles = document.getElementsByClassName("tile_button");
+
+    for (var i = 0; i < tiles.length; i++)
+    {
+        var tile = tiles.item(i);
+		
+		if (tiles.item(i).dataset.tweenTimeoutHandle != null)
+        {
+			clearTimeout(tiles.item(i).dataset.tweenTimeoutHandle);
+			tiles.item(i).dataset.tweenTimeoutHandle = null;
+        }
+    }
+}
+
 function update_subpage()
 {
 	previousTileId = null;
@@ -211,13 +227,26 @@ function update_subpage()
     var initialId = "0";
 
     var panel = document.getElementsByClassName("panel").item(0);
+	
     if (panel !== null && panel.hasAttribute("data-initialId"))
     {
         initialId = panel.getAttribute("data-initialId");
         console.log(initialId);
     }
-
+	
     setTimeout(function () { expand_tile("tile_id_" + initialId); }, 250);
+	
+	if (panel != null && panel.hasAttribute("data-unfold"))
+	{	
+		for (var i = 1; i < tiles.length; i++)
+		{			
+			if (tiles.item(i).dataset.content != null)
+			{
+				const tileid = tiles.item(i).id;
+				tiles.item(i).dataset.tweenTimeoutHandle = setTimeout(function () { expand_tile(tileid.toString()); }, 350 * (i + 1));
+			}
+		}
+	}
 }
 
 function expand_tile(id)
@@ -238,8 +267,10 @@ function expand_tile(id)
 
     set_button_color(element, true);
 
-    setTimeout(function () { scroll_element_to_top(element); }, 250)
+	element.dataset.tweenTimeoutHandle = null;
 
+	setTimeout(function () { scroll_element_to_top(element); }, 250);
+	
     switch (element.dataset.behavior)
     {
         case "local_document":
@@ -280,7 +311,7 @@ function expand_tile(id)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='video_right'><iframe width='556' height='100%' src='' frameborder='0' gesture='media' allow='encrypted-media'></iframe></div>");
+                element.insertAdjacentHTML("afterend", "<div class='video_right' style='width:calc(16 * var(--cscale) + var(--cscale-margin))'><iframe width='100%' height='100%' src='' frameborder='0' gesture='media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
 			}
             break;
@@ -293,8 +324,10 @@ function switch_panel(id)
     {
         return;
     }
-
+	
     play_sound(1, 0.15);
+
+	cancel_tile_tweens();
 
     var button = document.getElementById(id);
     var previousButton = document.getElementById(previousButtonId);
