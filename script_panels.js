@@ -130,12 +130,14 @@ function udpate_scaling()
     var scale = Math.max(8, length);
 	var scale_edge = Math.max(1.0, Math.floor(0.12 * scale));
 	var body_width = Math.min(vw, Math.max(vwClamped, 8)) * 100;
-	var scale_no_mobile = vw > vh ? scale : 0;
+	var is_mobile = vw <= vh ? 1 : 0;
+	var is_desktop = vw > vh ? 1 : 0;
 	
     document.documentElement.style.setProperty('--cscale', scale + "px");
     document.documentElement.style.setProperty('--cscale-edge', scale_edge + "px");
     document.documentElement.style.setProperty('--cscale-body-width', body_width + "px");
-    document.documentElement.style.setProperty('--cscale-no-mobile', scale_no_mobile + "px");
+    document.documentElement.style.setProperty('--is-mobile', is_mobile);
+    document.documentElement.style.setProperty('--is-desktop', is_desktop);
 }
 
 function bind_button_hover(button, tag, id)

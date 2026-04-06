@@ -24,11 +24,13 @@
     --color-scrollbar: #FD30A7;
     --color-scrollbar-thumb: #0E0E0F;
     --color-link: #FD30A7;
+	--is-mobile: 0;
+    --is-desktop: 1;
     --cscale: max(8px, min(1vw, 2vmin));
     --cscale-margin: calc(max(1px,0.25 * var(--cscale)));
     --cscale-edge: calc(max(1px,0.12 * var(--cscale)));
 	--cscale-body-width: 100wv;
-	--cscale-no-mobile: var(--cscale);
+	--cscale-no-mobile: cacl(var(--is-desktop) * var(--cscale));
 	--cscale-tile-height: calc(max(320px, 20 * var(--cscale)));
 	--cscale-img-height: calc(max(320px, 30 * var(--cscale)));
 	--cscale-button-height: max(32px, calc(2.0 * var(--cscale)));
@@ -131,18 +133,12 @@ p2
 p2.proj
 {
 	position: absolute;
-	top: calc(1.5 * var(--cscale));
-	left: calc(1.5 * var(--cscale-no-mobile));
-	right: calc(50% + 1.0 * var(--cscale));
-}
-
-p2.proj_cover
-{
-	position: absolute;
 	z-index: 1;
+	
 	text-shadow:0px 0px 24px var(--color-background);
 	top: calc(1.5 * var(--cscale));
 	left: calc(1.5 * var(--cscale));
+	right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
 }
 
 a 
