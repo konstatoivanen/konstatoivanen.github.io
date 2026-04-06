@@ -68,7 +68,7 @@ h1
     font-size: max(32px, 5.0vmin);
     margin-bottom: 0px;
     margin-top: calc(1.5 * var(--cscale));
-    letter-spacing: min(-2px, -0.25vmin);
+    letter-spacing: -0.05em;
     white-space: nowrap;
 }
 
