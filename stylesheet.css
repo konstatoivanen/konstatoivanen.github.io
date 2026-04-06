@@ -82,7 +82,7 @@ h2
     position: absolute;
     margin-block: 0%;
     bottom: 0px;
-    left: 0.5em;
+    left:calc(var(--cscale-edge) + 0.25em);
 
     user-select:none;
 }
