@@ -357,6 +357,20 @@ object
 		max-width: 50%;
 		clip-path: inherit;
 	}
+	
+	.image_tile_cover
+	{
+		background-color: var(--color-button-hollow-default);
+		position: initial;
+		height: 100%;
+		width: 100%;
+		clip-path: inherit;
+	}	
+
+	.image_tile_cover:hover
+	{
+		filter:brightness(0.5);
+	}		
 }
 
 @media (orientation: portrait) 
@@ -368,17 +382,18 @@ object
 		height: 100%;
 		width: 100%;
 		clip-path: inherit;
-		filter:brightness(0.25);
+		filter:brightness(0.5);
 	}
-}
-
-.image_tile_cover
-{
-	background-color: var(--color-button-hollow-default);
-    position: initial;
-    height: 100%;
-    width: 100%;
-    clip-path: inherit;
+	
+	.image_tile_cover
+	{
+		background-color: var(--color-button-hollow-default);
+		position: initial;
+		height: 100%;
+		width: 100%;
+		clip-path: inherit;
+		filter:brightness(0.5);
+	}	
 }
 
 @keyframes ClipIn_Left_Info 
