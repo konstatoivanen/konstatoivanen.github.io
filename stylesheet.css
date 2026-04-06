@@ -74,7 +74,6 @@ h2
 {
     color: inherit;
     background-color: transparent;
-    white-space:pre;
 
     font-family: republic;
     font-size: calc(1.0 * var(--cscale));
@@ -229,7 +228,7 @@ object
     display: inline-grid;
     position: relative;
     width: calc(16 * var(--cscale) + var(--cscale-margin));
-    height: calc(1.5 * var(--cscale));   
+    height: calc(max(16px, 1.5 * var(--cscale)));   
     margin-bottom: calc(var(--cscale-margin));
     margin-right: calc(var(--cscale-margin));
 	vertical-align: top;
