@@ -368,6 +368,7 @@ object
 		height: 100%;
 		width: 100%;
 		clip-path: inherit;
+		filter:brightness(0.25);
 	}
 }
 
