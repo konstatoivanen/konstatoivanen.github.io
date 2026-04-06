@@ -31,6 +31,7 @@
 	--cscale-no-mobile: var(--cscale);
 	--cscale-tile-height: calc(max(320px, 20 * var(--cscale)));
 	--cscale-img-height: calc(max(320px, 30 * var(--cscale)));
+	--cscale-button-height: max(32px, calc(2.0 * var(--cscale)));
 }
 
 body.root
@@ -200,8 +201,8 @@ object
 
     vertical-align:bottom;
     width: calc(8 * var(--cscale));
-    height: max(32px, calc(2.0 * var(--cscale)));
-    margin-top: max(8px, calc(0.5 * var(--cscale)));
+    height: var(--cscale-button-height);
+    margin-top: calc(0.25 * var(--cscale-button-height));
     margin-right:var(--cscale-margin);
     padding: var(--cscale-edge);
 
@@ -211,7 +212,7 @@ object
 .panel_button:hover
 {
     margin-top:0%;
-    height: max(40px, calc(2.5 * var(--cscale)));
+    height: calc(1.25 * var(--cscale-button-height));
 }
 
 .panel_button_inside
@@ -236,7 +237,7 @@ object
     display: inline-grid;
     position: relative;
     width: calc(16 * var(--cscale) + var(--cscale-margin));
-    height: calc(max(16px, 1.5 * var(--cscale)));   
+    height: calc(0.75 * var(--cscale-button-height));
     margin-bottom: calc(var(--cscale-margin));
     margin-right: calc(var(--cscale-margin));
 	vertical-align: top;
