@@ -181,6 +181,14 @@ object
 	background-color: var(--color-button-opaque-default-bg);
 }
 
+.panel_button_parent
+{
+	display: inline-flex; 
+	margin-top: calc(0.5 * var(--cscale)); 
+	vertical-align:bottom;
+	white-space: nowrap; 
+}
+
 .panel_button
 {
     color: var(--color-button-hollow-default);
@@ -192,8 +200,8 @@ object
 
     vertical-align:bottom;
     width: calc(8 * var(--cscale));
-    height:calc(2 * var(--cscale));
-    margin-top:calc(0.5 * var(--cscale));
+    height: max(32px, calc(2.0 * var(--cscale)));
+    margin-top: max(8px, calc(0.5 * var(--cscale)));
     margin-right:var(--cscale-margin);
     padding: var(--cscale-edge);
 
@@ -203,7 +211,7 @@ object
 .panel_button:hover
 {
     margin-top:0%;
-    height: calc(2.5 * var(--cscale));
+    height: max(40px, calc(2.5 * var(--cscale)));
 }
 
 .panel_button_inside
