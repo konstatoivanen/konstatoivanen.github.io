@@ -346,14 +346,29 @@ object
   line-height:calc(max(21px, 1.5 * var(--cscale)));
 }
 
-.image_tile_right 
+@media (orientation: landscape) 
 {
-	background-color: var(--color-button-hollow-default);
-    float:right;
-    position: sticky;
-    height: 100%;
-    max-width: 50%;
-    clip-path: inherit;
+	.image_tile_right 
+	{
+		background-color: var(--color-button-hollow-default);
+		float:right;
+		position: sticky;
+		height: 100%;
+		max-width: 50%;
+		clip-path: inherit;
+	}
+}
+
+@media (orientation: portrait) 
+{
+	.image_tile_right 
+	{
+		background-color: var(--color-button-hollow-default);
+		position: initial;
+		height: 100%;
+		width: 100%;
+		clip-path: inherit;
+	}
 }
 
 .image_tile_cover
