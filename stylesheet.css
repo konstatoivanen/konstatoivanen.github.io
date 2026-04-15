@@ -225,6 +225,18 @@ object
 		animation: ClipIn_Left_Button 0.3s 0.0s 1 normal forwards;
 	}
 
+	.tile_video_compact
+	{
+		background-color: transparent;
+		display:block;
+		position: relative;
+		margin-bottom:var(--cscale-margin);
+		margin-right:var(--cscale-margin);
+		width: calc(16 * var(--cscale) + var(--cscale-margin));
+		max-height: calc(20 * var(--cscale));
+		clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
+		animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
+	}
 }
 
 @media (max-aspect-ratio: 2/3) 
@@ -263,6 +275,19 @@ object
 	
 		clip-path: polygon(0 0, 0 20%, 0 20%, 0 100%, 0 100%, 0 0);
 		animation: ClipIn_Left_Button 0.3s 0.0s 1 normal forwards;
+	}
+	
+	.tile_video_compact
+	{
+		background-color: transparent;
+		display:block;
+		position: relative;
+		margin-bottom:var(--cscale-margin);
+		margin-right:var(--cscale-margin);
+		width:calc(50vw - 2.5 * var(--cscale) - var(--cscale-margin));
+		max-height: calc(20 * var(--cscale));
+		clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
+		animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
 	}
 }
 

@@ -320,7 +320,7 @@ function expand_tile(id, do_focus)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='tile_video' style='width:calc(16 * var(--cscale) + var(--cscale-margin))'><iframe width='100%' height='100%' src='' frameborder='0' gesture='media'></iframe></div>");
+                element.insertAdjacentHTML("afterend", "<div class='tile_video_compact'><iframe width='100%' height='100%' src='' frameborder='0' gesture='media'></iframe></div>");
                 newparent.lastElementChild.lastElementChild.src = element.dataset.content;
 				break;
 			}
