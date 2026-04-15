@@ -184,25 +184,86 @@ object
 	margin-top: calc(0.5 * var(--cscale)); 
 	vertical-align:bottom;
 	white-space: nowrap; 
+	width:100%;
 }
 
-.panel_button
+@media (min-aspect-ratio: 2/3) 
 {
-    color: var(--color-button-hollow-default);
-    background-color: var(--color-button-hollow-default);
-    
-    box-sizing:border-box;
-    display: inline-block; 
-    font-family: republic;
+	.panel_button
+	{
+		color: var(--color-button-hollow-default);
+		background-color: var(--color-button-hollow-default);
+		
+		box-sizing:border-box;
+		display: inline-block; 
+		font-family: republic;
+	
+		vertical-align:bottom;
+		width: calc(8 * var(--cscale));
+		height: var(--cscale-button-height);
+		margin-top: calc(0.25 * var(--cscale-button-height));
+		margin-right:var(--cscale-margin);
+		padding: var(--cscale-edge);
+	
+		clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
+	}	
+	
+	.tile_button 
+	{
+		color: var(--color-button-opaque-default-fg);
+		background-color: var(--color-button-opaque-default-bg);
+	
+		display: inline-grid;
+		position: relative;
+		width: calc(16 * var(--cscale) + var(--cscale-margin));
+		height: calc(0.75 * var(--cscale-button-height));
+		margin-bottom: calc(var(--cscale-margin));
+		margin-right: calc(var(--cscale-margin));
+		vertical-align: top;
+	
+		clip-path: polygon(0 0, 0 20%, 0 20%, 0 100%, 0 100%, 0 0);
+		animation: ClipIn_Left_Button 0.3s 0.0s 1 normal forwards;
+	}
 
-    vertical-align:bottom;
-    width: calc(8 * var(--cscale));
-    height: var(--cscale-button-height);
-    margin-top: calc(0.25 * var(--cscale-button-height));
-    margin-right:var(--cscale-margin);
-    padding: var(--cscale-edge);
+}
 
-    clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
+@media (max-aspect-ratio: 2/3) 
+{
+	.panel_button
+	{
+		color: var(--color-button-hollow-default);
+		background-color: var(--color-button-hollow-default);
+		
+		box-sizing:border-box;
+		display: inline-block; 
+		font-family: republic;
+	
+		vertical-align:bottom;
+		width: 25%;
+		height: var(--cscale-button-height);
+		margin-top: calc(0.25 * var(--cscale-button-height));
+		margin-right:var(--cscale-margin);
+		padding: var(--cscale-edge);
+	
+		clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
+	}
+	
+	.tile_button 
+	{
+		color: var(--color-button-opaque-default-fg);
+		background-color: var(--color-button-opaque-default-bg);
+	
+		display: inline-grid;
+		position: relative;
+		width: calc(50vw - 2.5 * var(--cscale) - var(--cscale-margin));
+		height: calc(0.75 * var(--cscale-button-height));
+		margin-bottom: calc(var(--cscale-margin));
+		margin-right: calc(var(--cscale-margin));
+		vertical-align: top;
+	
+		clip-path: polygon(0 0, 0 20%, 0 20%, 0 100%, 0 100%, 0 0);
+		animation: ClipIn_Left_Button 0.3s 0.0s 1 normal forwards;
+	}
 }
 
 .panel_button:hover
@@ -225,22 +286,6 @@ object
     clip-path: polygon(91% 0, 96% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 }
 
-.tile_button 
-{
-    color: var(--color-button-opaque-default-fg);
-    background-color: var(--color-button-opaque-default-bg);
-
-    display: inline-grid;
-    position: relative;
-    width: calc(16 * var(--cscale) + var(--cscale-margin));
-    height: calc(0.75 * var(--cscale-button-height));
-    margin-bottom: calc(var(--cscale-margin));
-    margin-right: calc(var(--cscale-margin));
-	vertical-align: top;
-
-    clip-path: polygon(0 0, 0 20%, 0 20%, 0 100%, 0 100%, 0 0);
-	animation: ClipIn_Left_Button 0.3s 0.0s 1 normal forwards;
-}
 
 .tile_button:hover 
 {
@@ -262,6 +307,8 @@ object
     display: table;
     height:100%;
 	padding-bottom:calc(1.5 * var(--cscale));
+	/* extra +1px so that tile align on narrow aspect always resolves to 2 columns. I know this is very hacky.*/
+	width:calc(100% + 1px);
 }
 
 .tile_parent
@@ -270,7 +317,8 @@ object
 
     display: block;
     position:relative;
-    width: calc(min(99%, 5 * (16 * var(--cscale) + 2 * var(--cscale-margin)) - var(--cscale-margin)));
+	/* extra -1px so that tile align on narrow aspect always resolves to 2 columns. I know this is very hacky.*/
+    width: calc(min(100% - var(--cscale-margin), 5 * (16 * var(--cscale) + 2 * var(--cscale-margin)) - var(--cscale-margin)) - 1px);
     margin-bottom:calc(0.25 * var(--cscale));
 
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -302,7 +350,6 @@ object
     position: relative;
     margin-bottom:var(--cscale-margin);
     margin-right:var(--cscale-margin);
-    width: 100%;
     max-height: calc(20 * var(--cscale));
     clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
     animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
