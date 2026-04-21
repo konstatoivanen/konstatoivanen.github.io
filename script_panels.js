@@ -91,8 +91,8 @@ function include_html(target, file, on_load)
 
 function set_button_color(element, isActive)
 {
-    element.style.color = isActive ? "var(--color-button-opaque-selected-fg)" : "var(--color-button-opaque-default-fg)";
-    element.style.background = isActive ? "var(--color-button-opaque-selected-bg)" : "var(--color-button-opaque-default-bg)";
+    element.style.color = isActive ? "var(--color-background-lift)" : "var(--color-midtone)";
+    element.style.background = isActive ? "var(--color-accent)" : "var(--color-lowtone)";
 }
 
 function play_sound(index, vol)
@@ -350,17 +350,17 @@ function switch_panel(id)
     if (previousButton !== null)
     {
         var previousInside = previousButton.getElementsByClassName("panel_button_inside").item(0);
-        previousButton.style.backgroundColor = "var(--color-button-hollow-default)";
-        previousButton.style.color = "var(--color-button-hollow-default)";
-        previousInside.style.backgroundColor = "var(--color-background)";
+        previousButton.style.backgroundColor = "var(--color-midtone)";
+        previousButton.style.color = "var(--color-midtone)";
+        previousInside.style.backgroundColor = "var(--color-background-lift)";
     }
 
     previousButtonId = id;
 
     var inside = button.getElementsByClassName("panel_button_inside").item(0);
-    button.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
-    button.style.color = "var(--color-button-hollow-selected-fg)";
-    inside.style.backgroundColor = "var(--color-button-hollow-selected-bg)";
+    button.style.backgroundColor = "var(--color-accent)";
+    button.style.color = "var(--color-background-lift)";
+    inside.style.backgroundColor = "var(--color-accent)";
 	include_html(document.getElementById("include_target"), button.dataset.content, update_subpage);
 }
 
@@ -378,8 +378,8 @@ function initialize()
         {
             const buttonid = "button_id_" + i.toString();
             button.id = buttonid;
-            button.style.color = "var(--color-button-hollow-default)";
-            button.style.backgroundColor = "var(--color-button-hollow-default)";
+            button.style.color = "var(--color-midtone)";
+            button.style.backgroundColor = "var(--color-midtone)";
 
             button.addEventListener('click', e => { switch_panel(buttonid.toString()); });
             button.addEventListener('mouseenter', e => { play_sound(0, 0.15); });
