@@ -13,7 +13,7 @@
     --color-hightone: #DCE3E8;
     --color-midtone: #839098;
     --color-lowtone: #191919;
-	
+		
 	--is-mobile: 0;
     --is-desktop: 1;
     --cscale: max(8px, min(1vw, 2vmin));

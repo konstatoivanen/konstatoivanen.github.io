@@ -2,6 +2,7 @@ var previousButtonId = "";
 var previousTileId = "";
 var audioClips = null;
 var playAudio = false;
+var isDarkMode = true;
 
 function create_element(content)
 {
@@ -86,6 +87,30 @@ function include_html(target, file, on_load)
 		xhttp.send();
 		/* Exit the function: */
 		return;
+	}
+}
+
+function toggle_color_scheme()
+{
+	isDarkMode ^= true;
+	
+	if (isDarkMode)
+	{
+		document.documentElement.style.setProperty('--color-background', '#0E0E0F');
+		document.documentElement.style.setProperty('--color-background-lift', '#0E0E0F');
+		document.documentElement.style.setProperty('--color-accent', '#FD30A7');
+		document.documentElement.style.setProperty('--color-hightone', '#DCE3E8');
+		document.documentElement.style.setProperty('--color-midtone', '#839098');
+		document.documentElement.style.setProperty('--color-lowtone', '#191919');
+	}
+	else
+	{
+		document.documentElement.style.setProperty('--color-background', '#C4C3C4');
+		document.documentElement.style.setProperty('--color-background-lift', '#B5B5B5');
+		document.documentElement.style.setProperty('--color-accent', '#000000');
+		document.documentElement.style.setProperty('--color-hightone', '#000000');
+		document.documentElement.style.setProperty('--color-midtone', '#000000');
+		document.documentElement.style.setProperty('--color-lowtone', '#707070');
 	}
 }
 
@@ -386,6 +411,9 @@ function initialize()
             bind_button_hover(button, "h3", "panel_button" + i.toString());
         }
     }
+	
+	var header = document.getElementsByTagName("h1");
+	header.item(0).addEventListener('click', e => { toggle_color_scheme(); });
 
     switch_panel("button_id_0");
 }
