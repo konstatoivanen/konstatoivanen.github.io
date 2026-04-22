@@ -13,6 +13,10 @@
     --color-hightone: #DCE3E8;
     --color-midtone: #839098;
     --color-lowtone: #191919;
+	
+	--color-overlay-background: #0E0E0F;
+	--color-overlay-accent: #FD30A7;
+	--color-overlay-hightone: #DCE3E8;
 		
 	--is-mobile: 0;
     --is-desktop: 1;
@@ -120,30 +124,13 @@ p2
 	pointer-events:none;
 }
 
-p2.proj
+p2.proj_overlay
 {
-	position: absolute;
-	z-index: 1;
-	
-	text-shadow:0px 8px 24px var(--color-background);
+	color:var(--color-overlay-hightone);
+	text-shadow:0px 8px 24px var(--color-overlay-background);
 	top: calc(1.5 * var(--cscale));
 	left: calc(1.5 * var(--cscale));
 	right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
-}
-
-a 
-{
-    color:  var(--color-accent);
-}
-
-span
-{
-	color:var(--color-accent);
-}
-
-span.dark
-{
-	color:var(--color-lowtone);
 }
 
 video
@@ -175,6 +162,98 @@ object
 	vertical-align:bottom;
 	white-space: nowrap; 
 	width:100%;
+}
+
+@media (orientation: landscape) 
+{
+	p2.proj
+	{
+		position: absolute;
+		z-index: 1;
+		top: calc(1.5 * var(--cscale));
+		left: calc(1.5 * var(--cscale));
+		right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
+	}
+	
+	a
+	{
+		color: var(--color-accent);
+	}
+	
+	span
+	{
+		color:var(--color-accent);
+	}
+	
+	.image_tile_right 
+	{
+		background-color: var(--color-midtone);
+		float:right;
+		position: sticky;
+		height: 100%;
+		max-width: 50%;
+		clip-path: inherit;
+	}
+	
+	.image_tile_cover
+	{
+		background-color: var(--color-midtone);
+		position: initial;
+		height: 100%;
+		width: 100%;
+		clip-path: inherit;
+	}	
+
+	.image_tile_cover:hover
+	{
+		filter:brightness(0.5);
+	}		
+}
+
+@media (orientation: portrait) 
+{
+	p2.proj
+	{
+		position: absolute;
+		z-index: 1;
+		
+		color:var(--color-overlay-hightone);
+		text-shadow:0px 8px 24px var(--color-overlay-background);
+		top: calc(1.5 * var(--cscale));
+		left: calc(1.5 * var(--cscale));
+		right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
+	}
+	
+	a
+	{
+		color: var(--color-overlay-accent);
+	}
+	
+	span
+	{
+		color:var(--color-overlay-accent);
+	}
+
+	
+	.image_tile_right 
+	{
+		background-color: var(--color-midtone);
+		position: initial;
+		height: 100%;
+		width: 100%;
+		clip-path: inherit;
+		filter:brightness(0.5);
+	}
+	
+	.image_tile_cover
+	{
+		background-color: var(--color-midtone);
+		position: initial;
+		height: 100%;
+		width: 100%;
+		clip-path: inherit;
+		filter:brightness(0.5);
+	}	
 }
 
 @media (min-aspect-ratio: 2/3) 
@@ -249,7 +328,7 @@ object
 	
 		clip-path: polygon(90% 0, 95% 10%, 100% 10%, 100% 100%, 0 100%, 0 0);
 	}
-	
+		
 	.tile_button 
 	{
 		color: var(--color-midtone);
@@ -279,6 +358,26 @@ object
 		clip-path: polygon(0 0, 0% 100%, 0 100%, 0 0);
 		animation: ClipIn_Left_Tile 0.5s 0.0s 1 normal forwards;
 	}
+}
+
+a.overlay
+{
+    color:var(--color-overlay-accent);
+}
+
+span.overlay
+{
+	color:var(--color-overlay-accent);
+}
+
+span.light
+{
+	color:var(--color-accent);
+}
+
+span.dark
+{
+	color:var(--color-lowtone);
 }
 
 .panel_button:hover
@@ -407,55 +506,6 @@ object
   line-height:calc(max(21px, 1.5 * var(--cscale)));
 }
 
-@media (orientation: landscape) 
-{
-	.image_tile_right 
-	{
-		background-color: var(--color-midtone);
-		float:right;
-		position: sticky;
-		height: 100%;
-		max-width: 50%;
-		clip-path: inherit;
-	}
-	
-	.image_tile_cover
-	{
-		background-color: var(--color-midtone);
-		position: initial;
-		height: 100%;
-		width: 100%;
-		clip-path: inherit;
-	}	
-
-	.image_tile_cover:hover
-	{
-		filter:brightness(0.5);
-	}		
-}
-
-@media (orientation: portrait) 
-{
-	.image_tile_right 
-	{
-		background-color: var(--color-midtone);
-		position: initial;
-		height: 100%;
-		width: 100%;
-		clip-path: inherit;
-		filter:brightness(0.5);
-	}
-	
-	.image_tile_cover
-	{
-		background-color: var(--color-midtone);
-		position: initial;
-		height: 100%;
-		width: 100%;
-		clip-path: inherit;
-		filter:brightness(0.5);
-	}	
-}
 
 @keyframes ClipIn_Left_Info 
 { 

@@ -102,6 +102,10 @@ function toggle_color_scheme()
 		document.documentElement.style.setProperty('--color-hightone', '#DCE3E8');
 		document.documentElement.style.setProperty('--color-midtone', '#839098');
 		document.documentElement.style.setProperty('--color-lowtone', '#191919');
+		document.documentElement.style.setProperty('--color-overlay-background','#0E0E0F');
+		document.documentElement.style.setProperty('--color-overlay-accent', '#FD30A7');
+		document.documentElement.style.setProperty('--color-overlay-hightone', '#DCE3E8');
+		
 	}
 	else
 	{
@@ -111,6 +115,9 @@ function toggle_color_scheme()
 		document.documentElement.style.setProperty('--color-hightone', '#000000');
 		document.documentElement.style.setProperty('--color-midtone', '#000000');
 		document.documentElement.style.setProperty('--color-lowtone', '#707070');
+		document.documentElement.style.setProperty('--color-overlay-background','#000000');
+		document.documentElement.style.setProperty('--color-overlay-accent', '#B5B5B5');
+		document.documentElement.style.setProperty('--color-overlay-hightone', '#C4C3C4');
 	}
 }
 
