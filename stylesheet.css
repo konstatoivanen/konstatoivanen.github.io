@@ -7,16 +7,15 @@
 }
 
 :root {
-    --color-background: #0E0E0F;
-    --color-background-lift: #0E0E0F;
-    --color-accent: #FD30A7;
-    --color-hightone: #DCE3E8;
-    --color-midtone: #839098;
-    --color-lowtone: #191919;
-	
-	--color-overlay-background: #0E0E0F;
-	--color-overlay-accent: #FD30A7;
-	--color-overlay-hightone: #DCE3E8;
+	--color-background: #C4C3C4;
+	--color-background-lift: #B5B5B5;
+	--color-accent: #000000;
+	--color-hightone: #000000;
+	--color-midtone: #000000;
+	--color-lowtone: #707070;
+	--color-overlay-background: #000000;
+	--color-overlay-accent: #C4C3C4;
+	--color-overlay-hightone: #FFFFFF;
 		
 	--is-mobile: 0;
     --is-desktop: 1;
@@ -126,6 +125,9 @@ p2
 
 p2.proj_overlay
 {
+	position: absolute;
+	z-index: 1;
+	
 	color:var(--color-overlay-hightone);
 	text-shadow:0px 8px 24px var(--color-overlay-background);
 	top: calc(1.5 * var(--cscale));

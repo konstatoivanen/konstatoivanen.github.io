@@ -2,7 +2,7 @@ var previousButtonId = "";
 var previousTileId = "";
 var audioClips = null;
 var playAudio = false;
-var isDarkMode = true;
+var isDarkMode = false;
 
 function create_element(content)
 {
@@ -116,8 +116,8 @@ function toggle_color_scheme()
 		document.documentElement.style.setProperty('--color-midtone', '#000000');
 		document.documentElement.style.setProperty('--color-lowtone', '#707070');
 		document.documentElement.style.setProperty('--color-overlay-background','#000000');
-		document.documentElement.style.setProperty('--color-overlay-accent', '#B5B5B5');
-		document.documentElement.style.setProperty('--color-overlay-hightone', '#C4C3C4');
+		document.documentElement.style.setProperty('--color-overlay-accent', '#C4C3C4');
+		document.documentElement.style.setProperty('--color-overlay-hightone', '#FFFFFF');
 	}
 }
 
