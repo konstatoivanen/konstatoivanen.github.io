@@ -210,6 +210,7 @@ object
 	a
 	{
 		color: var(--color-accent);
+		pointer-events: all;
 	}
 	
 	span
@@ -271,6 +272,7 @@ object
 	a
 	{
 		color: var(--color-overlay-accent);
+		pointer-events: all;
 	}
 	
 	span
@@ -550,6 +552,8 @@ span.dark
   display: grid;
   grid-template-columns: auto auto;
   line-height:calc(max(21px, 1.5 * var(--cscale)));
+  pointer-events:all;
+  user-select:text;
 }
 
 
