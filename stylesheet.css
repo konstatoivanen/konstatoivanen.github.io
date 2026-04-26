@@ -475,6 +475,8 @@ span.dark
 
     display: block;
     position:relative;
+	/* set height t0 0 so that animation begin doesn't jitter.*/
+	height:0;
 	/* extra -1px so that tile align on narrow aspect always resolves to 2 columns. I know this is very hacky.*/
     width: calc(min(100% - var(--cscale-margin), 5 * (16 * var(--cscale) + 2 * var(--cscale-margin)) - var(--cscale-margin)) - 1px);
     margin-bottom:calc(0.25 * var(--cscale));

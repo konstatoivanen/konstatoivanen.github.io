@@ -323,6 +323,7 @@ function expand_tile(id, do_focus)
         case "local_image":
 			if (try_update_previous_tile(id))
 			{
+				element.style.animationDuration = "0.0s";
 				element.insertAdjacentHTML("afterend", "<div id='expand_div' class='tile_parent' style='animation-name:ClipIn_Left_Img'><p2 class='date_overlay'>" 
 					+ element.dataset.date
 					+ "</p2><div class='divider'></div><div class='tile_image'><img src='" 
