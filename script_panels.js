@@ -335,7 +335,7 @@ function expand_tile(id, do_focus)
                 var newparent = create_element("<div style='display: inline-table; position: relative;' id='content_container'></div>");
                 element.parentElement.replaceChild(newparent, element);
                 newparent.appendChild(element);
-                element.insertAdjacentHTML("afterend", "<div class='tile_video' style='max-width:0px;'><video loop autoplay muted><source src=''></video></div>");
+                element.insertAdjacentHTML("afterend", "<div class='tile_video' style='max-width:0px;'><div class='divider'></div><video loop autoplay muted><source src=''></video></div>");
 
                 var image = newparent.lastElementChild;
                 var video = newparent.lastElementChild.lastElementChild;
