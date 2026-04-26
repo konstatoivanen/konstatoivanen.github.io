@@ -53,6 +53,7 @@ body::-webkit-scrollbar-thumb
     background-color: var(--color-background-lift);
 }
 
+/* main header */
 h1 
 {
     color: var(--color-hightone);
@@ -65,6 +66,7 @@ h1
     white-space: nowrap;
 }
 
+/* tile button */
 h2
 {
     color: inherit;
@@ -81,6 +83,7 @@ h2
     user-select:none;
 }
 
+/* panel button */ 
 h3
 {
     color: inherit;
@@ -95,6 +98,7 @@ h3
     left:0.25em;
 }
 
+/* sub header text */
 p 
 {
     color: var(--color-accent);
@@ -112,6 +116,7 @@ p
 	top: -0.25em;
 }
 
+/* text */
 p2 
 {
     color: var(--color-hightone);
@@ -125,14 +130,27 @@ p2
 
 p2.proj_overlay
 {
-	position: absolute;
-	z-index: 1;
-	
 	color:var(--color-overlay-hightone);
 	text-shadow:0px 8px 24px var(--color-overlay-background);
+
+	position: absolute;
+	z-index: 1;	
 	top: calc(1.5 * var(--cscale));
 	left: calc(1.5 * var(--cscale));
 	right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
+}
+
+p2.date_overlay
+{
+	color:var(--color-overlay-accent);
+	text-shadow:0px 8px 24px var(--color-overlay-background);
+	
+	font-size: calc(max(10px, 0.55 * var(--cscale)));
+
+	position: absolute;
+	z-index: 1;
+	bottom: calc(1.0 * var(--cscale));
+	left: calc(1.5 * var(--cscale));	
 }
 
 video
@@ -153,8 +171,8 @@ object
 
 .divider
 {
-	height: var(--cscale-edge);
 	background-color: var(--color-lowtone);
+	height: var(--cscale-edge);
 }
 
 .panel_button_parent
@@ -175,6 +193,18 @@ object
 		top: calc(1.5 * var(--cscale));
 		left: calc(1.5 * var(--cscale));
 		right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
+	}
+	
+	p2.date
+	{
+		color: var(--color-accent);
+		font-size: calc(max(10px, 0.55 * var(--cscale)));
+			
+		position: absolute;
+		z-index: 1;
+		bottom: calc(1.0 * var(--cscale));
+		left: calc(1.5 * var(--cscale));
+		color:var(--color-accent);
 	}
 	
 	a
@@ -216,14 +246,27 @@ object
 {
 	p2.proj
 	{
-		position: absolute;
-		z-index: 1;
-		
 		color:var(--color-overlay-hightone);
 		text-shadow:0px 8px 24px var(--color-overlay-background);
+
+		position: absolute;
+		z-index: 1;		
 		top: calc(1.5 * var(--cscale));
 		left: calc(1.5 * var(--cscale));
 		right: calc(50% * var(--is-desktop) + 1.0 * var(--cscale));
+	}
+	
+	p2.date
+	{
+		color: var(--color-overlay-accent);
+		text-shadow:0px 8px 24px var(--color-overlay-background);
+		font-size: calc(max(10px, 0.55 * var(--cscale)));
+		
+		position: absolute;
+		z-index: 1;
+		bottom: calc(1.0 * var(--cscale));
+		left: calc(1.5 * var(--cscale));
+		color:var(--color-accent);
 	}
 	
 	a
